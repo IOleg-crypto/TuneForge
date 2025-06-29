@@ -17,3 +17,4 @@ D:\gitnext\csharpProject\TuneForrge\TuneForge\obj\Debug\net9.0-windows\TuneForge
 D:\gitnext\csharpProject\TuneForrge\TuneForge\obj\Debug\net9.0-windows\TuneForge.Form1.resources
 D:\gitnext\csharpProject\TuneForrge\TuneForge\obj\Debug\net9.0-windows\TuneForge.csproj.GenerateResource.cache
 D:\gitnext\csharpProject\TuneForrge\TuneForge\obj\Debug\net9.0-windows\TuneForge.csproj.Up2Date
+D:\gitnext\csharpProject\TuneForrge\TuneForge\obj\Debug\net9.0-windows\TuneForge.sourcelink.json

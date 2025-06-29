@@ -5,9 +5,24 @@ namespace TuneForge
         public Form1()
         {
             InitializeComponent();
+
         }
-        private void Form1_Load(object sender, EventArgs e)
+        private void openSideBar(object sender, EventArgs e)
         {
+            int sidebarCount = Controls.OfType<Sidebar>().Count();
+            Sidebar sidebar = new Sidebar();
+            if (sidebarCount < 1)
+            {
+                Controls.Add(sidebar);
+            }
+
+            if (!Controls.Contains(sidebar))
+            {
+                OpenSideBar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+                OpenSideBar.Visible = false;
+                
+                
+            }
         }
     }
 }
