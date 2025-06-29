@@ -8,7 +8,6 @@ namespace TuneForge
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Тут можна щось ініціалізувати при завантаженні форми
         }
     }
 }
