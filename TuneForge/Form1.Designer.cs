@@ -35,27 +35,27 @@ partial class Form1
         // 
         // OpenSideBar
         // 
-        OpenSideBar.DisabledBackColor = System.Drawing.Color.FromArgb(((int)((byte)120)), ((int)((byte)65)), ((int)((byte)177)), ((int)((byte)225)));
-        OpenSideBar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)((byte)120)), ((int)((byte)65)), ((int)((byte)177)), ((int)((byte)225)));
+        OpenSideBar.DisabledBackColor = System.Drawing.Color.FromArgb(((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)));
+        OpenSideBar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)));
         OpenSideBar.DisabledForeColor = System.Drawing.Color.Gray;
-        OpenSideBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-        OpenSideBar.HoverBorderColor = System.Drawing.Color.FromArgb(((int)((byte)95)), ((int)((byte)207)), ((int)((byte)255)));
-        OpenSideBar.HoverColor = System.Drawing.Color.FromArgb(((int)((byte)95)), ((int)((byte)207)), ((int)((byte)255)));
-        OpenSideBar.HoverTextColor = System.Drawing.Color.White;
-        OpenSideBar.IsDerivedStyle = true;
+        OpenSideBar.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        OpenSideBar.HoverBorderColor = System.Drawing.Color.FromArgb(((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)));
+        OpenSideBar.HoverColor = System.Drawing.Color.FromArgb(((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)));
+        OpenSideBar.HoverTextColor = System.Drawing.Color.DimGray;
+        OpenSideBar.IsDerivedStyle = false;
         OpenSideBar.Location = new System.Drawing.Point(12, 12);
         OpenSideBar.Name = "OpenSideBar";
-        OpenSideBar.NormalBorderColor = System.Drawing.Color.FromArgb(((int)((byte)65)), ((int)((byte)177)), ((int)((byte)225)));
-        OpenSideBar.NormalColor = System.Drawing.Color.FromArgb(((int)((byte)65)), ((int)((byte)177)), ((int)((byte)225)));
+        OpenSideBar.NormalBorderColor = System.Drawing.Color.Transparent;
+        OpenSideBar.NormalColor = System.Drawing.Color.Transparent;
         OpenSideBar.NormalTextColor = System.Drawing.Color.White;
-        OpenSideBar.PressBorderColor = System.Drawing.Color.FromArgb(((int)((byte)35)), ((int)((byte)147)), ((int)((byte)195)));
-        OpenSideBar.PressColor = System.Drawing.Color.FromArgb(((int)((byte)35)), ((int)((byte)147)), ((int)((byte)195)));
-        OpenSideBar.PressTextColor = System.Drawing.Color.White;
-        OpenSideBar.Size = new System.Drawing.Size(172, 54);
+        OpenSideBar.PressBorderColor = System.Drawing.Color.Transparent;
+        OpenSideBar.PressColor = System.Drawing.Color.Transparent;
+        OpenSideBar.PressTextColor = System.Drawing.Color.Transparent;
+        OpenSideBar.Size = new System.Drawing.Size(50, 37);
         OpenSideBar.Style = ReaLTaiizor.Enum.Metro.Style.Light;
         OpenSideBar.StyleManager = null;
         OpenSideBar.TabIndex = 0;
-        OpenSideBar.Text = "OpenSidebar";
+        OpenSideBar.Text = "☰";
         OpenSideBar.ThemeAuthor = "Taiizor";
         OpenSideBar.ThemeName = "MetroLight";
         OpenSideBar.Click += openSideBar;
