@@ -50,6 +50,14 @@
         "net8.0-windows10.0.26100": {
           "targetAlias": "net8.0-windows10.0.26100.0",
           "dependencies": {
+            "NAudio": {
+              "target": "Package",
+              "version": "[2.2.1, )"
+            },
+            "NAudio.WaveFormRenderer": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
             "ReaLTaiizor": {
               "target": "Package",
               "version": "[3.8.1.3, )"

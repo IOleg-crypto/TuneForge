@@ -8,20 +8,27 @@ namespace TuneForge
     {
         private List<SidebarItem> _items = new();
         private PictureBox _cancelIcon = null!;
-        private readonly Control? _toggleButton;
+        private Control? _toggleButton;
         private readonly int _Width = 200;
-
-        public Sidebar(Control? toggleButton = null)
+        private readonly Form ? _form;
+        
+        public Sidebar(Form? form , Control? toggleButton = null)
         {
-            _toggleButton = toggleButton;
-            if (_toggleButton != null && !_toggleButton.IsDisposed && _toggleButton.IsHandleCreated)
-                _toggleButton.Visible = false;
-            
+            _form = form;
+            IsToggleButtonVisible(toggleButton);
             InitSidebar();
             InitItems();
             InitCancelButton();
         }
 
+        private void IsToggleButtonVisible(Control? toggleButton = null)
+        {
+            _toggleButton = toggleButton;
+            if (_toggleButton != null && !_toggleButton.IsDisposed && _toggleButton.IsHandleCreated)
+            {
+                _toggleButton.Visible = false;
+            }
+        }
         private void InitSidebar()
         {
             this.SuspendLayout();
@@ -39,30 +46,39 @@ namespace TuneForge
         
         private void OnProfileClick()
         {
-            MessageBox.Show("Profile");
+            MessageBox.Show(@"Profile");
         }
         private void OnFavoriteClick()
         {
-            MessageBox.Show("Favorite");
+            MessageBox.Show(@"Favorite");
         }
         private void OnLanguageClick()
         {
-            MessageBox.Show("Language");
+            MessageBox.Show(@"Language");
         }
         private void OnContractClick()
         {
-            MessageBox.Show("Contract");
+            MessageBox.Show(@"Contract");
         }
         private void OnSettingsClick()
         {
-            MessageBox.Show("Settings");
+            MessageBox.Show(@"Settings");
         }
-        
         private void OnMusicClick()
         {
-            MessageBox.Show("Music");
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "mp3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.RestoreDirectory = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (_form is Form1 mainForm)
+                {
+                    mainForm.CurrentMusicPath = openFileDialog.FileName;
+                }
+            }
         }
-        
         private void InitItems()
         {
             // TODO : fix paths in future

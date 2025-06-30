@@ -20,3 +20,11 @@ D:\gitnext\csharpProject\TuneForrge\TuneForge\obj\Release\net8.0-windows10.0.261
 D:\gitnext\csharpProject\TuneForrge\TuneForge\obj\Release\net8.0-windows10.0.26100.0\TuneForge.pdb
 D:\gitnext\csharpProject\TuneForrge\TuneForge\obj\Release\net8.0-windows10.0.26100.0\TuneForge.genruntimeconfig.cache
 D:\gitnext\csharpProject\TuneForrge\TuneForge\obj\Release\net8.0-windows10.0.26100.0\ref\TuneForge.dll
+D:\gitnext\csharpProject\TuneForrge\TuneForge\bin\Release\net8.0-windows10.0.26100.0\NAudio.dll
+D:\gitnext\csharpProject\TuneForrge\TuneForge\bin\Release\net8.0-windows10.0.26100.0\NAudio.Asio.dll
+D:\gitnext\csharpProject\TuneForrge\TuneForge\bin\Release\net8.0-windows10.0.26100.0\NAudio.Core.dll
+D:\gitnext\csharpProject\TuneForrge\TuneForge\bin\Release\net8.0-windows10.0.26100.0\NAudio.Midi.dll
+D:\gitnext\csharpProject\TuneForrge\TuneForge\bin\Release\net8.0-windows10.0.26100.0\NAudio.Wasapi.dll
+D:\gitnext\csharpProject\TuneForrge\TuneForge\bin\Release\net8.0-windows10.0.26100.0\NAudio.WaveFormRenderer.dll
+D:\gitnext\csharpProject\TuneForrge\TuneForge\bin\Release\net8.0-windows10.0.26100.0\NAudio.WinForms.dll
+D:\gitnext\csharpProject\TuneForrge\TuneForge\bin\Release\net8.0-windows10.0.26100.0\NAudio.WinMM.dll

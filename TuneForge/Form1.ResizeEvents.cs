@@ -30,5 +30,10 @@
             // Come back to original size
             musicBar.Height = _originalMusicBarHeight;
         }
+        private void Form1_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            musicBar.Location = new Point(musicBar.Location.X - 80, musicBar.Location.Y);
+        }
+
     }
 }

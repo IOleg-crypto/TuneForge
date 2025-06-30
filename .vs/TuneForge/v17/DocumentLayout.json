@@ -3,28 +3,24 @@
   "WorkspaceRootPath": "D:\\gitnext\\csharpProject\\TuneForrge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|d:\\gitnext\\csharpproject\\tuneforrge\\tuneforge\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|solutionrelative:tuneforge\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|d:\\gitnext\\csharpproject\\tuneforrge\\tuneforge\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|solutionrelative:tuneforge\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|d:\\gitnext\\csharpproject\\tuneforrge\\tuneforge\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|solutionrelative:tuneforge\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|d:\\gitnext\\csharpproject\\tuneforrge\\tuneforge\\tuneforge.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|solutionrelative:tuneforge\\tuneforge.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|d:\\gitnext\\csharpproject\\tuneforrge\\tuneforge\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|solutionrelative:tuneforge\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|d:\\gitnext\\csharpproject\\tuneforrge\\tuneforge\\bin\\debug\\net8.0-windows10.0.26100.0\\tuneforge.exe||{177559E0-D141-11D0-92DF-00A0C9138C45}",
       "RelativeMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|solutionrelative:tuneforge\\bin\\debug\\net8.0-windows10.0.26100.0\\tuneforge.exe||{177559E0-D141-11D0-92DF-00A0C9138C45}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|d:\\gitnext\\csharpproject\\tuneforrge\\tuneforge\\tuneforge.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|solutionrelative:tuneforge\\tuneforge.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|d:\\gitnext\\csharpproject\\tuneforrge\\tuneforge\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|solutionrelative:tuneforge\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|D:\\gitnext\\csharpProject\\TuneForrge\\tuneforge\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|solutionrelative:tuneforge\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62E036E0-2573-4ACB-81B4-BF566313AA6E}|TuneForge\\TuneForge.csproj|d:\\gitnext\\csharpproject\\tuneforrge\\tuneforge\\tuneforrge.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -38,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,7 +78,56 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TuneForge.csproj",
+              "DocumentMoniker": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\TuneForge.csproj",
+              "RelativeDocumentMoniker": "TuneForge\\TuneForge.csproj",
+              "ToolTip": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\TuneForge.csproj",
+              "RelativeToolTip": "TuneForge\\TuneForge.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-29T13:36:38.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\Program.cs",
+              "RelativeDocumentMoniker": "TuneForge\\Program.cs",
+              "ToolTip": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\Program.cs",
+              "RelativeToolTip": "TuneForge\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T13:29:49.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\Form1.cs",
+              "RelativeDocumentMoniker": "TuneForge\\Form1.cs",
+              "ToolTip": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\Form1.cs",
+              "RelativeToolTip": "TuneForge\\Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T13:28:56.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "TuneForge.exe",
+              "DocumentMoniker": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\bin\\Debug\\net8.0-windows10.0.26100.0\\TuneForge.exe",
+              "RelativeDocumentMoniker": "TuneForge\\bin\\Debug\\net8.0-windows10.0.26100.0\\TuneForge.exe",
+              "ToolTip": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\bin\\Debug\\net8.0-windows10.0.26100.0\\TuneForge.exe",
+              "RelativeToolTip": "TuneForge\\bin\\Debug\\net8.0-windows10.0.26100.0\\TuneForge.exe",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000165|",
+              "WhenOpened": "2025-06-29T13:38:38.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\Form1.cs",
               "RelativeDocumentMoniker": "TuneForge\\Form1.cs",
@@ -94,71 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TuneForge.csproj",
-              "DocumentMoniker": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\TuneForge.csproj",
-              "RelativeDocumentMoniker": "TuneForge\\TuneForge.csproj",
-              "ToolTip": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\TuneForge.csproj",
-              "RelativeToolTip": "TuneForge\\TuneForge.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-06-29T13:36:38.583Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "TuneForge",
-              "DocumentMoniker": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\TuneForge.csproj",
-              "RelativeDocumentMoniker": "TuneForge\\TuneForge.csproj",
-              "ToolTip": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\TuneForge.csproj",
-              "RelativeToolTip": "TuneForge\\TuneForge.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-06-29T13:33:12.615Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\Program.cs",
-              "RelativeDocumentMoniker": "TuneForge\\Program.cs",
-              "ToolTip": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\Program.cs",
-              "RelativeToolTip": "TuneForge\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-29T13:29:49.641Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\Form1.cs",
-              "RelativeDocumentMoniker": "TuneForge\\Form1.cs",
-              "ToolTip": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\Form1.cs",
-              "RelativeToolTip": "TuneForge\\Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-29T13:28:56.198Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TuneForge.exe",
-              "DocumentMoniker": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\bin\\Debug\\net8.0-windows10.0.26100.0\\TuneForge.exe",
-              "RelativeDocumentMoniker": "TuneForge\\bin\\Debug\\net8.0-windows10.0.26100.0\\TuneForge.exe",
-              "ToolTip": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\bin\\Debug\\net8.0-windows10.0.26100.0\\TuneForge.exe",
-              "RelativeToolTip": "TuneForge\\bin\\Debug\\net8.0-windows10.0.26100.0\\TuneForge.exe",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000165|",
-              "WhenOpened": "2025-06-29T13:38:38.142Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "TuneForrge.csproj.user",
               "DocumentMoniker": "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\TuneForrge.csproj.user",
               "RelativeDocumentMoniker": "TuneForge\\TuneForrge.csproj.user",
@@ -167,6 +148,10 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003464|",
               "WhenOpened": "2025-06-29T13:35:30.005Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

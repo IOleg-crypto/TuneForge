@@ -37,6 +37,7 @@ partial class Form1
         pictureBox3 = new System.Windows.Forms.PictureBox();
         pictureBox2 = new System.Windows.Forms.PictureBox();
         pictureBox1 = new System.Windows.Forms.PictureBox();
+        OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
         musicBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -130,6 +131,7 @@ partial class Form1
         pictureBox1.Size = new System.Drawing.Size(126, 87);
         pictureBox1.TabIndex = 0;
         pictureBox1.TabStop = false;
+        pictureBox1.Click += OnClickMusic;
         // 
         // Form1
         // 
@@ -142,7 +144,6 @@ partial class Form1
         Controls.Add(metroLabel1);
         Controls.Add(OpenSideBar);
         Text = "TuneForge";
-        Load += Form1_Load;
         ResizeBegin += Form1_ResizeBegin;
         ResizeEnd += Form1_ResizeEnd;
         ControlRemoved += Form1_ControlRemoved;
@@ -152,6 +153,8 @@ partial class Form1
         ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.OpenFileDialog OpenFileDialog;
 
     private System.Windows.Forms.PictureBox pictureBox3;
 

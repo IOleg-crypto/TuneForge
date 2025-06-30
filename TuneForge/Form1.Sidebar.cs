@@ -2,7 +2,7 @@
 {
     public partial class Form1
     {
-        private readonly int _sidebarOffset = 85;
+        private readonly int _sidebarOffset = 85; // Default offset
         private bool _isSidebarOpen;
 
         private void openSideBar(object sender, EventArgs e)
@@ -24,7 +24,7 @@
             {
                 return;
             }
-            Sidebar sidebar = new Sidebar(OpenSideBar);
+            Sidebar sidebar = new Sidebar(this , OpenSideBar);
             Controls.Add(sidebar);
 
             if (sidebar.IsHandleCreated)

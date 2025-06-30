@@ -11,6 +11,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="NAudio" Version="2.2.1" />
+      <PackageReference Include="NAudio.WaveFormRenderer" Version="2.0.0" />
       <PackageReference Include="ReaLTaiizor" Version="3.8.1.3" />
     </ItemGroup>
 
