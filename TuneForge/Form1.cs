@@ -5,19 +5,18 @@ namespace TuneForge
         public Form1()
         {
             InitializeComponent();
-
+            LayoutMusicComponents();
         }
-        private void openSideBar(object sender, EventArgs e)
+        
+        private void Form1_ControlRemoved(object sender, ControlEventArgs e)
         {
-            if (OpenSideBar == null || OpenSideBar.IsDisposed || !OpenSideBar.IsHandleCreated)
-                return;
+            musicBar.Location = new Point(musicBar.Location.X - 80, musicBar.Location.Y);
+        }
 
-            if (Controls.OfType<Sidebar>().Any())
-            {
-                return;
-            }
-            Sidebar sidebar = new Sidebar(OpenSideBar);
-            Controls.Add(sidebar); 
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //_musicBarOriginalLocation = musicBar.Location;
         }
     }
 }

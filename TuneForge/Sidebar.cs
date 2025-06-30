@@ -6,10 +6,10 @@ namespace TuneForge
 {
     public sealed class Sidebar : Panel
     {
-        private readonly List<SidebarItem> _items = new();
+        private List<SidebarItem> _items = new();
         private PictureBox _cancelIcon = null!;
         private readonly Control? _toggleButton;
-        public int _width = 200;
+        private readonly int _Width = 200;
 
         public Sidebar(Control? toggleButton = null)
         {
@@ -29,7 +29,7 @@ namespace TuneForge
             BorderStyle = BorderStyle.None;
             Dock = DockStyle.Left;
             
-            Width = _width;
+            Width = _Width;
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.AllPaintingInWmPaint |
                           ControlStyles.UserPaint |
@@ -62,15 +62,16 @@ namespace TuneForge
         {
             MessageBox.Show("Music");
         }
-
+        
         private void InitItems()
         {
-            AddItem("Profile",  "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\profile.png",  150, OnProfileClick);
-            AddItem("Favorite", "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\favoriter.png", 200, OnFavoriteClick);
+            // TODO : fix paths in future
+            AddItem("Profile",  "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\profile.png",  120, OnProfileClick);
+            AddItem("Favorite", "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\favoriter.png", 180, OnFavoriteClick);
             AddItem("Language", "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\language.png", 250, OnLanguageClick);
-            AddItem("Contract", "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\contact.png",  300, OnContractClick);
+            AddItem("Contract", "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\contact.png",  320, OnContractClick);
+            AddItem("Music","D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\music.png",  400, OnMusicClick);
             AddItem("Settings", "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\settings.png", 550, OnSettingsClick);
-            AddItem("Music","D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\music.png",  600, OnMusicClick);
         }
 
         private void AddItem(string text, string relativePath, int top , Action action)
@@ -82,6 +83,7 @@ namespace TuneForge
         }
         private void InitCancelButton()
         {
+            // TODO : fix paths in future
             const string path = "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\cancel.png";
             _cancelIcon = new PictureBox
             {
@@ -97,6 +99,7 @@ namespace TuneForge
                     _toggleButton.Visible = true;
                 Parent?.Controls.Remove(this);
                 Dispose();
+                
             };
             Controls.Add(_cancelIcon);
         }
