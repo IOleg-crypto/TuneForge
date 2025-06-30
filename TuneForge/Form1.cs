@@ -9,13 +9,15 @@ namespace TuneForge
         }
         private void openSideBar(object sender, EventArgs e)
         {
-            Sidebar sidebar = new Sidebar(OpenSideBar);
-            if (!Controls.OfType<Sidebar>().Any())
+            if (OpenSideBar == null || OpenSideBar.IsDisposed || !OpenSideBar.IsHandleCreated)
+                return;
+
+            if (Controls.OfType<Sidebar>().Any())
             {
-                Controls.Add(sidebar); 
+                return;
             }
-            
-            
+            Sidebar sidebar = new Sidebar(OpenSideBar);
+            Controls.Add(sidebar); 
         }
     }
 }
