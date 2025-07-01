@@ -19,12 +19,16 @@ namespace TuneForge
             InitSidebar();
             InitItems();
             InitCancelButton();
+            _form!.Resize += (_, _) => 
+            {
+                InitFullscreenResize();
+            };
         }
 
         private void IsToggleButtonVisible(Control? toggleButton = null)
         {
             _toggleButton = toggleButton;
-            if (_toggleButton != null && !_toggleButton.IsDisposed && _toggleButton.IsHandleCreated)
+            if (_toggleButton is { IsDisposed: false, IsHandleCreated: true })
             {
                 _toggleButton.Visible = false;
             }
@@ -42,6 +46,28 @@ namespace TuneForge
                           ControlStyles.UserPaint |
                           ControlStyles.OptimizedDoubleBuffer, true);
             this.ResumeLayout();
+        }
+        
+        
+        public void InitFullscreenResize()
+        {
+            var settingsItem = _items.Find(item =>
+                item.Label.Text == "Settings");
+            
+            if (settingsItem == null)
+                return; 
+            const int bottomMargin = 50; // Відступ від низу
+            int labelY = _form!.ClientSize.Height - bottomMargin;
+
+            settingsItem!.Label.Location = new Point(
+                settingsItem.Label.Location.X,
+                labelY
+            );
+
+            settingsItem.Icon.Location = new Point(
+                settingsItem.Icon.Location.X,
+                labelY
+            );
         }
         
         private void OnProfileClick()
@@ -123,8 +149,8 @@ namespace TuneForge
 
     internal sealed class SidebarItem
     {
-        private Label Label { get; }
-        private PictureBox Icon { get; }
+        public Label Label { get; }
+        public PictureBox Icon { get; }
         public SidebarItem(string text, string imagePath, int top , Action action)
         {
             Icon = new PictureBox

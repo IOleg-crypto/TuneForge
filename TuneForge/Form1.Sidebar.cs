@@ -26,6 +26,8 @@
             }
             Sidebar sidebar = new Sidebar(this , OpenSideBar);
             Controls.Add(sidebar);
+            sidebar.InitFullscreenResize();
+           
 
             if (sidebar.IsHandleCreated)
             {
@@ -37,7 +39,17 @@
 
         private void ShiftMusicBar(int offsetX)
         {
-            musicBar.Location = new Point(musicBar.Location.X + offsetX, musicBar.Location.Y);
+            if (musicBar != null)
+                musicBar.Location = new Point(musicBar.Location.X + offsetX, musicBar.Location.Y);
+
+            if (startMusicLabel != null)
+                startMusicLabel.Location = new Point(startMusicLabel.Location.X + offsetX, startMusicLabel.Location.Y);
+
+            if (endMusicLabel != null)
+                endMusicLabel.Location = new Point(endMusicLabel.Location.X + offsetX, endMusicLabel.Location.Y);
+
+            if (MusicTrackBar != null)
+                MusicTrackBar.Location = new Point(MusicTrackBar.Location.X + offsetX, MusicTrackBar.Location.Y);
         }
     }
 }

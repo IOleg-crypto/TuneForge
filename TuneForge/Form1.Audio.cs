@@ -63,5 +63,6 @@ namespace TuneForge
 
             _isMusicPlaying = false;
         }
+        
     }
 }

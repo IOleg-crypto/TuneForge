@@ -38,6 +38,9 @@ partial class Form1
         pictureBox2 = new System.Windows.Forms.PictureBox();
         pictureBox1 = new System.Windows.Forms.PictureBox();
         OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+        MusicTrackBar = new ReaLTaiizor.Controls.MetroTrackBar();
+        startMusicLabel = new System.Windows.Forms.Label();
+        endMusicLabel = new System.Windows.Forms.Label();
         musicBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -49,7 +52,7 @@ partial class Form1
         OpenSideBar.DisabledBackColor = System.Drawing.Color.FromArgb(((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)));
         OpenSideBar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)));
         OpenSideBar.DisabledForeColor = System.Drawing.Color.Gray;
-        OpenSideBar.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        OpenSideBar.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
         OpenSideBar.HoverBorderColor = System.Drawing.Color.FromArgb(((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)));
         OpenSideBar.HoverColor = System.Drawing.Color.FromArgb(((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)));
         OpenSideBar.HoverTextColor = System.Drawing.Color.DimGray;
@@ -66,7 +69,7 @@ partial class Form1
         OpenSideBar.Style = ReaLTaiizor.Enum.Metro.Style.Light;
         OpenSideBar.StyleManager = null;
         OpenSideBar.TabIndex = 0;
-        OpenSideBar.Text = "☰";
+        OpenSideBar.Text = "≡";
         OpenSideBar.ThemeAuthor = "Taiizor";
         OpenSideBar.ThemeName = "MetroLight";
         OpenSideBar.Click += openSideBar;
@@ -81,15 +84,15 @@ partial class Form1
         metroLabel1.Style = ReaLTaiizor.Enum.Metro.Style.Light;
         metroLabel1.StyleManager = null;
         metroLabel1.TabIndex = 1;
-        metroLabel1.Text = "TuneForge";
         metroLabel1.ThemeAuthor = "Taiizor";
         metroLabel1.ThemeName = "MetroLight";
         // 
         // labelProgram
         // 
+        labelProgram.BackColor = System.Drawing.Color.Black;
         labelProgram.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
         labelProgram.ForeColor = System.Drawing.Color.WhiteSmoke;
-        labelProgram.Location = new System.Drawing.Point(856, 12);
+        labelProgram.Location = new System.Drawing.Point(784, 9);
         labelProgram.Name = "labelProgram";
         labelProgram.Size = new System.Drawing.Size(123, 37);
         labelProgram.TabIndex = 2;
@@ -133,16 +136,65 @@ partial class Form1
         pictureBox1.TabStop = false;
         pictureBox1.Click += OnClickMusic;
         // 
+        // MusicTrackBar
+        // 
+        MusicTrackBar.BackgroundColor = System.Drawing.Color.FromArgb(((int)((byte)205)), ((int)((byte)205)), ((int)((byte)205)));
+        MusicTrackBar.Cursor = System.Windows.Forms.Cursors.Hand;
+        MusicTrackBar.DisabledBackColor = System.Drawing.Color.FromArgb(((int)((byte)235)), ((int)((byte)235)), ((int)((byte)235)));
+        MusicTrackBar.DisabledBorderColor = System.Drawing.Color.Empty;
+        MusicTrackBar.DisabledHandlerColor = System.Drawing.Color.FromArgb(((int)((byte)196)), ((int)((byte)196)), ((int)((byte)196)));
+        MusicTrackBar.DisabledValueColor = System.Drawing.Color.FromArgb(((int)((byte)205)), ((int)((byte)205)), ((int)((byte)205)));
+        MusicTrackBar.HandlerColor = System.Drawing.Color.FromArgb(((int)((byte)180)), ((int)((byte)180)), ((int)((byte)180)));
+        MusicTrackBar.IsDerivedStyle = true;
+        MusicTrackBar.Location = new System.Drawing.Point(134, 406);
+        MusicTrackBar.Maximum = 100;
+        MusicTrackBar.Minimum = 0;
+        MusicTrackBar.Name = "MusicTrackBar";
+        MusicTrackBar.Size = new System.Drawing.Size(670, 16);
+        MusicTrackBar.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+        MusicTrackBar.StyleManager = null;
+        MusicTrackBar.TabIndex = 4;
+        MusicTrackBar.Text = "metroTrackBar1";
+        MusicTrackBar.ThemeAuthor = "Taiizor";
+        MusicTrackBar.ThemeName = "MetroLight";
+        MusicTrackBar.Value = 0;
+        MusicTrackBar.ValueColor = System.Drawing.Color.FromArgb(((int)((byte)65)), ((int)((byte)177)), ((int)((byte)225)));
+        // 
+        // startMusicLabel
+        // 
+        startMusicLabel.BackColor = System.Drawing.Color.Transparent;
+        startMusicLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
+        startMusicLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+        startMusicLabel.Location = new System.Drawing.Point(121, 425);
+        startMusicLabel.Name = "startMusicLabel";
+        startMusicLabel.Size = new System.Drawing.Size(68, 28);
+        startMusicLabel.TabIndex = 7;
+        startMusicLabel.Text = "00:00";
+        // 
+        // endMusicLabel
+        // 
+        endMusicLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
+        endMusicLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+        endMusicLabel.Location = new System.Drawing.Point(761, 423);
+        endMusicLabel.Name = "endMusicLabel";
+        endMusicLabel.Size = new System.Drawing.Size(72, 30);
+        endMusicLabel.TabIndex = 8;
+        endMusicLabel.Text = "00:00";
+        // 
         // Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.Color.Black;
-        ClientSize = new System.Drawing.Size(984, 610);
+        ClientSize = new System.Drawing.Size(910, 610);
+        Controls.Add(startMusicLabel);
+        Controls.Add(endMusicLabel);
+        Controls.Add(MusicTrackBar);
         Controls.Add(musicBar);
         Controls.Add(labelProgram);
         Controls.Add(metroLabel1);
         Controls.Add(OpenSideBar);
+        Location = new System.Drawing.Point(19, 19);
         Text = "TuneForge";
         ResizeBegin += Form1_ResizeBegin;
         ResizeEnd += Form1_ResizeEnd;
@@ -153,6 +205,12 @@ partial class Form1
         ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.Label startMusicLabel;
+    private System.Windows.Forms.Label endMusicLabel;
+    
+
+    private ReaLTaiizor.Controls.MetroTrackBar MusicTrackBar;
 
     private System.Windows.Forms.OpenFileDialog OpenFileDialog;
 

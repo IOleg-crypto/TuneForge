@@ -8,7 +8,12 @@
     ".NETCoreApp,Version=v8.0": {
       "TuneForge/1.0.0": {
         "dependencies": {
+          "BubbleSeekBar": "1.0.0",
+          "NAudio": "2.2.1",
+          "NAudio.WaveFormRenderer": "2.0.0",
           "ReaLTaiizor": "3.8.1.3",
+          "Syncfusion.Tools.Windows": "30.1.37",
+          "Vanara.Windows.Forms": "4.1.6",
           "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.26100.57"
         },
         "runtime": {
@@ -27,11 +32,596 @@
           }
         }
       },
+      "BubbleSeekBar/1.0.0": {
+        "runtime": {
+          "lib/BubbleSeekBar.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.1.0": {},
+      "Microsoft.Win32.Registry/4.7.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "4.7.0",
+          "System.Security.Principal.Windows": "4.7.0"
+        }
+      },
+      "Microsoft.Win32.SystemEvents/8.0.0": {},
+      "Microsoft.WinForms.Designer.SDK/1.6.0": {
+        "dependencies": {
+          "System.CodeDom": "4.6.0",
+          "System.Composition": "6.0.0"
+        }
+      },
+      "NAudio/2.2.1": {
+        "dependencies": {
+          "NAudio.Asio": "2.2.1",
+          "NAudio.Core": "2.2.1",
+          "NAudio.Midi": "2.2.1",
+          "NAudio.Wasapi": "2.2.1",
+          "NAudio.WinForms": "2.2.1",
+          "NAudio.WinMM": "2.2.1"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/NAudio.dll": {
+            "assemblyVersion": "2.2.1.0",
+            "fileVersion": "2.2.1.0"
+          }
+        }
+      },
+      "NAudio.Asio/2.2.1": {
+        "dependencies": {
+          "Microsoft.Win32.Registry": "4.7.0",
+          "NAudio.Core": "2.2.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NAudio.Asio.dll": {
+            "assemblyVersion": "2.2.1.0",
+            "fileVersion": "2.2.1.0"
+          }
+        }
+      },
+      "NAudio.Core/2.2.1": {
+        "runtime": {
+          "lib/netstandard2.0/NAudio.Core.dll": {
+            "assemblyVersion": "2.2.1.0",
+            "fileVersion": "2.2.1.0"
+          }
+        }
+      },
+      "NAudio.Midi/2.2.1": {
+        "dependencies": {
+          "NAudio.Core": "2.2.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NAudio.Midi.dll": {
+            "assemblyVersion": "2.2.1.0",
+            "fileVersion": "2.2.1.0"
+          }
+        }
+      },
+      "NAudio.Wasapi/2.2.1": {
+        "dependencies": {
+          "NAudio.Core": "2.2.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NAudio.Wasapi.dll": {
+            "assemblyVersion": "2.2.1.0",
+            "fileVersion": "2.2.1.0"
+          }
+        }
+      },
+      "NAudio.WaveFormRenderer/2.0.0": {
+        "dependencies": {
+          "NAudio.Core": "2.2.1",
+          "System.Drawing.Common": "8.0.5"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NAudio.WaveFormRenderer.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "NAudio.WinForms/2.2.1": {
+        "dependencies": {
+          "NAudio.WinMM": "2.2.1"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/NAudio.WinForms.dll": {
+            "assemblyVersion": "2.2.1.0",
+            "fileVersion": "2.2.1.0"
+          }
+        }
+      },
+      "NAudio.WinMM/2.2.1": {
+        "dependencies": {
+          "Microsoft.Win32.Registry": "4.7.0",
+          "NAudio.Core": "2.2.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NAudio.WinMM.dll": {
+            "assemblyVersion": "2.2.1.0",
+            "fileVersion": "2.2.1.0"
+          }
+        }
+      },
       "ReaLTaiizor/3.8.1.3": {
         "runtime": {
           "lib/net8.0-windows7.0/ReaLTaiizor.dll": {
             "assemblyVersion": "3.8.1.3",
             "fileVersion": "3.8.1.3"
+          }
+        }
+      },
+      "Syncfusion.Grid.Windows/30.1.37": {
+        "dependencies": {
+          "Microsoft.WinForms.Designer.SDK": "1.6.0",
+          "Syncfusion.Licensing": "30.1.37",
+          "Syncfusion.Shared.Base": "30.1.37",
+          "Syncfusion.Shared.Windows": "30.1.37"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.Grid.Windows.dll": {
+            "assemblyVersion": "30.1.37.0",
+            "fileVersion": "30.1.37.0"
+          }
+        }
+      },
+      "Syncfusion.Licensing/30.1.37": {
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "30.1.37.0",
+            "fileVersion": "30.1.37.0"
+          }
+        }
+      },
+      "Syncfusion.Shared.Base/30.1.37": {
+        "dependencies": {
+          "Microsoft.WinForms.Designer.SDK": "1.6.0",
+          "Syncfusion.Licensing": "30.1.37"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.Shared.Base.dll": {
+            "assemblyVersion": "30.1.37.0",
+            "fileVersion": "30.1.37.0"
+          }
+        }
+      },
+      "Syncfusion.Shared.Windows/30.1.37": {
+        "dependencies": {
+          "Syncfusion.Licensing": "30.1.37",
+          "Syncfusion.Shared.Base": "30.1.37"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.Shared.Windows.dll": {
+            "assemblyVersion": "30.1.37.0",
+            "fileVersion": "30.1.37.0"
+          }
+        }
+      },
+      "Syncfusion.SpellChecker.Base/30.1.37": {
+        "dependencies": {
+          "Syncfusion.Licensing": "30.1.37"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.SpellChecker.Base.dll": {
+            "assemblyVersion": "30.1.37.0",
+            "fileVersion": "30.1.37.0"
+          }
+        }
+      },
+      "Syncfusion.Tools.Base/30.1.37": {
+        "dependencies": {
+          "Syncfusion.Licensing": "30.1.37",
+          "Syncfusion.Shared.Base": "30.1.37"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.Tools.Base.dll": {
+            "assemblyVersion": "30.1.37.0",
+            "fileVersion": "30.1.37.0"
+          }
+        }
+      },
+      "Syncfusion.Tools.Windows/30.1.37": {
+        "dependencies": {
+          "Microsoft.WinForms.Designer.SDK": "1.6.0",
+          "Syncfusion.Grid.Windows": "30.1.37",
+          "Syncfusion.Licensing": "30.1.37",
+          "Syncfusion.Shared.Base": "30.1.37",
+          "Syncfusion.Shared.Windows": "30.1.37",
+          "Syncfusion.SpellChecker.Base": "30.1.37",
+          "Syncfusion.Tools.Base": "30.1.37"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.Tools.Windows.dll": {
+            "assemblyVersion": "30.1.37.0",
+            "fileVersion": "30.1.37.0"
+          }
+        }
+      },
+      "System.CodeDom/4.6.0": {},
+      "System.Composition/6.0.0": {
+        "dependencies": {
+          "System.Composition.AttributedModel": "6.0.0",
+          "System.Composition.Convention": "6.0.0",
+          "System.Composition.Hosting": "6.0.0",
+          "System.Composition.Runtime": "6.0.0",
+          "System.Composition.TypedParts": "6.0.0"
+        }
+      },
+      "System.Composition.AttributedModel/6.0.0": {
+        "runtime": {
+          "lib/net6.0/System.Composition.AttributedModel.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Composition.Convention/6.0.0": {
+        "dependencies": {
+          "System.Composition.AttributedModel": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Composition.Convention.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Composition.Hosting/6.0.0": {
+        "dependencies": {
+          "System.Composition.Runtime": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Composition.Hosting.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Composition.Runtime/6.0.0": {
+        "runtime": {
+          "lib/net6.0/System.Composition.Runtime.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Composition.TypedParts/6.0.0": {
+        "dependencies": {
+          "System.Composition.AttributedModel": "6.0.0",
+          "System.Composition.Hosting": "6.0.0",
+          "System.Composition.Runtime": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Composition.TypedParts.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Configuration.ConfigurationManager/8.0.0": {
+        "dependencies": {
+          "System.Diagnostics.EventLog": "8.0.0",
+          "System.Security.Cryptography.ProtectedData": "8.0.0"
+        }
+      },
+      "System.Diagnostics.EventLog/8.0.0": {},
+      "System.DirectoryServices/8.0.0": {},
+      "System.Drawing.Common/8.0.5": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.524.21704"
+          }
+        }
+      },
+      "System.Security.AccessControl/4.7.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "System.Security.Principal.Windows": "4.7.0"
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/8.0.0": {},
+      "System.Security.Permissions/8.0.0": {
+        "dependencies": {
+          "System.Windows.Extensions": "8.0.0"
+        }
+      },
+      "System.Security.Principal.Windows/4.7.0": {},
+      "System.Windows.Extensions/8.0.0": {},
+      "Vanara.Core/4.1.6": {
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.Core.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        },
+        "resources": {
+          "lib/net8.0-windows7.0/fr/Vanara.Core.resources.dll": {
+            "locale": "fr"
+          }
+        }
+      },
+      "Vanara.PInvoke.AclUI/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.Security": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.AclUI.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.ComCtl32/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.User32": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.ComCtl32.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.CredUI/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.Kernel32": "4.1.6",
+          "Vanara.PInvoke.Security": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.CredUI.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.Cryptography/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.Shared": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Cryptography.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.DwmApi/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.Gdi32": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.DwmApi.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.Gdi32/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.Shared": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Gdi32.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.Kernel32/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.Shared": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Kernel32.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.Mpr/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.Shared": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Mpr.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.NTDSApi/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.Shared": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.NTDSApi.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.Ole/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.Rpc": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Ole.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.Rpc/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.Security": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Rpc.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.SearchApi/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.Shell32": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.SearchApi.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.Security/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.Cryptography": "4.1.6",
+          "Vanara.PInvoke.Kernel32": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Security.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.Shared/4.1.6": {
+        "dependencies": {
+          "Vanara.Core": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Shared.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.Shell32/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.ComCtl32": "4.1.6",
+          "Vanara.PInvoke.Ole": "4.1.6",
+          "Vanara.PInvoke.ShlwApi": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Shell32.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.ShlwApi/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.Kernel32": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.ShlwApi.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.User32/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.Gdi32": "4.1.6",
+          "Vanara.PInvoke.Kernel32": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.User32.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.PInvoke.UxTheme/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.User32": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.UxTheme.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.Security/4.1.6": {
+        "dependencies": {
+          "System.DirectoryServices": "8.0.0",
+          "Vanara.PInvoke.NTDSApi": "4.1.6",
+          "Vanara.PInvoke.Security": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.Security.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.Windows.Extensions/4.1.6": {
+        "dependencies": {
+          "System.Drawing.Common": "8.0.5",
+          "Vanara.PInvoke.User32": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.Windows.Extensions.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.Windows.Forms/4.1.6": {
+        "dependencies": {
+          "Vanara.PInvoke.AclUI": "4.1.6",
+          "Vanara.PInvoke.CredUI": "4.1.6",
+          "Vanara.PInvoke.DwmApi": "4.1.6",
+          "Vanara.PInvoke.Mpr": "4.1.6",
+          "Vanara.PInvoke.UxTheme": "4.1.6",
+          "Vanara.Security": "4.1.6",
+          "Vanara.Windows.Extensions": "4.1.6",
+          "Vanara.Windows.Shell": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.Windows.Forms.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        },
+        "resources": {
+          "lib/net8.0-windows7.0/fr/Vanara.Windows.Forms.resources.dll": {
+            "locale": "fr"
+          }
+        }
+      },
+      "Vanara.Windows.Shell/4.1.6": {
+        "dependencies": {
+          "Vanara.Windows.Shell.Common": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.Windows.Shell.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
+          }
+        }
+      },
+      "Vanara.Windows.Shell.Common/4.1.6": {
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "8.0.0",
+          "System.Drawing.Common": "8.0.5",
+          "System.Security.Permissions": "8.0.0",
+          "Vanara.PInvoke.SearchApi": "4.1.6",
+          "Vanara.Windows.Extensions": "4.1.6"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.Windows.Shell.Common.dll": {
+            "assemblyVersion": "4.1.6.0",
+            "fileVersion": "4.1.6.0"
           }
         }
       }
@@ -48,12 +638,432 @@
       "serviceable": false,
       "sha512": ""
     },
+    "BubbleSeekBar/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yzc7n0NQ7AJYoviLHfq1k0a9DjAbtu9I7g8hhq4T9Xy3i3IxcuKQQNQmyCIr5P4NkF/FeZt4CX49+oOLN6+fAw==",
+      "path": "bubbleseekbar/1.0.0",
+      "hashPath": "bubbleseekbar.1.0.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
+      "path": "microsoft.netcore.platforms/3.1.0",
+      "hashPath": "microsoft.netcore.platforms.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.Registry/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KSrRMb5vNi0CWSGG1++id2ZOs/1QhRqROt+qgbEAdQuGjGrFcl4AOl4/exGPUYz2wUnU42nvJqon1T3U0kPXLA==",
+      "path": "microsoft.win32.registry/4.7.0",
+      "hashPath": "microsoft.win32.registry.4.7.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9opKRyOKMCi2xJ7Bj7kxtZ1r9vbzosMvRrdEhVhDz8j8MoBGgB+WmC94yH839NPH+BclAjtQ/pyagvi/8gDLkw==",
+      "path": "microsoft.win32.systemevents/8.0.0",
+      "hashPath": "microsoft.win32.systemevents.8.0.0.nupkg.sha512"
+    },
+    "Microsoft.WinForms.Designer.SDK/1.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BDIY84GbvQ4ensnD1zuZUmWIypl2muqUm4SM9qZ48OmaN8G5dmos38Dt35aEzMy0sN2Ci6UaJPiY1gwmw5eo7A==",
+      "path": "microsoft.winforms.designer.sdk/1.6.0",
+      "hashPath": "microsoft.winforms.designer.sdk.1.6.0.nupkg.sha512"
+    },
+    "NAudio/2.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-c0DzwiyyklM0TP39Y7RObwO3QkWecgM6H60ikiEnsV/aEAJPbj5MFCLaD8BSfKuZe0HGuh9GRGWWlJmSxDc9MA==",
+      "path": "naudio/2.2.1",
+      "hashPath": "naudio.2.2.1.nupkg.sha512"
+    },
+    "NAudio.Asio/2.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hQglyOT5iT3XuGpBP8ZG0+aoqwRfidHjTNehpoWwX0g6KJEgtH2VaqM2nuJ2mheKZa/IBqB4YQTZVvrIapzfOA==",
+      "path": "naudio.asio/2.2.1",
+      "hashPath": "naudio.asio.2.2.1.nupkg.sha512"
+    },
+    "NAudio.Core/2.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GgkdP6K/7FqXFo7uHvoqGZTJvW4z8g2IffhOO4JHaLzKCdDOUEzVKtveoZkCuUX8eV2HAINqi7VFqlFndrnz/g==",
+      "path": "naudio.core/2.2.1",
+      "hashPath": "naudio.core.2.2.1.nupkg.sha512"
+    },
+    "NAudio.Midi/2.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6r23ylGo5aeP02WFXsPquz0T0hFJWyh+7t++tz19tc3Kr38NHm+Z9j+FiAv+xkH8tZqXJqus9Q8p6u7bidIgbw==",
+      "path": "naudio.midi/2.2.1",
+      "hashPath": "naudio.midi.2.2.1.nupkg.sha512"
+    },
+    "NAudio.Wasapi/2.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lFfXoqacZZe0WqNChJgGYI+XV/n/61LzPHT3C1CJp4khoxeo2sziyX5wzNYWeCMNbsWxFvT3b3iXeY1UYjBhZw==",
+      "path": "naudio.wasapi/2.2.1",
+      "hashPath": "naudio.wasapi.2.2.1.nupkg.sha512"
+    },
+    "NAudio.WaveFormRenderer/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OntjxB9eZA9JlIO09oiN+IAM/DnKBR7/PAVVy+/8h6tSuQm/Cr2En5VufZ49ATfL+9B8BGsGaeDeDRT2brWiDw==",
+      "path": "naudio.waveformrenderer/2.0.0",
+      "hashPath": "naudio.waveformrenderer.2.0.0.nupkg.sha512"
+    },
+    "NAudio.WinForms/2.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DlDkewY1myY0A+3NrYRJD+MZhZV0yy1mNF6dckB27IQ9XCs/My5Ip8BZcoSHOsaPSe2GAjvoaDnk6N9w8xTv7w==",
+      "path": "naudio.winforms/2.2.1",
+      "hashPath": "naudio.winforms.2.2.1.nupkg.sha512"
+    },
+    "NAudio.WinMM/2.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xFHRFwH4x6aq3IxRbewvO33ugJRvZFEOfO62i7uQJRUNW2cnu6BeBTHUS0JD5KBucZbHZaYqxQG8dwZ47ezQuQ==",
+      "path": "naudio.winmm/2.2.1",
+      "hashPath": "naudio.winmm.2.2.1.nupkg.sha512"
+    },
     "ReaLTaiizor/3.8.1.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-ZIIXX5Elr/+Z+LDHviUQGQa3O3Ah2oDIIaYKwm5gpAHcxGWsjIsidsXQBWU1c8mrZHx3JmHr8SS4hmf9Ohpm6w==",
       "path": "realtaiizor/3.8.1.3",
       "hashPath": "realtaiizor.3.8.1.3.nupkg.sha512"
+    },
+    "Syncfusion.Grid.Windows/30.1.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-x8cUrip6lOq76FKKvx8qEMj/r9j8qGTO34OnkDsibgqOriBM9/tQe1bHgU7htztAynvoST6wYfDGI04CgwXuyQ==",
+      "path": "syncfusion.grid.windows/30.1.37",
+      "hashPath": "syncfusion.grid.windows.30.1.37.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/30.1.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QYAjEsjSXhXr8Bwsv53cNSic03Q7AS9R1bhEFx8RZ9uxx8hxDKtst0u+pVGJiG46QMRT54SUL3bbSD/QduHV2A==",
+      "path": "syncfusion.licensing/30.1.37",
+      "hashPath": "syncfusion.licensing.30.1.37.nupkg.sha512"
+    },
+    "Syncfusion.Shared.Base/30.1.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6F8/K5z18F/PQ0wF6nLhRX5h63fJwTkFldTAyEF2OYZg9ftzEkuyUxHeMXkzHLC3fqU7hRGMGj/IBlH90hjiHQ==",
+      "path": "syncfusion.shared.base/30.1.37",
+      "hashPath": "syncfusion.shared.base.30.1.37.nupkg.sha512"
+    },
+    "Syncfusion.Shared.Windows/30.1.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5zcOCpqt8in+CaRmhKE/ndTScFIDy2phbYm9oxYDDCVA8ZiPid5WfCuLUzBOIqEe150hD13EYZuHvymbQHn77w==",
+      "path": "syncfusion.shared.windows/30.1.37",
+      "hashPath": "syncfusion.shared.windows.30.1.37.nupkg.sha512"
+    },
+    "Syncfusion.SpellChecker.Base/30.1.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fTr6OVy7JR6xZx5UHGBD6X4Q4wawkguNP0tYVZhShOUltVGyk38M/zeZoYx19VmRyzBQ819aOp+7BQ2ZTVXeCw==",
+      "path": "syncfusion.spellchecker.base/30.1.37",
+      "hashPath": "syncfusion.spellchecker.base.30.1.37.nupkg.sha512"
+    },
+    "Syncfusion.Tools.Base/30.1.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0IkxWTFyYZRQghXOWB2+llKzxCPvuMr8xmQVpbM4VwdO5GpRHttL62wRlV8mgUgfheFCuQ6ZA3qonOHTrcs3rQ==",
+      "path": "syncfusion.tools.base/30.1.37",
+      "hashPath": "syncfusion.tools.base.30.1.37.nupkg.sha512"
+    },
+    "Syncfusion.Tools.Windows/30.1.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EulEKhI3rwDQWfmqCXJk2Qiz9lkqEtA8roL19lRfSUrMIPP/L8cULkk3hK0m/roHPFqSkdEJYmyVdVpDTZAssw==",
+      "path": "syncfusion.tools.windows/30.1.37",
+      "hashPath": "syncfusion.tools.windows.30.1.37.nupkg.sha512"
+    },
+    "System.CodeDom/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ArWGZOxPhOaJUd4YgvbTxGZDbVDJHPAOQNiJIpbRDPW6v2NT5xkallQv1zpu8Rwwb5Z3iZ1jwWA4gSQuWgR+jw==",
+      "path": "system.codedom/4.6.0",
+      "hashPath": "system.codedom.4.6.0.nupkg.sha512"
+    },
+    "System.Composition/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-d7wMuKQtfsxUa7S13tITC8n1cQzewuhD5iDjZtK2prwFfKVzdYtgrTHgjaV03Zq7feGQ5gkP85tJJntXwInsJA==",
+      "path": "system.composition/6.0.0",
+      "hashPath": "system.composition.6.0.0.nupkg.sha512"
+    },
+    "System.Composition.AttributedModel/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WK1nSDLByK/4VoC7fkNiFuTVEiperuCN/Hyn+VN30R+W2ijO1d0Z2Qm0ScEl9xkSn1G2MyapJi8xpf4R8WRa/w==",
+      "path": "system.composition.attributedmodel/6.0.0",
+      "hashPath": "system.composition.attributedmodel.6.0.0.nupkg.sha512"
+    },
+    "System.Composition.Convention/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XYi4lPRdu5bM4JVJ3/UIHAiG6V6lWWUlkhB9ab4IOq0FrRsp0F4wTyV4Dj+Ds+efoXJ3qbLqlvaUozDO7OLeXA==",
+      "path": "system.composition.convention/6.0.0",
+      "hashPath": "system.composition.convention.6.0.0.nupkg.sha512"
+    },
+    "System.Composition.Hosting/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-w/wXjj7kvxuHPLdzZ0PAUt++qJl03t7lENmb2Oev0n3zbxyNULbWBlnd5J5WUMMv15kg5o+/TCZFb6lSwfaUUQ==",
+      "path": "system.composition.hosting/6.0.0",
+      "hashPath": "system.composition.hosting.6.0.0.nupkg.sha512"
+    },
+    "System.Composition.Runtime/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qkRH/YBaMPTnzxrS5RDk1juvqed4A6HOD/CwRcDGyPpYps1J27waBddiiq1y93jk2ZZ9wuA/kynM+NO0kb3PKg==",
+      "path": "system.composition.runtime/6.0.0",
+      "hashPath": "system.composition.runtime.6.0.0.nupkg.sha512"
+    },
+    "System.Composition.TypedParts/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iUR1eHrL8Cwd82neQCJ00MpwNIBs4NZgXzrPqx8NJf/k4+mwBO0XCRmHYJT4OLSwDDqh5nBLJWkz5cROnrGhRA==",
+      "path": "system.composition.typedparts/6.0.0",
+      "hashPath": "system.composition.typedparts.6.0.0.nupkg.sha512"
+    },
+    "System.Configuration.ConfigurationManager/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JlYi9XVvIREURRUlGMr1F6vOFLk7YSY4p1vHo4kX3tQ0AGrjqlRWHDi66ImHhy6qwXBG3BJ6Y1QlYQ+Qz6Xgww==",
+      "path": "system.configuration.configurationmanager/8.0.0",
+      "hashPath": "system.configuration.configurationmanager.8.0.0.nupkg.sha512"
+    },
+    "System.Diagnostics.EventLog/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fdYxcRjQqTTacKId/2IECojlDSFvp7LP5N78+0z/xH7v/Tuw5ZAxu23Y6PTCRinqyu2ePx+Gn1098NC6jM6d+A==",
+      "path": "system.diagnostics.eventlog/8.0.0",
+      "hashPath": "system.diagnostics.eventlog.8.0.0.nupkg.sha512"
+    },
+    "System.DirectoryServices/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7nit//efUTy1OsAKco2f02PMrwsR2S234N0dVVp84udC77YcvpOQDz5znAWMtgMWBzY1aRJvUW61jo/7vQRfXg==",
+      "path": "system.directoryservices/8.0.0",
+      "hashPath": "system.directoryservices.8.0.0.nupkg.sha512"
+    },
+    "System.Drawing.Common/8.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n55wb6rL8YG254AG+SfQOSQencrcnpKAAcYyEcvBuO2pob7ltXuZ5skBBdvLJOLVPKd1Ya8+8ColIM5AtBo5ww==",
+      "path": "system.drawing.common/8.0.5",
+      "hashPath": "system.drawing.common.8.0.5.nupkg.sha512"
+    },
+    "System.Security.AccessControl/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JECvTt5aFF3WT3gHpfofL2MNNP6v84sxtXxpqhLBCcDRzqsPBmHhQ6shv4DwwN2tRlzsUxtb3G9M3763rbXKDg==",
+      "path": "system.security.accesscontrol/4.7.0",
+      "hashPath": "system.security.accesscontrol.4.7.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.ProtectedData/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+TUFINV2q2ifyXauQXRwy4CiBhqvDEDZeVJU7qfxya4aRYOKzVBpN+4acx25VcPB9ywUN6C0n8drWl110PhZEg==",
+      "path": "system.security.cryptography.protecteddata/8.0.0",
+      "hashPath": "system.security.cryptography.protecteddata.8.0.0.nupkg.sha512"
+    },
+    "System.Security.Permissions/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-v/BBylw7XevuAsHXoX9dDUUfmBIcUf7Lkz8K3ZXIKz3YRKpw8YftpSir4n4e/jDTKFoaK37AsC3xnk+GNFI1Ow==",
+      "path": "system.security.permissions/8.0.0",
+      "hashPath": "system.security.permissions.8.0.0.nupkg.sha512"
+    },
+    "System.Security.Principal.Windows/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
+      "path": "system.security.principal.windows/4.7.0",
+      "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
+    },
+    "System.Windows.Extensions/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Obg3a90MkOw9mYKxrardLpY2u0axDMrSmy4JCdq2cYbelM2cUwmUir5Bomvd1yxmPL9h5LVHU1tuKBZpUjfASg==",
+      "path": "system.windows.extensions/8.0.0",
+      "hashPath": "system.windows.extensions.8.0.0.nupkg.sha512"
+    },
+    "Vanara.Core/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6ofXAXvywY223+1cRs2uOiWWzBsy9o/m5Bh6txvF3weYSsLI18Pbaz6YCq4oLEEHD7UtE/l4qHkSMdZx9s/6LA==",
+      "path": "vanara.core/4.1.6",
+      "hashPath": "vanara.core.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.AclUI/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DoLKyhf+azyPxtocfyxoYqoLC3It3/mJaimY1zf5i5h3y9OW0rAd75DPPxuRcQg31H0CXEfaMeAGQj8EJQfR+Q==",
+      "path": "vanara.pinvoke.aclui/4.1.6",
+      "hashPath": "vanara.pinvoke.aclui.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.ComCtl32/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Fv6PjUOCJzw2rjwdrHAvjMJLqHOLQL8Hce6BEqH8Cs1SAGrJlF35C1ImtdlqUJJyGdOSrIqJvHdNLdPS9JjvsQ==",
+      "path": "vanara.pinvoke.comctl32/4.1.6",
+      "hashPath": "vanara.pinvoke.comctl32.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.CredUI/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QZK/5yXhT+XgbQliYHICOMz2tK4NNVB/4j7XZx6VZ4qfV+g0BW5HPaRKcqKC0Aa0yiswtHA1NIgNnnIAwQYZBw==",
+      "path": "vanara.pinvoke.credui/4.1.6",
+      "hashPath": "vanara.pinvoke.credui.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.Cryptography/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W/dDJOlvu6nvTC/LgfEpfPEuktwa/K29146J3RcbyHyrAHvIpyxiMR++QxT0MVV1R034nbh52svB70AMOZfLUw==",
+      "path": "vanara.pinvoke.cryptography/4.1.6",
+      "hashPath": "vanara.pinvoke.cryptography.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.DwmApi/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8G2diVSr+bl3X6GdIAgUZoXpunjDxDjTuhZTmUbmVYKPvYEYF4TlK/Ahkq1GJAnsSQ74IXau465b6nEb6Qaubg==",
+      "path": "vanara.pinvoke.dwmapi/4.1.6",
+      "hashPath": "vanara.pinvoke.dwmapi.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.Gdi32/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wv8vwFvFXdLRhEiYY+yHUakplqgIAqiH7/BKHSpjkff2SCrluyrQ66MitJW0A9B2DSkKb7AcntOkzl3CaKgA2w==",
+      "path": "vanara.pinvoke.gdi32/4.1.6",
+      "hashPath": "vanara.pinvoke.gdi32.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.Kernel32/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-15WEAjnXvncyo9BJjzFzLz6IiHGuSQSYQeUL6cfisrR2zz0/g7u+H7AoWAPHqT3sNVei1ad8JyRGY+v7ZwF8Tg==",
+      "path": "vanara.pinvoke.kernel32/4.1.6",
+      "hashPath": "vanara.pinvoke.kernel32.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.Mpr/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VTPhQKKCeNzCFkCnCsO3hVRW5KSDxm5IeMDEaESMuUjZtFf5cCKux2kMt/l4G+c5Oe9rzx/yO97T2hWLkJLkwg==",
+      "path": "vanara.pinvoke.mpr/4.1.6",
+      "hashPath": "vanara.pinvoke.mpr.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.NTDSApi/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dVi0uEGzCdvl1fCIevUrJS2CKpqtLNRpyi0tjGZaQS1V1cLf6U3+qdbjLaEtI/FQUTAWKZuMcFHCK4E/G69Nig==",
+      "path": "vanara.pinvoke.ntdsapi/4.1.6",
+      "hashPath": "vanara.pinvoke.ntdsapi.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.Ole/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-e0WHr7izTPfh6kf9e7AZrdOoOhM6knH53aubs/XH+SzHeXNBvaMDihPkWZpbbcWt/6OqUgmRzw5GI6DCtwKKKw==",
+      "path": "vanara.pinvoke.ole/4.1.6",
+      "hashPath": "vanara.pinvoke.ole.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.Rpc/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Y/7lUyp3OL7QlRljJDNdfHdW6v2QN1OZfD4O29Bde4P9DUqCrhuZ9gWk2O5SdIKEUnGDyHQCdpNxQw6lYDBvQg==",
+      "path": "vanara.pinvoke.rpc/4.1.6",
+      "hashPath": "vanara.pinvoke.rpc.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.SearchApi/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OswLZktfX7vP8deSSjTkyltX+YRVJ0oarapiHQBQ/Tdy6dv1rhNq0xzJHJrOwwKgEgtAElTctubEM/599U3Caw==",
+      "path": "vanara.pinvoke.searchapi/4.1.6",
+      "hashPath": "vanara.pinvoke.searchapi.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.Security/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2WdhMQrwWv6ch1OfZpaDacFdZTKl68nyP8/4AJ1aNntkxIEoCUJlSd8Gc0fdNi4hbmfqYU5mhTMBPDKIv17cUg==",
+      "path": "vanara.pinvoke.security/4.1.6",
+      "hashPath": "vanara.pinvoke.security.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.Shared/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mmoYuZMtJ70h0Q7jxpQdeYeCcE3rjPHS+AwkgdzURg+zMHR9GQpRg5e978YtDj6msNCxeWD+F9jgzKPxDivQ1w==",
+      "path": "vanara.pinvoke.shared/4.1.6",
+      "hashPath": "vanara.pinvoke.shared.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.Shell32/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CDCJhqXstV2mg2ex7FkSZTks++sJIhJnb6oxBEtTKs/uHHtja8zIZmPK0P7pb5+H8aNaZgzu2LdOMzs9zblgLg==",
+      "path": "vanara.pinvoke.shell32/4.1.6",
+      "hashPath": "vanara.pinvoke.shell32.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.ShlwApi/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Jk7reUrsEAndL5+ux20DBc4Z7EcF+nfwwX9AUvA37owVJtSpYYHi1vC06hEKVhmo+mRZt2EvgRzqys3E1CEUrA==",
+      "path": "vanara.pinvoke.shlwapi/4.1.6",
+      "hashPath": "vanara.pinvoke.shlwapi.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.User32/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-76VVqeT47QvqN16CZLDrrbM5lyQTUFxtt7fLiT4R3LYGl85wujqSIP62KsSDhrfmiukvJFXyS44exy/qZ/eAgA==",
+      "path": "vanara.pinvoke.user32/4.1.6",
+      "hashPath": "vanara.pinvoke.user32.4.1.6.nupkg.sha512"
+    },
+    "Vanara.PInvoke.UxTheme/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Mt1IS6fhzCcxG9eFtQra5l0wbjXTXzTjqv8JHhsRMiCjnB5fBt7U/nm5RSOpA5H89Bx3eFE16u0jTFL2wdOONA==",
+      "path": "vanara.pinvoke.uxtheme/4.1.6",
+      "hashPath": "vanara.pinvoke.uxtheme.4.1.6.nupkg.sha512"
+    },
+    "Vanara.Security/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A9di7eZdWlGBFsSl8gmY1QqhrY/KZ6/eJcUY43wk4bIlZ0subd68Y/AxSEL6ODz9/D37yED4p7UbBdxyC044jw==",
+      "path": "vanara.security/4.1.6",
+      "hashPath": "vanara.security.4.1.6.nupkg.sha512"
+    },
+    "Vanara.Windows.Extensions/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HBVoPB8tqjpUoAeMMjc/prYe+bWc+TDdovTcVCc3BDPA7pXpD/UFK9nquzEMl4oB8u1BP0bj/aq5iv4MKE0i0g==",
+      "path": "vanara.windows.extensions/4.1.6",
+      "hashPath": "vanara.windows.extensions.4.1.6.nupkg.sha512"
+    },
+    "Vanara.Windows.Forms/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gJC9K7eRaPRrukDh7wrENXNOD6QfvsvXE40z+WMJjtCr4D9QspY+qil7sxaAlAHTfZKr4K0/U9eUWBOytDlbhg==",
+      "path": "vanara.windows.forms/4.1.6",
+      "hashPath": "vanara.windows.forms.4.1.6.nupkg.sha512"
+    },
+    "Vanara.Windows.Shell/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tPhKP5Z8WSSX3Kp1iRK5e9NQeuddh3DAdZhhL6nkmqJDaRuP1oZIhuBiGmUZ3zTVYHeWgQPcyn3qosL3Bl1vcA==",
+      "path": "vanara.windows.shell/4.1.6",
+      "hashPath": "vanara.windows.shell.4.1.6.nupkg.sha512"
+    },
+    "Vanara.Windows.Shell.Common/4.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-B7vEjAV7v/MPUt5Mu98sgwWSHy9orh6tqlM25XeC6PS4Ap0VbMVI8lUWYKqvNGfMF1H327tNY6oDxZiTXj5nrA==",
+      "path": "vanara.windows.shell.common/4.1.6",
+      "hashPath": "vanara.windows.shell.common.4.1.6.nupkg.sha512"
     }
   }
 }

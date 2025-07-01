@@ -13,4 +13,12 @@
     <SourceRoot Include="C:\Users\38063\.nuget\packages\" />
     <SourceRoot Include="E:\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.winforms.designer.sdk\1.6.0\build\netcoreapp3.1\Microsoft.WinForms.Designer.SDK.props" Condition="Exists('$(NuGetPackageRoot)microsoft.winforms.designer.sdk\1.6.0\build\netcoreapp3.1\Microsoft.WinForms.Designer.SDK.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgSyncfusion_Shared_Base Condition=" '$(PkgSyncfusion_Shared_Base)' == '' ">C:\Users\38063\.nuget\packages\syncfusion.shared.base\30.1.37</PkgSyncfusion_Shared_Base>
+    <PkgSyncfusion_Grid_Windows Condition=" '$(PkgSyncfusion_Grid_Windows)' == '' ">C:\Users\38063\.nuget\packages\syncfusion.grid.windows\30.1.37</PkgSyncfusion_Grid_Windows>
+    <PkgSyncfusion_Tools_Windows Condition=" '$(PkgSyncfusion_Tools_Windows)' == '' ">C:\Users\38063\.nuget\packages\syncfusion.tools.windows\30.1.37</PkgSyncfusion_Tools_Windows>
+  </PropertyGroup>
 </Project>

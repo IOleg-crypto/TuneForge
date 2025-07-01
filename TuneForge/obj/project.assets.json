@@ -2,7 +2,16 @@
   "version": 3,
   "targets": {
     "net8.0-windows10.0.26100": {
-      "Microsoft.NETCore.Platforms/5.0.0": {
+      "BubbleSeekBar/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/BubbleSeekBar.dll": {}
+        },
+        "runtime": {
+          "lib/BubbleSeekBar.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -38,26 +47,48 @@
           }
         }
       },
-      "Microsoft.Win32.SystemEvents/5.0.0": {
+      "Microsoft.Win32.SystemEvents/8.0.0": {
         "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "5.0.0"
-        },
         "compile": {
-          "ref/netstandard2.0/_._": {
+          "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
+          "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
           }
         },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
         "runtimeTargets": {
-          "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
+          "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "Microsoft.WinForms.Designer.SDK/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "System.CodeDom": "4.6.0",
+          "System.Composition": "6.0.0"
+        },
+        "compile": {
+          "ref/netcoreapp3.1/Microsoft.DotNet.DesignTools.Protocol.dll": {
+            "related": ".xml"
+          },
+          "ref/netcoreapp3.1/Microsoft.DotNet.DesignTools.Server.dll": {
+            "related": ".xml"
+          },
+          "ref/netcoreapp3.1/Microsoft.WinForms.Utilities.Shared.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/netcoreapp3.1/Microsoft.WinForms.Designer.SDK.props": {},
+          "build/netcoreapp3.1/Microsoft.WinForms.Designer.SDK.targets": {}
         }
       },
       "NAudio/2.2.1": {
@@ -212,30 +243,325 @@
           "Microsoft.WindowsDesktop.App.WindowsForms"
         ]
       },
-      "System.Drawing.Common/5.0.1": {
+      "Syncfusion.Grid.Windows/30.1.37": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Win32.SystemEvents": "5.0.0"
+          "Microsoft.WinForms.Designer.SDK": "1.6.0",
+          "Syncfusion.Licensing": "30.1.37",
+          "Syncfusion.Shared.Base": "30.1.37",
+          "Syncfusion.Shared.Windows": "30.1.37"
         },
         "compile": {
-          "ref/netcoreapp3.0/System.Drawing.Common.dll": {
+          "lib/net8.0-windows7.0/Syncfusion.Grid.Windows.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.0/System.Drawing.Common.dll": {
+          "lib/net8.0-windows7.0/Syncfusion.Grid.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Licensing/30.1.37": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Shared.Base/30.1.37": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.WinForms.Designer.SDK": "1.6.0",
+          "Syncfusion.Licensing": "30.1.37"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Syncfusion.Shared.Base.dll": {
             "related": ".xml"
           }
         },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.Shared.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Shared.Windows/30.1.37": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "30.1.37",
+          "Syncfusion.Shared.Base": "30.1.37"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Syncfusion.Shared.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.Shared.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.SpellChecker.Base/30.1.37": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "30.1.37"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Syncfusion.SpellChecker.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.SpellChecker.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Tools.Base/30.1.37": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "30.1.37",
+          "Syncfusion.Shared.Base": "30.1.37"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Syncfusion.Tools.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.Tools.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Tools.Windows/30.1.37": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.WinForms.Designer.SDK": "1.6.0",
+          "Syncfusion.Grid.Windows": "30.1.37",
+          "Syncfusion.Licensing": "30.1.37",
+          "Syncfusion.Shared.Base": "30.1.37",
+          "Syncfusion.Shared.Windows": "30.1.37",
+          "Syncfusion.SpellChecker.Base": "30.1.37",
+          "Syncfusion.Tools.Base": "30.1.37"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Syncfusion.Tools.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.Tools.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.CodeDom/4.6.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Composition/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Composition.AttributedModel": "6.0.0",
+          "System.Composition.Convention": "6.0.0",
+          "System.Composition.Hosting": "6.0.0",
+          "System.Composition.Runtime": "6.0.0",
+          "System.Composition.TypedParts": "6.0.0"
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Composition.AttributedModel/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.Composition.AttributedModel.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Composition.AttributedModel.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Composition.Convention/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Composition.AttributedModel": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/System.Composition.Convention.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Composition.Convention.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Composition.Hosting/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Composition.Runtime": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/System.Composition.Hosting.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Composition.Hosting.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Composition.Runtime/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.Composition.Runtime.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Composition.Runtime.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Composition.TypedParts/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Composition.AttributedModel": "6.0.0",
+          "System.Composition.Hosting": "6.0.0",
+          "System.Composition.Runtime": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/System.Composition.TypedParts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Composition.TypedParts.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Configuration.ConfigurationManager/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.EventLog": "8.0.0",
+          "System.Security.Cryptography.ProtectedData": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Diagnostics.EventLog/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Diagnostics.EventLog.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Diagnostics.EventLog.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
         "runtimeTargets": {
-          "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll": {
             "assetType": "runtime",
-            "rid": "unix"
+            "rid": "win"
           },
-          "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "System.DirectoryServices/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.DirectoryServices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.DirectoryServices.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.DirectoryServices.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Drawing.Common/8.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "System.Security.AccessControl/4.7.0": {
@@ -261,6 +587,41 @@
           }
         }
       },
+      "System.Security.Cryptography.ProtectedData/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Security.Permissions/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Windows.Extensions": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/System.Security.Permissions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Security.Permissions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
       "System.Security.Principal.Windows/4.7.0": {
         "type": "package",
         "compile": {
@@ -283,22 +644,471 @@
             "rid": "win"
           }
         }
+      },
+      "System.Windows.Extensions/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Windows.Extensions.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "Vanara.Core/4.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "resource": {
+          "lib/net8.0-windows7.0/fr/Vanara.Core.resources.dll": {
+            "locale": "fr"
+          }
+        }
+      },
+      "Vanara.PInvoke.AclUI/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.Security": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.AclUI.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.AclUI.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.ComCtl32/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.User32": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.ComCtl32.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.ComCtl32.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.CredUI/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.Kernel32": "4.1.6",
+          "Vanara.PInvoke.Security": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.CredUI.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.CredUI.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.Cryptography/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.Shared": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.DwmApi/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.Gdi32": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.DwmApi.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.DwmApi.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.Gdi32/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.Shared": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Gdi32.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Gdi32.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.Kernel32/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.Shared": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Kernel32.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Kernel32.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.Mpr/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.Shared": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Mpr.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Mpr.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.NTDSApi/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.Shared": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.NTDSApi.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.NTDSApi.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.Ole/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.Rpc": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Ole.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Ole.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.Rpc/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.Security": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Rpc.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Rpc.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.SearchApi/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.Shell32": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.SearchApi.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.SearchApi.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.Security/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.Cryptography": "4.1.6",
+          "Vanara.PInvoke.Kernel32": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Security.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Security.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.Shared/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.Core": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Shared.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Shared.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.Shell32/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.ComCtl32": "4.1.6",
+          "Vanara.PInvoke.Ole": "4.1.6",
+          "Vanara.PInvoke.ShlwApi": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Shell32.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.Shell32.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.ShlwApi/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.Kernel32": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.ShlwApi.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.ShlwApi.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.User32/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.Gdi32": "4.1.6",
+          "Vanara.PInvoke.Kernel32": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.User32.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.User32.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.PInvoke.UxTheme/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.User32": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.UxTheme.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.PInvoke.UxTheme.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.Security/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "System.DirectoryServices": "8.0.0",
+          "Vanara.PInvoke.NTDSApi": "4.1.6",
+          "Vanara.PInvoke.Security": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.Security.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.Security.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Vanara.Windows.Extensions/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "8.0.5",
+          "Vanara.PInvoke.User32": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "Vanara.Windows.Forms/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.PInvoke.AclUI": "4.1.6",
+          "Vanara.PInvoke.CredUI": "4.1.6",
+          "Vanara.PInvoke.DwmApi": "4.1.6",
+          "Vanara.PInvoke.Mpr": "4.1.6",
+          "Vanara.PInvoke.UxTheme": "4.1.6",
+          "Vanara.Security": "4.1.6",
+          "Vanara.Windows.Extensions": "4.1.6",
+          "Vanara.Windows.Shell": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.Windows.Forms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.Windows.Forms.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ],
+        "resource": {
+          "lib/net8.0-windows7.0/fr/Vanara.Windows.Forms.resources.dll": {
+            "locale": "fr"
+          }
+        }
+      },
+      "Vanara.Windows.Shell/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Vanara.Windows.Shell.Common": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.Windows.Shell.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.Windows.Shell.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      },
+      "Vanara.Windows.Shell.Common/4.1.6": {
+        "type": "package",
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "8.0.0",
+          "System.Drawing.Common": "8.0.5",
+          "System.Security.Permissions": "8.0.0",
+          "Vanara.PInvoke.SearchApi": "4.1.6",
+          "Vanara.Windows.Extensions": "4.1.6"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Vanara.Windows.Shell.Common.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Vanara.Windows.Shell.Common.dll": {
+            "related": ".xml"
+          }
+        }
       }
     }
   },
   "libraries": {
-    "Microsoft.NETCore.Platforms/5.0.0": {
-      "sha512": "VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
+    "BubbleSeekBar/1.0.0": {
+      "sha512": "yzc7n0NQ7AJYoviLHfq1k0a9DjAbtu9I7g8hhq4T9Xy3i3IxcuKQQNQmyCIr5P4NkF/FeZt4CX49+oOLN6+fAw==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/5.0.0",
+      "path": "bubbleseekbar/1.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
+        "bubbleseekbar.1.0.0.nupkg.sha512",
+        "bubbleseekbar.nuspec",
+        "lib/BubbleSeekBar.dll"
+      ]
+    },
+    "Microsoft.NETCore.Platforms/3.1.0": {
+      "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
+      "type": "package",
+      "path": "microsoft.netcore.platforms/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+        "microsoft.netcore.platforms.3.1.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
@@ -352,32 +1162,67 @@
         "version.txt"
       ]
     },
-    "Microsoft.Win32.SystemEvents/5.0.0": {
-      "sha512": "Bh6blKG8VAKvXiLe2L+sEsn62nc1Ij34MrNxepD2OCrS5cpCwQa9MeLyhVQPQ/R4Wlzwuy6wMK8hLb11QPDRsQ==",
+    "Microsoft.Win32.SystemEvents/8.0.0": {
+      "sha512": "9opKRyOKMCi2xJ7Bj7kxtZ1r9vbzosMvRrdEhVhDz8j8MoBGgB+WmC94yH839NPH+BclAjtQ/pyagvi/8gDLkw==",
       "type": "package",
-      "path": "microsoft.win32.systemevents/5.0.0",
+      "path": "microsoft.win32.systemevents/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/Microsoft.Win32.SystemEvents.dll",
-        "lib/net461/Microsoft.Win32.SystemEvents.xml",
+        "buildTransitive/net461/Microsoft.Win32.SystemEvents.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Win32.SystemEvents.targets",
+        "lib/net462/Microsoft.Win32.SystemEvents.dll",
+        "lib/net462/Microsoft.Win32.SystemEvents.xml",
+        "lib/net6.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/net6.0/Microsoft.Win32.SystemEvents.xml",
+        "lib/net7.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/net7.0/Microsoft.Win32.SystemEvents.xml",
+        "lib/net8.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/net8.0/Microsoft.Win32.SystemEvents.xml",
         "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
         "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
-        "microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+        "microsoft.win32.systemevents.8.0.0.nupkg.sha512",
         "microsoft.win32.systemevents.nuspec",
-        "ref/net461/Microsoft.Win32.SystemEvents.dll",
-        "ref/net461/Microsoft.Win32.SystemEvents.xml",
-        "ref/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
-        "ref/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
-        "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.dll",
-        "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.xml",
-        "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll",
-        "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.xml",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.WinForms.Designer.SDK/1.6.0": {
+      "sha512": "BDIY84GbvQ4ensnD1zuZUmWIypl2muqUm4SM9qZ48OmaN8G5dmos38Dt35aEzMy0sN2Ci6UaJPiY1gwmw5eo7A==",
+      "type": "package",
+      "path": "microsoft.winforms.designer.sdk/1.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PackageLicense.txt",
+        "build/netcoreapp3.1/Microsoft.WinForms.Designer.SDK.props",
+        "build/netcoreapp3.1/Microsoft.WinForms.Designer.SDK.targets",
+        "microsoft.winforms.designer.sdk.1.6.0.nupkg.sha512",
+        "microsoft.winforms.designer.sdk.nuspec",
+        "readme.md",
+        "ref/net472/Microsoft.DotNet.DesignTools.Client.dll",
+        "ref/net472/Microsoft.DotNet.DesignTools.Client.xml",
+        "ref/net472/Microsoft.DotNet.DesignTools.Protocol.dll",
+        "ref/net472/Microsoft.DotNet.DesignTools.Protocol.xml",
+        "ref/net472/Microsoft.WinForms.Utilities.Shared.dll",
+        "ref/net472/Microsoft.WinForms.Utilities.Shared.xml",
+        "ref/netcoreapp3.1/Microsoft.DotNet.DesignTools.Protocol.dll",
+        "ref/netcoreapp3.1/Microsoft.DotNet.DesignTools.Protocol.xml",
+        "ref/netcoreapp3.1/Microsoft.DotNet.DesignTools.Server.dll",
+        "ref/netcoreapp3.1/Microsoft.DotNet.DesignTools.Server.xml",
+        "ref/netcoreapp3.1/Microsoft.WinForms.Utilities.Shared.dll",
+        "ref/netcoreapp3.1/Microsoft.WinForms.Utilities.Shared.xml"
       ]
     },
     "NAudio/2.2.1": {
@@ -533,46 +1378,458 @@
         "realtaiizor.nuspec"
       ]
     },
-    "System.Drawing.Common/5.0.1": {
-      "sha512": "3IN8zWk395Qu+7wnoTbebEjdP3izZBBKAahgWuC0jp9tCgTdUFN6KsrqQl0I3L+ptZD/LvwKjgFp1u+x3+p+DA==",
+    "Syncfusion.Grid.Windows/30.1.37": {
+      "sha512": "x8cUrip6lOq76FKKvx8qEMj/r9j8qGTO34OnkDsibgqOriBM9/tQe1bHgU7htztAynvoST6wYfDGI04CgwXuyQ==",
       "type": "package",
-      "path": "system.drawing.common/5.0.1",
+      "path": "syncfusion.grid.windows/30.1.37",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net462/Syncfusion.Grid.Windows.dll",
+        "lib/net462/Syncfusion.Grid.Windows.xml",
+        "lib/net8.0-windows7.0/Design/WinForms/Server/Syncfusion.Grid.Windows.Server.dll",
+        "lib/net8.0-windows7.0/Design/WinForms/Syncfusion.Grid.Windows.Client.dll",
+        "lib/net8.0-windows7.0/Syncfusion.Grid.Windows.dll",
+        "lib/net8.0-windows7.0/Syncfusion.Grid.Windows.xml",
+        "lib/net9.0-windows7.0/Design/WinForms/Server/Syncfusion.Grid.Windows.Server.dll",
+        "lib/net9.0-windows7.0/Design/WinForms/Syncfusion.Grid.Windows.Client.dll",
+        "lib/net9.0-windows7.0/Syncfusion.Grid.Windows.dll",
+        "lib/net9.0-windows7.0/Syncfusion.Grid.Windows.xml",
+        "syncfusion.grid.windows.30.1.37.nupkg.sha512",
+        "syncfusion.grid.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Licensing/30.1.37": {
+      "sha512": "QYAjEsjSXhXr8Bwsv53cNSic03Q7AS9R1bhEFx8RZ9uxx8hxDKtst0u+pVGJiG46QMRT54SUL3bbSD/QduHV2A==",
+      "type": "package",
+      "path": "syncfusion.licensing/30.1.37",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/MonoAndroid90/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net462/Syncfusion.Licensing.dll",
+        "lib/net8.0/Syncfusion.Licensing.dll",
+        "lib/net9.0/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.30.1.37.nupkg.sha512",
+        "syncfusion.licensing.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Shared.Base/30.1.37": {
+      "sha512": "6F8/K5z18F/PQ0wF6nLhRX5h63fJwTkFldTAyEF2OYZg9ftzEkuyUxHeMXkzHLC3fqU7hRGMGj/IBlH90hjiHQ==",
+      "type": "package",
+      "path": "syncfusion.shared.base/30.1.37",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net462/Syncfusion.Shared.Base.dll",
+        "lib/net462/Syncfusion.Shared.Base.xml",
+        "lib/net8.0-windows7.0/Design/WinForms/Server/Syncfusion.Shared.Base.Server.dll",
+        "lib/net8.0-windows7.0/Design/WinForms/Syncfusion.Shared.Base.Client.dll",
+        "lib/net8.0-windows7.0/Syncfusion.Shared.Base.dll",
+        "lib/net8.0-windows7.0/Syncfusion.Shared.Base.xml",
+        "lib/net9.0-windows7.0/Design/WinForms/Server/Syncfusion.Shared.Base.Server.dll",
+        "lib/net9.0-windows7.0/Design/WinForms/Syncfusion.Shared.Base.Client.dll",
+        "lib/net9.0-windows7.0/Syncfusion.Shared.Base.dll",
+        "lib/net9.0-windows7.0/Syncfusion.Shared.Base.xml",
+        "syncfusion.shared.base.30.1.37.nupkg.sha512",
+        "syncfusion.shared.base.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Shared.Windows/30.1.37": {
+      "sha512": "5zcOCpqt8in+CaRmhKE/ndTScFIDy2phbYm9oxYDDCVA8ZiPid5WfCuLUzBOIqEe150hD13EYZuHvymbQHn77w==",
+      "type": "package",
+      "path": "syncfusion.shared.windows/30.1.37",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net462/Syncfusion.Shared.Windows.dll",
+        "lib/net462/Syncfusion.Shared.Windows.xml",
+        "lib/net8.0-windows7.0/Syncfusion.Shared.Windows.dll",
+        "lib/net8.0-windows7.0/Syncfusion.Shared.Windows.xml",
+        "lib/net9.0-windows7.0/Syncfusion.Shared.Windows.dll",
+        "lib/net9.0-windows7.0/Syncfusion.Shared.Windows.xml",
+        "syncfusion.shared.windows.30.1.37.nupkg.sha512",
+        "syncfusion.shared.windows.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.SpellChecker.Base/30.1.37": {
+      "sha512": "fTr6OVy7JR6xZx5UHGBD6X4Q4wawkguNP0tYVZhShOUltVGyk38M/zeZoYx19VmRyzBQ819aOp+7BQ2ZTVXeCw==",
+      "type": "package",
+      "path": "syncfusion.spellchecker.base/30.1.37",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net462/Syncfusion.SpellChecker.Base.dll",
+        "lib/net462/Syncfusion.SpellChecker.Base.xml",
+        "lib/net8.0-windows7.0/Syncfusion.SpellChecker.Base.dll",
+        "lib/net8.0-windows7.0/Syncfusion.SpellChecker.Base.xml",
+        "lib/net9.0-windows7.0/Syncfusion.SpellChecker.Base.dll",
+        "lib/net9.0-windows7.0/Syncfusion.SpellChecker.Base.xml",
+        "syncfusion.spellchecker.base.30.1.37.nupkg.sha512",
+        "syncfusion.spellchecker.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Tools.Base/30.1.37": {
+      "sha512": "0IkxWTFyYZRQghXOWB2+llKzxCPvuMr8xmQVpbM4VwdO5GpRHttL62wRlV8mgUgfheFCuQ6ZA3qonOHTrcs3rQ==",
+      "type": "package",
+      "path": "syncfusion.tools.base/30.1.37",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net462/Syncfusion.Tools.Base.dll",
+        "lib/net462/Syncfusion.Tools.Base.xml",
+        "lib/net8.0-windows7.0/Syncfusion.Tools.Base.dll",
+        "lib/net8.0-windows7.0/Syncfusion.Tools.Base.xml",
+        "lib/net9.0-windows7.0/Syncfusion.Tools.Base.dll",
+        "lib/net9.0-windows7.0/Syncfusion.Tools.Base.xml",
+        "syncfusion.tools.base.30.1.37.nupkg.sha512",
+        "syncfusion.tools.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Tools.Windows/30.1.37": {
+      "sha512": "EulEKhI3rwDQWfmqCXJk2Qiz9lkqEtA8roL19lRfSUrMIPP/L8cULkk3hK0m/roHPFqSkdEJYmyVdVpDTZAssw==",
+      "type": "package",
+      "path": "syncfusion.tools.windows/30.1.37",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net462/Syncfusion.Tools.Windows.dll",
+        "lib/net462/Syncfusion.Tools.Windows.xml",
+        "lib/net8.0-windows7.0/Design/WinForms/Server/Syncfusion.Tools.Windows.Server.dll",
+        "lib/net8.0-windows7.0/Design/WinForms/Syncfusion.Tools.Windows.Client.dll",
+        "lib/net8.0-windows7.0/Syncfusion.Tools.Windows.dll",
+        "lib/net8.0-windows7.0/Syncfusion.Tools.Windows.xml",
+        "lib/net9.0-windows7.0/Design/WinForms/Server/Syncfusion.Tools.Windows.Server.dll",
+        "lib/net9.0-windows7.0/Design/WinForms/Syncfusion.Tools.Windows.Client.dll",
+        "lib/net9.0-windows7.0/Syncfusion.Tools.Windows.dll",
+        "lib/net9.0-windows7.0/Syncfusion.Tools.Windows.xml",
+        "syncfusion.tools.windows.30.1.37.nupkg.sha512",
+        "syncfusion.tools.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "System.CodeDom/4.6.0": {
+      "sha512": "ArWGZOxPhOaJUd4YgvbTxGZDbVDJHPAOQNiJIpbRDPW6v2NT5xkallQv1zpu8Rwwb5Z3iZ1jwWA4gSQuWgR+jw==",
+      "type": "package",
+      "path": "system.codedom/4.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.CodeDom.dll",
+        "lib/net461/System.CodeDom.xml",
+        "lib/netstandard2.0/System.CodeDom.dll",
+        "lib/netstandard2.0/System.CodeDom.xml",
+        "ref/net461/System.CodeDom.dll",
+        "ref/net461/System.CodeDom.xml",
+        "ref/netstandard2.0/System.CodeDom.dll",
+        "ref/netstandard2.0/System.CodeDom.xml",
+        "system.codedom.4.6.0.nupkg.sha512",
+        "system.codedom.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Composition/6.0.0": {
+      "sha512": "d7wMuKQtfsxUa7S13tITC8n1cQzewuhD5iDjZtK2prwFfKVzdYtgrTHgjaV03Zq7feGQ5gkP85tJJntXwInsJA==",
+      "type": "package",
+      "path": "system.composition/6.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Composition.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "system.composition.6.0.0.nupkg.sha512",
+        "system.composition.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Composition.AttributedModel/6.0.0": {
+      "sha512": "WK1nSDLByK/4VoC7fkNiFuTVEiperuCN/Hyn+VN30R+W2ijO1d0Z2Qm0ScEl9xkSn1G2MyapJi8xpf4R8WRa/w==",
+      "type": "package",
+      "path": "system.composition.attributedmodel/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Composition.AttributedModel.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Composition.AttributedModel.dll",
+        "lib/net461/System.Composition.AttributedModel.xml",
+        "lib/net6.0/System.Composition.AttributedModel.dll",
+        "lib/net6.0/System.Composition.AttributedModel.xml",
+        "lib/netstandard2.0/System.Composition.AttributedModel.dll",
+        "lib/netstandard2.0/System.Composition.AttributedModel.xml",
+        "system.composition.attributedmodel.6.0.0.nupkg.sha512",
+        "system.composition.attributedmodel.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Composition.Convention/6.0.0": {
+      "sha512": "XYi4lPRdu5bM4JVJ3/UIHAiG6V6lWWUlkhB9ab4IOq0FrRsp0F4wTyV4Dj+Ds+efoXJ3qbLqlvaUozDO7OLeXA==",
+      "type": "package",
+      "path": "system.composition.convention/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Composition.Convention.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Composition.Convention.dll",
+        "lib/net461/System.Composition.Convention.xml",
+        "lib/net6.0/System.Composition.Convention.dll",
+        "lib/net6.0/System.Composition.Convention.xml",
+        "lib/netstandard2.0/System.Composition.Convention.dll",
+        "lib/netstandard2.0/System.Composition.Convention.xml",
+        "system.composition.convention.6.0.0.nupkg.sha512",
+        "system.composition.convention.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Composition.Hosting/6.0.0": {
+      "sha512": "w/wXjj7kvxuHPLdzZ0PAUt++qJl03t7lENmb2Oev0n3zbxyNULbWBlnd5J5WUMMv15kg5o+/TCZFb6lSwfaUUQ==",
+      "type": "package",
+      "path": "system.composition.hosting/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Composition.Hosting.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Composition.Hosting.dll",
+        "lib/net461/System.Composition.Hosting.xml",
+        "lib/net6.0/System.Composition.Hosting.dll",
+        "lib/net6.0/System.Composition.Hosting.xml",
+        "lib/netstandard2.0/System.Composition.Hosting.dll",
+        "lib/netstandard2.0/System.Composition.Hosting.xml",
+        "system.composition.hosting.6.0.0.nupkg.sha512",
+        "system.composition.hosting.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Composition.Runtime/6.0.0": {
+      "sha512": "qkRH/YBaMPTnzxrS5RDk1juvqed4A6HOD/CwRcDGyPpYps1J27waBddiiq1y93jk2ZZ9wuA/kynM+NO0kb3PKg==",
+      "type": "package",
+      "path": "system.composition.runtime/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Composition.Runtime.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Composition.Runtime.dll",
+        "lib/net461/System.Composition.Runtime.xml",
+        "lib/net6.0/System.Composition.Runtime.dll",
+        "lib/net6.0/System.Composition.Runtime.xml",
+        "lib/netstandard2.0/System.Composition.Runtime.dll",
+        "lib/netstandard2.0/System.Composition.Runtime.xml",
+        "system.composition.runtime.6.0.0.nupkg.sha512",
+        "system.composition.runtime.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Composition.TypedParts/6.0.0": {
+      "sha512": "iUR1eHrL8Cwd82neQCJ00MpwNIBs4NZgXzrPqx8NJf/k4+mwBO0XCRmHYJT4OLSwDDqh5nBLJWkz5cROnrGhRA==",
+      "type": "package",
+      "path": "system.composition.typedparts/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Composition.TypedParts.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Composition.TypedParts.dll",
+        "lib/net461/System.Composition.TypedParts.xml",
+        "lib/net6.0/System.Composition.TypedParts.dll",
+        "lib/net6.0/System.Composition.TypedParts.xml",
+        "lib/netstandard2.0/System.Composition.TypedParts.dll",
+        "lib/netstandard2.0/System.Composition.TypedParts.xml",
+        "system.composition.typedparts.6.0.0.nupkg.sha512",
+        "system.composition.typedparts.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Configuration.ConfigurationManager/8.0.0": {
+      "sha512": "JlYi9XVvIREURRUlGMr1F6vOFLk7YSY4p1vHo4kX3tQ0AGrjqlRWHDi66ImHhy6qwXBG3BJ6Y1QlYQ+Qz6Xgww==",
+      "type": "package",
+      "path": "system.configuration.configurationmanager/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Configuration.ConfigurationManager.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Configuration.ConfigurationManager.targets",
+        "lib/net462/System.Configuration.ConfigurationManager.dll",
+        "lib/net462/System.Configuration.ConfigurationManager.xml",
+        "lib/net6.0/System.Configuration.ConfigurationManager.dll",
+        "lib/net6.0/System.Configuration.ConfigurationManager.xml",
+        "lib/net7.0/System.Configuration.ConfigurationManager.dll",
+        "lib/net7.0/System.Configuration.ConfigurationManager.xml",
+        "lib/net8.0/System.Configuration.ConfigurationManager.dll",
+        "lib/net8.0/System.Configuration.ConfigurationManager.xml",
+        "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "lib/netstandard2.0/System.Configuration.ConfigurationManager.xml",
+        "system.configuration.configurationmanager.8.0.0.nupkg.sha512",
+        "system.configuration.configurationmanager.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Diagnostics.EventLog/8.0.0": {
+      "sha512": "fdYxcRjQqTTacKId/2IECojlDSFvp7LP5N78+0z/xH7v/Tuw5ZAxu23Y6PTCRinqyu2ePx+Gn1098NC6jM6d+A==",
+      "type": "package",
+      "path": "system.diagnostics.eventlog/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Diagnostics.EventLog.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Diagnostics.EventLog.targets",
+        "lib/net462/System.Diagnostics.EventLog.dll",
+        "lib/net462/System.Diagnostics.EventLog.xml",
+        "lib/net6.0/System.Diagnostics.EventLog.dll",
+        "lib/net6.0/System.Diagnostics.EventLog.xml",
+        "lib/net7.0/System.Diagnostics.EventLog.dll",
+        "lib/net7.0/System.Diagnostics.EventLog.xml",
+        "lib/net8.0/System.Diagnostics.EventLog.dll",
+        "lib/net8.0/System.Diagnostics.EventLog.xml",
+        "lib/netstandard2.0/System.Diagnostics.EventLog.dll",
+        "lib/netstandard2.0/System.Diagnostics.EventLog.xml",
+        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll",
+        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll",
+        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.xml",
+        "runtimes/win/lib/net7.0/System.Diagnostics.EventLog.Messages.dll",
+        "runtimes/win/lib/net7.0/System.Diagnostics.EventLog.dll",
+        "runtimes/win/lib/net7.0/System.Diagnostics.EventLog.xml",
+        "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll",
+        "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll",
+        "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.xml",
+        "system.diagnostics.eventlog.8.0.0.nupkg.sha512",
+        "system.diagnostics.eventlog.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.DirectoryServices/8.0.0": {
+      "sha512": "7nit//efUTy1OsAKco2f02PMrwsR2S234N0dVVp84udC77YcvpOQDz5znAWMtgMWBzY1aRJvUW61jo/7vQRfXg==",
+      "type": "package",
+      "path": "system.directoryservices/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.DirectoryServices.targets",
+        "lib/net462/_._",
+        "lib/net6.0/System.DirectoryServices.dll",
+        "lib/net6.0/System.DirectoryServices.xml",
+        "lib/net7.0/System.DirectoryServices.dll",
+        "lib/net7.0/System.DirectoryServices.xml",
+        "lib/net8.0/System.DirectoryServices.dll",
+        "lib/net8.0/System.DirectoryServices.xml",
+        "lib/netstandard2.0/System.DirectoryServices.dll",
+        "lib/netstandard2.0/System.DirectoryServices.xml",
+        "runtimes/win/lib/net6.0/System.DirectoryServices.dll",
+        "runtimes/win/lib/net6.0/System.DirectoryServices.xml",
+        "runtimes/win/lib/net7.0/System.DirectoryServices.dll",
+        "runtimes/win/lib/net7.0/System.DirectoryServices.xml",
+        "runtimes/win/lib/net8.0/System.DirectoryServices.dll",
+        "runtimes/win/lib/net8.0/System.DirectoryServices.xml",
+        "system.directoryservices.8.0.0.nupkg.sha512",
+        "system.directoryservices.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Drawing.Common/8.0.5": {
+      "sha512": "n55wb6rL8YG254AG+SfQOSQencrcnpKAAcYyEcvBuO2pob7ltXuZ5skBBdvLJOLVPKd1Ya8+8ColIM5AtBo5ww==",
+      "type": "package",
+      "path": "system.drawing.common/8.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Drawing.Common.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Drawing.Common.targets",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
-        "lib/net461/System.Drawing.Common.dll",
-        "lib/netcoreapp3.0/System.Drawing.Common.dll",
-        "lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "lib/net462/System.Drawing.Common.dll",
+        "lib/net462/System.Drawing.Common.pdb",
+        "lib/net462/System.Drawing.Common.xml",
+        "lib/net6.0/System.Drawing.Common.dll",
+        "lib/net6.0/System.Drawing.Common.pdb",
+        "lib/net6.0/System.Drawing.Common.xml",
+        "lib/net7.0/System.Drawing.Common.dll",
+        "lib/net7.0/System.Drawing.Common.pdb",
+        "lib/net7.0/System.Drawing.Common.xml",
+        "lib/net8.0/System.Drawing.Common.dll",
+        "lib/net8.0/System.Drawing.Common.pdb",
+        "lib/net8.0/System.Drawing.Common.xml",
         "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.pdb",
+        "lib/netstandard2.0/System.Drawing.Common.xml",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net461/System.Drawing.Common.dll",
-        "ref/netcoreapp3.0/System.Drawing.Common.dll",
-        "ref/netcoreapp3.0/System.Drawing.Common.xml",
-        "ref/netstandard2.0/System.Drawing.Common.dll",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
-        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll",
-        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.xml",
-        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.xml",
-        "system.drawing.common.5.0.1.nupkg.sha512",
+        "system.drawing.common.8.0.5.nupkg.sha512",
         "system.drawing.common.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "useSharedDesignerContext.txt"
       ]
     },
     "System.Security.AccessControl/4.7.0": {
@@ -619,6 +1876,71 @@
         "system.security.accesscontrol.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "System.Security.Cryptography.ProtectedData/8.0.0": {
+      "sha512": "+TUFINV2q2ifyXauQXRwy4CiBhqvDEDZeVJU7qfxya4aRYOKzVBpN+4acx25VcPB9ywUN6C0n8drWl110PhZEg==",
+      "type": "package",
+      "path": "system.security.cryptography.protecteddata/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Cryptography.ProtectedData.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Security.Cryptography.ProtectedData.targets",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net462/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net462/System.Security.Cryptography.ProtectedData.xml",
+        "lib/net6.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net6.0/System.Security.Cryptography.ProtectedData.xml",
+        "lib/net7.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net7.0/System.Security.Cryptography.ProtectedData.xml",
+        "lib/net8.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net8.0/System.Security.Cryptography.ProtectedData.xml",
+        "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "system.security.cryptography.protecteddata.8.0.0.nupkg.sha512",
+        "system.security.cryptography.protecteddata.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Security.Permissions/8.0.0": {
+      "sha512": "v/BBylw7XevuAsHXoX9dDUUfmBIcUf7Lkz8K3ZXIKz3YRKpw8YftpSir4n4e/jDTKFoaK37AsC3xnk+GNFI1Ow==",
+      "type": "package",
+      "path": "system.security.permissions/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Permissions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Security.Permissions.targets",
+        "lib/net462/System.Security.Permissions.dll",
+        "lib/net462/System.Security.Permissions.xml",
+        "lib/net6.0/System.Security.Permissions.dll",
+        "lib/net6.0/System.Security.Permissions.xml",
+        "lib/net7.0/System.Security.Permissions.dll",
+        "lib/net7.0/System.Security.Permissions.xml",
+        "lib/net8.0/System.Security.Permissions.dll",
+        "lib/net8.0/System.Security.Permissions.xml",
+        "lib/netstandard2.0/System.Security.Permissions.dll",
+        "lib/netstandard2.0/System.Security.Permissions.xml",
+        "system.security.permissions.8.0.0.nupkg.sha512",
+        "system.security.permissions.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "System.Security.Principal.Windows/4.7.0": {
@@ -674,13 +1996,790 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "System.Windows.Extensions/8.0.0": {
+      "sha512": "Obg3a90MkOw9mYKxrardLpY2u0axDMrSmy4JCdq2cYbelM2cUwmUir5Bomvd1yxmPL9h5LVHU1tuKBZpUjfASg==",
+      "type": "package",
+      "path": "system.windows.extensions/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net6.0/System.Windows.Extensions.dll",
+        "lib/net6.0/System.Windows.Extensions.xml",
+        "lib/net7.0/System.Windows.Extensions.dll",
+        "lib/net7.0/System.Windows.Extensions.xml",
+        "lib/net8.0/System.Windows.Extensions.dll",
+        "lib/net8.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net6.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net6.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net7.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net7.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net8.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net8.0/System.Windows.Extensions.xml",
+        "system.windows.extensions.8.0.0.nupkg.sha512",
+        "system.windows.extensions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Vanara.Core/4.1.6": {
+      "sha512": "6ofXAXvywY223+1cRs2uOiWWzBsy9o/m5Bh6txvF3weYSsLI18Pbaz6YCq4oLEEHD7UtE/l4qHkSMdZx9s/6LA==",
+      "type": "package",
+      "path": "vanara.core/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.Core.dll",
+        "lib/net48/Vanara.Core.xml",
+        "lib/net48/fr/Vanara.Core.resources.dll",
+        "lib/net5.0/Vanara.Core.dll",
+        "lib/net5.0/Vanara.Core.xml",
+        "lib/net5.0/fr/Vanara.Core.resources.dll",
+        "lib/net6.0/Vanara.Core.dll",
+        "lib/net6.0/Vanara.Core.xml",
+        "lib/net6.0/fr/Vanara.Core.resources.dll",
+        "lib/net7.0/Vanara.Core.dll",
+        "lib/net7.0/Vanara.Core.xml",
+        "lib/net7.0/fr/Vanara.Core.resources.dll",
+        "lib/net8.0-windows7.0/Vanara.Core.dll",
+        "lib/net8.0-windows7.0/Vanara.Core.xml",
+        "lib/net8.0-windows7.0/fr/Vanara.Core.resources.dll",
+        "lib/net9.0-windows7.0/Vanara.Core.dll",
+        "lib/net9.0-windows7.0/Vanara.Core.xml",
+        "lib/net9.0-windows7.0/fr/Vanara.Core.resources.dll",
+        "lib/netcoreapp3.1/Vanara.Core.dll",
+        "lib/netcoreapp3.1/Vanara.Core.xml",
+        "lib/netcoreapp3.1/fr/Vanara.Core.resources.dll",
+        "lib/netstandard2.0/Vanara.Core.dll",
+        "lib/netstandard2.0/Vanara.Core.xml",
+        "lib/netstandard2.0/fr/Vanara.Core.resources.dll",
+        "lib/netstandard2.1/Vanara.Core.dll",
+        "lib/netstandard2.1/Vanara.Core.xml",
+        "lib/netstandard2.1/fr/Vanara.Core.resources.dll",
+        "pkgreadme.md",
+        "vanara.core.4.1.6.nupkg.sha512",
+        "vanara.core.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.AclUI/4.1.6": {
+      "sha512": "DoLKyhf+azyPxtocfyxoYqoLC3It3/mJaimY1zf5i5h3y9OW0rAd75DPPxuRcQg31H0CXEfaMeAGQj8EJQfR+Q==",
+      "type": "package",
+      "path": "vanara.pinvoke.aclui/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.AclUI.dll",
+        "lib/net48/Vanara.PInvoke.AclUI.xml",
+        "lib/net5.0/Vanara.PInvoke.AclUI.dll",
+        "lib/net5.0/Vanara.PInvoke.AclUI.xml",
+        "lib/net6.0/Vanara.PInvoke.AclUI.dll",
+        "lib/net6.0/Vanara.PInvoke.AclUI.xml",
+        "lib/net7.0/Vanara.PInvoke.AclUI.dll",
+        "lib/net7.0/Vanara.PInvoke.AclUI.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.AclUI.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.AclUI.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.AclUI.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.AclUI.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.AclUI.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.AclUI.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.AclUI.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.AclUI.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.AclUI.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.AclUI.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.aclui.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.aclui.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.ComCtl32/4.1.6": {
+      "sha512": "Fv6PjUOCJzw2rjwdrHAvjMJLqHOLQL8Hce6BEqH8Cs1SAGrJlF35C1ImtdlqUJJyGdOSrIqJvHdNLdPS9JjvsQ==",
+      "type": "package",
+      "path": "vanara.pinvoke.comctl32/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.ComCtl32.dll",
+        "lib/net48/Vanara.PInvoke.ComCtl32.xml",
+        "lib/net5.0/Vanara.PInvoke.ComCtl32.dll",
+        "lib/net5.0/Vanara.PInvoke.ComCtl32.xml",
+        "lib/net6.0/Vanara.PInvoke.ComCtl32.dll",
+        "lib/net6.0/Vanara.PInvoke.ComCtl32.xml",
+        "lib/net7.0/Vanara.PInvoke.ComCtl32.dll",
+        "lib/net7.0/Vanara.PInvoke.ComCtl32.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.ComCtl32.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.ComCtl32.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.ComCtl32.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.ComCtl32.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.ComCtl32.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.ComCtl32.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.ComCtl32.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.ComCtl32.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.ComCtl32.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.ComCtl32.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.comctl32.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.comctl32.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.CredUI/4.1.6": {
+      "sha512": "QZK/5yXhT+XgbQliYHICOMz2tK4NNVB/4j7XZx6VZ4qfV+g0BW5HPaRKcqKC0Aa0yiswtHA1NIgNnnIAwQYZBw==",
+      "type": "package",
+      "path": "vanara.pinvoke.credui/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.CredUI.dll",
+        "lib/net48/Vanara.PInvoke.CredUI.xml",
+        "lib/net5.0/Vanara.PInvoke.CredUI.dll",
+        "lib/net5.0/Vanara.PInvoke.CredUI.xml",
+        "lib/net6.0/Vanara.PInvoke.CredUI.dll",
+        "lib/net6.0/Vanara.PInvoke.CredUI.xml",
+        "lib/net7.0/Vanara.PInvoke.CredUI.dll",
+        "lib/net7.0/Vanara.PInvoke.CredUI.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.CredUI.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.CredUI.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.CredUI.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.CredUI.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.CredUI.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.CredUI.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.CredUI.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.CredUI.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.CredUI.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.CredUI.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.credui.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.credui.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.Cryptography/4.1.6": {
+      "sha512": "W/dDJOlvu6nvTC/LgfEpfPEuktwa/K29146J3RcbyHyrAHvIpyxiMR++QxT0MVV1R034nbh52svB70AMOZfLUw==",
+      "type": "package",
+      "path": "vanara.pinvoke.cryptography/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.Cryptography.dll",
+        "lib/net48/Vanara.PInvoke.Cryptography.xml",
+        "lib/net5.0/Vanara.PInvoke.Cryptography.dll",
+        "lib/net5.0/Vanara.PInvoke.Cryptography.xml",
+        "lib/net6.0/Vanara.PInvoke.Cryptography.dll",
+        "lib/net6.0/Vanara.PInvoke.Cryptography.xml",
+        "lib/net7.0/Vanara.PInvoke.Cryptography.dll",
+        "lib/net7.0/Vanara.PInvoke.Cryptography.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Cryptography.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Cryptography.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Cryptography.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Cryptography.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Cryptography.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Cryptography.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.Cryptography.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.Cryptography.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.Cryptography.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.Cryptography.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.cryptography.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.cryptography.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.DwmApi/4.1.6": {
+      "sha512": "8G2diVSr+bl3X6GdIAgUZoXpunjDxDjTuhZTmUbmVYKPvYEYF4TlK/Ahkq1GJAnsSQ74IXau465b6nEb6Qaubg==",
+      "type": "package",
+      "path": "vanara.pinvoke.dwmapi/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.DwmApi.dll",
+        "lib/net48/Vanara.PInvoke.DwmApi.xml",
+        "lib/net5.0/Vanara.PInvoke.DwmApi.dll",
+        "lib/net5.0/Vanara.PInvoke.DwmApi.xml",
+        "lib/net6.0/Vanara.PInvoke.DwmApi.dll",
+        "lib/net6.0/Vanara.PInvoke.DwmApi.xml",
+        "lib/net7.0/Vanara.PInvoke.DwmApi.dll",
+        "lib/net7.0/Vanara.PInvoke.DwmApi.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.DwmApi.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.DwmApi.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.DwmApi.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.DwmApi.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.DwmApi.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.DwmApi.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.DwmApi.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.DwmApi.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.DwmApi.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.DwmApi.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.dwmapi.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.dwmapi.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.Gdi32/4.1.6": {
+      "sha512": "wv8vwFvFXdLRhEiYY+yHUakplqgIAqiH7/BKHSpjkff2SCrluyrQ66MitJW0A9B2DSkKb7AcntOkzl3CaKgA2w==",
+      "type": "package",
+      "path": "vanara.pinvoke.gdi32/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.Gdi32.dll",
+        "lib/net48/Vanara.PInvoke.Gdi32.xml",
+        "lib/net5.0/Vanara.PInvoke.Gdi32.dll",
+        "lib/net5.0/Vanara.PInvoke.Gdi32.xml",
+        "lib/net6.0/Vanara.PInvoke.Gdi32.dll",
+        "lib/net6.0/Vanara.PInvoke.Gdi32.xml",
+        "lib/net7.0/Vanara.PInvoke.Gdi32.dll",
+        "lib/net7.0/Vanara.PInvoke.Gdi32.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Gdi32.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Gdi32.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Gdi32.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Gdi32.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Gdi32.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Gdi32.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.Gdi32.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.Gdi32.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.Gdi32.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.Gdi32.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.gdi32.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.gdi32.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.Kernel32/4.1.6": {
+      "sha512": "15WEAjnXvncyo9BJjzFzLz6IiHGuSQSYQeUL6cfisrR2zz0/g7u+H7AoWAPHqT3sNVei1ad8JyRGY+v7ZwF8Tg==",
+      "type": "package",
+      "path": "vanara.pinvoke.kernel32/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.Kernel32.dll",
+        "lib/net48/Vanara.PInvoke.Kernel32.xml",
+        "lib/net5.0/Vanara.PInvoke.Kernel32.dll",
+        "lib/net5.0/Vanara.PInvoke.Kernel32.xml",
+        "lib/net6.0/Vanara.PInvoke.Kernel32.dll",
+        "lib/net6.0/Vanara.PInvoke.Kernel32.xml",
+        "lib/net7.0/Vanara.PInvoke.Kernel32.dll",
+        "lib/net7.0/Vanara.PInvoke.Kernel32.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Kernel32.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Kernel32.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Kernel32.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Kernel32.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Kernel32.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Kernel32.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.Kernel32.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.Kernel32.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.Kernel32.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.Kernel32.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.kernel32.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.kernel32.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.Mpr/4.1.6": {
+      "sha512": "VTPhQKKCeNzCFkCnCsO3hVRW5KSDxm5IeMDEaESMuUjZtFf5cCKux2kMt/l4G+c5Oe9rzx/yO97T2hWLkJLkwg==",
+      "type": "package",
+      "path": "vanara.pinvoke.mpr/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.Mpr.dll",
+        "lib/net48/Vanara.PInvoke.Mpr.xml",
+        "lib/net5.0/Vanara.PInvoke.Mpr.dll",
+        "lib/net5.0/Vanara.PInvoke.Mpr.xml",
+        "lib/net6.0/Vanara.PInvoke.Mpr.dll",
+        "lib/net6.0/Vanara.PInvoke.Mpr.xml",
+        "lib/net7.0/Vanara.PInvoke.Mpr.dll",
+        "lib/net7.0/Vanara.PInvoke.Mpr.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Mpr.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Mpr.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Mpr.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Mpr.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Mpr.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Mpr.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.Mpr.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.Mpr.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.Mpr.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.Mpr.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.mpr.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.mpr.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.NTDSApi/4.1.6": {
+      "sha512": "dVi0uEGzCdvl1fCIevUrJS2CKpqtLNRpyi0tjGZaQS1V1cLf6U3+qdbjLaEtI/FQUTAWKZuMcFHCK4E/G69Nig==",
+      "type": "package",
+      "path": "vanara.pinvoke.ntdsapi/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.NTDSApi.dll",
+        "lib/net48/Vanara.PInvoke.NTDSApi.xml",
+        "lib/net5.0/Vanara.PInvoke.NTDSApi.dll",
+        "lib/net5.0/Vanara.PInvoke.NTDSApi.xml",
+        "lib/net6.0/Vanara.PInvoke.NTDSApi.dll",
+        "lib/net6.0/Vanara.PInvoke.NTDSApi.xml",
+        "lib/net7.0/Vanara.PInvoke.NTDSApi.dll",
+        "lib/net7.0/Vanara.PInvoke.NTDSApi.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.NTDSApi.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.NTDSApi.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.NTDSApi.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.NTDSApi.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.NTDSApi.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.NTDSApi.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.NTDSApi.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.NTDSApi.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.NTDSApi.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.NTDSApi.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.ntdsapi.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.ntdsapi.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.Ole/4.1.6": {
+      "sha512": "e0WHr7izTPfh6kf9e7AZrdOoOhM6knH53aubs/XH+SzHeXNBvaMDihPkWZpbbcWt/6OqUgmRzw5GI6DCtwKKKw==",
+      "type": "package",
+      "path": "vanara.pinvoke.ole/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.Ole.dll",
+        "lib/net48/Vanara.PInvoke.Ole.xml",
+        "lib/net5.0/Vanara.PInvoke.Ole.dll",
+        "lib/net5.0/Vanara.PInvoke.Ole.xml",
+        "lib/net6.0/Vanara.PInvoke.Ole.dll",
+        "lib/net6.0/Vanara.PInvoke.Ole.xml",
+        "lib/net7.0/Vanara.PInvoke.Ole.dll",
+        "lib/net7.0/Vanara.PInvoke.Ole.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Ole.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Ole.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Ole.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Ole.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Ole.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Ole.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.Ole.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.Ole.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.Ole.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.Ole.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.ole.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.ole.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.Rpc/4.1.6": {
+      "sha512": "Y/7lUyp3OL7QlRljJDNdfHdW6v2QN1OZfD4O29Bde4P9DUqCrhuZ9gWk2O5SdIKEUnGDyHQCdpNxQw6lYDBvQg==",
+      "type": "package",
+      "path": "vanara.pinvoke.rpc/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.Rpc.dll",
+        "lib/net48/Vanara.PInvoke.Rpc.xml",
+        "lib/net5.0/Vanara.PInvoke.Rpc.dll",
+        "lib/net5.0/Vanara.PInvoke.Rpc.xml",
+        "lib/net6.0/Vanara.PInvoke.Rpc.dll",
+        "lib/net6.0/Vanara.PInvoke.Rpc.xml",
+        "lib/net7.0/Vanara.PInvoke.Rpc.dll",
+        "lib/net7.0/Vanara.PInvoke.Rpc.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Rpc.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Rpc.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Rpc.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Rpc.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Rpc.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Rpc.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.Rpc.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.Rpc.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.Rpc.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.Rpc.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.rpc.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.rpc.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.SearchApi/4.1.6": {
+      "sha512": "OswLZktfX7vP8deSSjTkyltX+YRVJ0oarapiHQBQ/Tdy6dv1rhNq0xzJHJrOwwKgEgtAElTctubEM/599U3Caw==",
+      "type": "package",
+      "path": "vanara.pinvoke.searchapi/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.SearchApi.dll",
+        "lib/net48/Vanara.PInvoke.SearchApi.xml",
+        "lib/net5.0/Vanara.PInvoke.SearchApi.dll",
+        "lib/net5.0/Vanara.PInvoke.SearchApi.xml",
+        "lib/net6.0/Vanara.PInvoke.SearchApi.dll",
+        "lib/net6.0/Vanara.PInvoke.SearchApi.xml",
+        "lib/net7.0/Vanara.PInvoke.SearchApi.dll",
+        "lib/net7.0/Vanara.PInvoke.SearchApi.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.SearchApi.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.SearchApi.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.SearchApi.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.SearchApi.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.SearchApi.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.SearchApi.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.SearchApi.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.SearchApi.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.SearchApi.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.SearchApi.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.searchapi.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.searchapi.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.Security/4.1.6": {
+      "sha512": "2WdhMQrwWv6ch1OfZpaDacFdZTKl68nyP8/4AJ1aNntkxIEoCUJlSd8Gc0fdNi4hbmfqYU5mhTMBPDKIv17cUg==",
+      "type": "package",
+      "path": "vanara.pinvoke.security/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.Security.dll",
+        "lib/net48/Vanara.PInvoke.Security.xml",
+        "lib/net5.0/Vanara.PInvoke.Security.dll",
+        "lib/net5.0/Vanara.PInvoke.Security.xml",
+        "lib/net6.0/Vanara.PInvoke.Security.dll",
+        "lib/net6.0/Vanara.PInvoke.Security.xml",
+        "lib/net7.0/Vanara.PInvoke.Security.dll",
+        "lib/net7.0/Vanara.PInvoke.Security.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Security.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Security.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Security.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Security.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Security.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Security.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.Security.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.Security.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.Security.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.Security.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.security.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.security.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.Shared/4.1.6": {
+      "sha512": "mmoYuZMtJ70h0Q7jxpQdeYeCcE3rjPHS+AwkgdzURg+zMHR9GQpRg5e978YtDj6msNCxeWD+F9jgzKPxDivQ1w==",
+      "type": "package",
+      "path": "vanara.pinvoke.shared/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.Shared.dll",
+        "lib/net48/Vanara.PInvoke.Shared.xml",
+        "lib/net5.0/Vanara.PInvoke.Shared.dll",
+        "lib/net5.0/Vanara.PInvoke.Shared.xml",
+        "lib/net6.0/Vanara.PInvoke.Shared.dll",
+        "lib/net6.0/Vanara.PInvoke.Shared.xml",
+        "lib/net7.0/Vanara.PInvoke.Shared.dll",
+        "lib/net7.0/Vanara.PInvoke.Shared.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Shared.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Shared.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Shared.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Shared.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Shared.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Shared.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.Shared.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.Shared.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.Shared.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.Shared.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.shared.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.shared.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.Shell32/4.1.6": {
+      "sha512": "CDCJhqXstV2mg2ex7FkSZTks++sJIhJnb6oxBEtTKs/uHHtja8zIZmPK0P7pb5+H8aNaZgzu2LdOMzs9zblgLg==",
+      "type": "package",
+      "path": "vanara.pinvoke.shell32/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.Shell32.dll",
+        "lib/net48/Vanara.PInvoke.Shell32.xml",
+        "lib/net5.0/Vanara.PInvoke.Shell32.dll",
+        "lib/net5.0/Vanara.PInvoke.Shell32.xml",
+        "lib/net6.0/Vanara.PInvoke.Shell32.dll",
+        "lib/net6.0/Vanara.PInvoke.Shell32.xml",
+        "lib/net7.0/Vanara.PInvoke.Shell32.dll",
+        "lib/net7.0/Vanara.PInvoke.Shell32.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Shell32.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.Shell32.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Shell32.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.Shell32.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Shell32.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.Shell32.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.Shell32.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.Shell32.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.Shell32.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.Shell32.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.shell32.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.shell32.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.ShlwApi/4.1.6": {
+      "sha512": "Jk7reUrsEAndL5+ux20DBc4Z7EcF+nfwwX9AUvA37owVJtSpYYHi1vC06hEKVhmo+mRZt2EvgRzqys3E1CEUrA==",
+      "type": "package",
+      "path": "vanara.pinvoke.shlwapi/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.ShlwApi.dll",
+        "lib/net48/Vanara.PInvoke.ShlwApi.xml",
+        "lib/net5.0/Vanara.PInvoke.ShlwApi.dll",
+        "lib/net5.0/Vanara.PInvoke.ShlwApi.xml",
+        "lib/net6.0/Vanara.PInvoke.ShlwApi.dll",
+        "lib/net6.0/Vanara.PInvoke.ShlwApi.xml",
+        "lib/net7.0/Vanara.PInvoke.ShlwApi.dll",
+        "lib/net7.0/Vanara.PInvoke.ShlwApi.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.ShlwApi.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.ShlwApi.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.ShlwApi.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.ShlwApi.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.ShlwApi.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.ShlwApi.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.ShlwApi.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.ShlwApi.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.ShlwApi.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.ShlwApi.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.shlwapi.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.shlwapi.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.User32/4.1.6": {
+      "sha512": "76VVqeT47QvqN16CZLDrrbM5lyQTUFxtt7fLiT4R3LYGl85wujqSIP62KsSDhrfmiukvJFXyS44exy/qZ/eAgA==",
+      "type": "package",
+      "path": "vanara.pinvoke.user32/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.User32.dll",
+        "lib/net48/Vanara.PInvoke.User32.xml",
+        "lib/net5.0/Vanara.PInvoke.User32.dll",
+        "lib/net5.0/Vanara.PInvoke.User32.xml",
+        "lib/net6.0/Vanara.PInvoke.User32.dll",
+        "lib/net6.0/Vanara.PInvoke.User32.xml",
+        "lib/net7.0/Vanara.PInvoke.User32.dll",
+        "lib/net7.0/Vanara.PInvoke.User32.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.User32.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.User32.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.User32.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.User32.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.User32.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.User32.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.User32.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.User32.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.User32.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.User32.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.user32.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.user32.nuspec"
+      ]
+    },
+    "Vanara.PInvoke.UxTheme/4.1.6": {
+      "sha512": "Mt1IS6fhzCcxG9eFtQra5l0wbjXTXzTjqv8JHhsRMiCjnB5fBt7U/nm5RSOpA5H89Bx3eFE16u0jTFL2wdOONA==",
+      "type": "package",
+      "path": "vanara.pinvoke.uxtheme/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.PInvoke.UxTheme.dll",
+        "lib/net48/Vanara.PInvoke.UxTheme.xml",
+        "lib/net5.0/Vanara.PInvoke.UxTheme.dll",
+        "lib/net5.0/Vanara.PInvoke.UxTheme.xml",
+        "lib/net6.0/Vanara.PInvoke.UxTheme.dll",
+        "lib/net6.0/Vanara.PInvoke.UxTheme.xml",
+        "lib/net7.0/Vanara.PInvoke.UxTheme.dll",
+        "lib/net7.0/Vanara.PInvoke.UxTheme.xml",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.UxTheme.dll",
+        "lib/net8.0-windows7.0/Vanara.PInvoke.UxTheme.xml",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.UxTheme.dll",
+        "lib/net9.0-windows7.0/Vanara.PInvoke.UxTheme.xml",
+        "lib/netcoreapp3.1/Vanara.PInvoke.UxTheme.dll",
+        "lib/netcoreapp3.1/Vanara.PInvoke.UxTheme.xml",
+        "lib/netstandard2.0/Vanara.PInvoke.UxTheme.dll",
+        "lib/netstandard2.0/Vanara.PInvoke.UxTheme.xml",
+        "lib/netstandard2.1/Vanara.PInvoke.UxTheme.dll",
+        "lib/netstandard2.1/Vanara.PInvoke.UxTheme.xml",
+        "pkgreadme.md",
+        "vanara.pinvoke.uxtheme.4.1.6.nupkg.sha512",
+        "vanara.pinvoke.uxtheme.nuspec"
+      ]
+    },
+    "Vanara.Security/4.1.6": {
+      "sha512": "A9di7eZdWlGBFsSl8gmY1QqhrY/KZ6/eJcUY43wk4bIlZ0subd68Y/AxSEL6ODz9/D37yED4p7UbBdxyC044jw==",
+      "type": "package",
+      "path": "vanara.security/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.Security.dll",
+        "lib/net48/Vanara.Security.xml",
+        "lib/net5.0/Vanara.Security.dll",
+        "lib/net5.0/Vanara.Security.xml",
+        "lib/net6.0/Vanara.Security.dll",
+        "lib/net6.0/Vanara.Security.xml",
+        "lib/net7.0/Vanara.Security.dll",
+        "lib/net7.0/Vanara.Security.xml",
+        "lib/net8.0-windows7.0/Vanara.Security.dll",
+        "lib/net8.0-windows7.0/Vanara.Security.xml",
+        "lib/net9.0-windows7.0/Vanara.Security.dll",
+        "lib/net9.0-windows7.0/Vanara.Security.xml",
+        "lib/netcoreapp3.1/Vanara.Security.dll",
+        "lib/netcoreapp3.1/Vanara.Security.xml",
+        "lib/netstandard2.0/Vanara.Security.dll",
+        "lib/netstandard2.0/Vanara.Security.xml",
+        "lib/netstandard2.1/Vanara.Security.dll",
+        "lib/netstandard2.1/Vanara.Security.xml",
+        "pkgreadme.md",
+        "vanara.security.4.1.6.nupkg.sha512",
+        "vanara.security.nuspec"
+      ]
+    },
+    "Vanara.Windows.Extensions/4.1.6": {
+      "sha512": "HBVoPB8tqjpUoAeMMjc/prYe+bWc+TDdovTcVCc3BDPA7pXpD/UFK9nquzEMl4oB8u1BP0bj/aq5iv4MKE0i0g==",
+      "type": "package",
+      "path": "vanara.windows.extensions/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.Windows.Extensions.dll",
+        "lib/net48/Vanara.Windows.Extensions.xml",
+        "lib/net5.0/Vanara.Windows.Extensions.dll",
+        "lib/net5.0/Vanara.Windows.Extensions.xml",
+        "lib/net6.0/Vanara.Windows.Extensions.dll",
+        "lib/net6.0/Vanara.Windows.Extensions.xml",
+        "lib/net7.0/Vanara.Windows.Extensions.dll",
+        "lib/net7.0/Vanara.Windows.Extensions.xml",
+        "lib/net8.0-windows7.0/Vanara.Windows.Extensions.dll",
+        "lib/net8.0-windows7.0/Vanara.Windows.Extensions.xml",
+        "lib/net9.0-windows7.0/Vanara.Windows.Extensions.dll",
+        "lib/net9.0-windows7.0/Vanara.Windows.Extensions.xml",
+        "lib/netcoreapp3.1/Vanara.Windows.Extensions.dll",
+        "lib/netcoreapp3.1/Vanara.Windows.Extensions.xml",
+        "lib/netstandard2.0/Vanara.Windows.Extensions.dll",
+        "lib/netstandard2.0/Vanara.Windows.Extensions.xml",
+        "lib/netstandard2.1/Vanara.Windows.Extensions.dll",
+        "lib/netstandard2.1/Vanara.Windows.Extensions.xml",
+        "pkgreadme.md",
+        "vanara.windows.extensions.4.1.6.nupkg.sha512",
+        "vanara.windows.extensions.nuspec"
+      ]
+    },
+    "Vanara.Windows.Forms/4.1.6": {
+      "sha512": "gJC9K7eRaPRrukDh7wrENXNOD6QfvsvXE40z+WMJjtCr4D9QspY+qil7sxaAlAHTfZKr4K0/U9eUWBOytDlbhg==",
+      "type": "package",
+      "path": "vanara.windows.forms/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.Windows.Forms.dll",
+        "lib/net48/Vanara.Windows.Forms.xml",
+        "lib/net48/fr/Vanara.Windows.Forms.resources.dll",
+        "lib/net6.0/Vanara.Windows.Forms.dll",
+        "lib/net6.0/Vanara.Windows.Forms.xml",
+        "lib/net6.0/fr/Vanara.Windows.Forms.resources.dll",
+        "lib/net7.0/Vanara.Windows.Forms.dll",
+        "lib/net7.0/Vanara.Windows.Forms.xml",
+        "lib/net7.0/fr/Vanara.Windows.Forms.resources.dll",
+        "lib/net8.0-windows7.0/Vanara.Windows.Forms.dll",
+        "lib/net8.0-windows7.0/Vanara.Windows.Forms.xml",
+        "lib/net8.0-windows7.0/fr/Vanara.Windows.Forms.resources.dll",
+        "lib/net9.0-windows7.0/Vanara.Windows.Forms.dll",
+        "lib/net9.0-windows7.0/Vanara.Windows.Forms.xml",
+        "lib/net9.0-windows7.0/fr/Vanara.Windows.Forms.resources.dll",
+        "lib/netcoreapp3.1/Vanara.Windows.Forms.dll",
+        "lib/netcoreapp3.1/Vanara.Windows.Forms.xml",
+        "lib/netcoreapp3.1/fr/Vanara.Windows.Forms.resources.dll",
+        "pkgreadme.md",
+        "vanara.windows.forms.4.1.6.nupkg.sha512",
+        "vanara.windows.forms.nuspec"
+      ]
+    },
+    "Vanara.Windows.Shell/4.1.6": {
+      "sha512": "tPhKP5Z8WSSX3Kp1iRK5e9NQeuddh3DAdZhhL6nkmqJDaRuP1oZIhuBiGmUZ3zTVYHeWgQPcyn3qosL3Bl1vcA==",
+      "type": "package",
+      "path": "vanara.windows.shell/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.Windows.Shell.dll",
+        "lib/net48/Vanara.Windows.Shell.xml",
+        "lib/net6.0/Vanara.Windows.Shell.dll",
+        "lib/net6.0/Vanara.Windows.Shell.xml",
+        "lib/net7.0/Vanara.Windows.Shell.dll",
+        "lib/net7.0/Vanara.Windows.Shell.xml",
+        "lib/net8.0-windows7.0/Vanara.Windows.Shell.dll",
+        "lib/net8.0-windows7.0/Vanara.Windows.Shell.xml",
+        "lib/net9.0-windows7.0/Vanara.Windows.Shell.dll",
+        "lib/net9.0-windows7.0/Vanara.Windows.Shell.xml",
+        "lib/netcoreapp3.1/Vanara.Windows.Shell.dll",
+        "lib/netcoreapp3.1/Vanara.Windows.Shell.xml",
+        "pkgreadme.md",
+        "vanara.windows.shell.4.1.6.nupkg.sha512",
+        "vanara.windows.shell.nuspec"
+      ]
+    },
+    "Vanara.Windows.Shell.Common/4.1.6": {
+      "sha512": "B7vEjAV7v/MPUt5Mu98sgwWSHy9orh6tqlM25XeC6PS4Ap0VbMVI8lUWYKqvNGfMF1H327tNY6oDxZiTXj5nrA==",
+      "type": "package",
+      "path": "vanara.windows.shell.common/4.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Vanara64x64.png",
+        "lib/net48/Vanara.Windows.Shell.Common.dll",
+        "lib/net48/Vanara.Windows.Shell.Common.xml",
+        "lib/net5.0/Vanara.Windows.Shell.Common.dll",
+        "lib/net5.0/Vanara.Windows.Shell.Common.xml",
+        "lib/net6.0/Vanara.Windows.Shell.Common.dll",
+        "lib/net6.0/Vanara.Windows.Shell.Common.xml",
+        "lib/net7.0/Vanara.Windows.Shell.Common.dll",
+        "lib/net7.0/Vanara.Windows.Shell.Common.xml",
+        "lib/net8.0-windows7.0/Vanara.Windows.Shell.Common.dll",
+        "lib/net8.0-windows7.0/Vanara.Windows.Shell.Common.xml",
+        "lib/net9.0-windows7.0/Vanara.Windows.Shell.Common.dll",
+        "lib/net9.0-windows7.0/Vanara.Windows.Shell.Common.xml",
+        "lib/netcoreapp3.1/Vanara.Windows.Shell.Common.dll",
+        "lib/netcoreapp3.1/Vanara.Windows.Shell.Common.xml",
+        "lib/netstandard2.0/Vanara.Windows.Shell.Common.dll",
+        "lib/netstandard2.0/Vanara.Windows.Shell.Common.xml",
+        "lib/netstandard2.1/Vanara.Windows.Shell.Common.dll",
+        "lib/netstandard2.1/Vanara.Windows.Shell.Common.xml",
+        "pkgreadme.md",
+        "vanara.windows.shell.common.4.1.6.nupkg.sha512",
+        "vanara.windows.shell.common.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net8.0-windows10.0.26100": [
+      "BubbleSeekBar >= 1.0.0",
       "NAudio >= 2.2.1",
       "NAudio.WaveFormRenderer >= 2.0.0",
-      "ReaLTaiizor >= 3.8.1.3"
+      "ReaLTaiizor >= 3.8.1.3",
+      "Syncfusion.Tools.Windows >= 30.1.37",
+      "Vanara.Windows.Forms >= 4.1.6"
     ]
   },
   "packageFolders": {
@@ -733,6 +2832,10 @@
       "net8.0-windows10.0.26100": {
         "targetAlias": "net8.0-windows10.0.26100.0",
         "dependencies": {
+          "BubbleSeekBar": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "NAudio": {
             "target": "Package",
             "version": "[2.2.1, )"
@@ -744,6 +2847,14 @@
           "ReaLTaiizor": {
             "target": "Package",
             "version": "[3.8.1.3, )"
+          },
+          "Syncfusion.Tools.Windows": {
+            "target": "Package",
+            "version": "[30.1.37, )"
+          },
+          "Vanara.Windows.Forms": {
+            "target": "Package",
+            "version": "[4.1.6, )"
           }
         },
         "imports": [
@@ -777,5 +2888,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BubbleSeekBar 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows10.0.26100'. This package may not be fully compatible with your project.",
+      "libraryId": "BubbleSeekBar",
+      "targetGraphs": [
+        "net8.0-windows10.0.26100"
+      ]
+    }
+  ]
 }
