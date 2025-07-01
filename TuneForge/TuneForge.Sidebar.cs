@@ -1,6 +1,6 @@
 ﻿namespace TuneForge
 {
-    public partial class Form1
+    public partial class TuneForge
     {
         private readonly int _sidebarOffset = 85; // Default offset
         private bool _isSidebarOpen;
@@ -24,10 +24,16 @@
             {
                 return;
             }
+
+            if (this.IsDisposed || !this.IsHandleCreated)
+            {
+                return;
+            }
+
             Sidebar sidebar = new Sidebar(this , OpenSideBar);
             Controls.Add(sidebar);
             sidebar.InitFullscreenResize();
-           
+            
 
             if (sidebar.IsHandleCreated)
             {
@@ -41,15 +47,27 @@
         {
             if (musicBar != null)
                 musicBar.Location = new Point(musicBar.Location.X + offsetX, musicBar.Location.Y);
-
+            
             if (startMusicLabel != null)
                 startMusicLabel.Location = new Point(startMusicLabel.Location.X + offsetX, startMusicLabel.Location.Y);
-
-            if (endMusicLabel != null)
-                endMusicLabel.Location = new Point(endMusicLabel.Location.X + offsetX, endMusicLabel.Location.Y);
-
+            
+            if (endMusicLabel != null) 
+                 endMusicLabel.Location = new Point(endMusicLabel.Location.X + offsetX, endMusicLabel.Location.Y);
+            
             if (MusicTrackBar != null)
                 MusicTrackBar.Location = new Point(MusicTrackBar.Location.X + offsetX, MusicTrackBar.Location.Y);
+            
+            if(StatusVolumeSound != null)
+                StatusVolumeSound.Location = new Point(StatusVolumeSound.Location.X + offsetX, StatusVolumeSound.Location.Y); 
+            
+            if (MusicLogo != null)
+                MusicLogo.Location = new Point(MusicLogo.Location.X + offsetX, MusicLogo.Location.Y);
+            
+            if (nameSong != null)
+                nameSong.Location = new Point(nameSong.Location.X + offsetX, nameSong.Location.Y);
+            
+            if (nameArtist != null)
+                nameArtist.Location = new Point(nameArtist.Location.X + offsetX, nameArtist.Location.Y);
         }
     }
 }
