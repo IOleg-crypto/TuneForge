@@ -115,4 +115,15 @@
   <metadata name="OpenFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing.Primitives, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="StatusVolumeSound.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABcAAAAbCAYAAACX6BTbAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAQ
+        lAAAEJQBAkcyUQAAATdJREFUSEvtlbFugzAQhpm7Zs3cuWtXsnbOmq6s7QuwxLXLUClyIFHfoUMlMJb6
+        cPXBXYItYkhMhkj5pV8In/0d/kEmChWT5ePHtnxl8meGQ+FK098HXtRLkas9GBpgKUxCqoXY1V8EngTe
+        RlC9H6GmgdQsCO5GAOayXsK4yPXqYrgbAc/VG+wAy9EgHJ4g+9YxTLDtRqAWuOQgLxy31uR2yhQBLrHk
+        hbOdeu6AYKLlbgR98sKpyKVOcOgsjYL3FkfIXb/elk+fhX6B6+Rw6/4Ov334Vb8WS1mhYyiCuawSmNT1
+        0B/GC0/35mzBM/mUfU0Gdw4NmGzOGJh4tN2UZeYcwiUHBcXaNHWaiE01x3LwOzMN/mYEIVNUwXBS08Td
+        RetwOKknqungIDeqSeGktgn8sdxPNYr+AYyYFYhGYuCxAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

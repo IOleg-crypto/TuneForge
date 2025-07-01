@@ -38,13 +38,19 @@ partial class Form1
         pictureBox2 = new System.Windows.Forms.PictureBox();
         pictureBox1 = new System.Windows.Forms.PictureBox();
         OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-        MusicTrackBar = new ReaLTaiizor.Controls.MetroTrackBar();
-        startMusicLabel = new System.Windows.Forms.Label();
         endMusicLabel = new System.Windows.Forms.Label();
+        startMusicLabel = new System.Windows.Forms.Label();
+        MusicTrackBar = new ReaLTaiizor.Controls.MetroTrackBar();
+        StatusVolumeSound = new System.Windows.Forms.PictureBox();
+        MusicLogo = new System.Windows.Forms.PictureBox();
+        nameSong = new System.Windows.Forms.Label();
+        nameArtist = new System.Windows.Forms.Label();
         musicBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)StatusVolumeSound).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)MusicLogo).BeginInit();
         SuspendLayout();
         // 
         // OpenSideBar
@@ -91,8 +97,8 @@ partial class Form1
         // 
         labelProgram.BackColor = System.Drawing.Color.Black;
         labelProgram.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
-        labelProgram.ForeColor = System.Drawing.Color.WhiteSmoke;
-        labelProgram.Location = new System.Drawing.Point(784, 9);
+        labelProgram.ForeColor = System.Drawing.Color.Transparent;
+        labelProgram.Location = new System.Drawing.Point(784, 12);
         labelProgram.Name = "labelProgram";
         labelProgram.Size = new System.Drawing.Size(123, 37);
         labelProgram.TabIndex = 2;
@@ -136,6 +142,27 @@ partial class Form1
         pictureBox1.TabStop = false;
         pictureBox1.Click += OnClickMusic;
         // 
+        // endMusicLabel
+        // 
+        endMusicLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
+        endMusicLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+        endMusicLabel.Location = new System.Drawing.Point(757, 423);
+        endMusicLabel.Name = "endMusicLabel";
+        endMusicLabel.Size = new System.Drawing.Size(72, 30);
+        endMusicLabel.TabIndex = 8;
+        endMusicLabel.Text = "00:00";
+        // 
+        // startMusicLabel
+        // 
+        startMusicLabel.BackColor = System.Drawing.Color.Transparent;
+        startMusicLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
+        startMusicLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+        startMusicLabel.Location = new System.Drawing.Point(121, 425);
+        startMusicLabel.Name = "startMusicLabel";
+        startMusicLabel.Size = new System.Drawing.Size(68, 28);
+        startMusicLabel.TabIndex = 7;
+        startMusicLabel.Text = "00:00";
+        // 
         // MusicTrackBar
         // 
         MusicTrackBar.BackgroundColor = System.Drawing.Color.FromArgb(((int)((byte)205)), ((int)((byte)205)), ((int)((byte)205)));
@@ -146,7 +173,7 @@ partial class Form1
         MusicTrackBar.DisabledValueColor = System.Drawing.Color.FromArgb(((int)((byte)205)), ((int)((byte)205)), ((int)((byte)205)));
         MusicTrackBar.HandlerColor = System.Drawing.Color.FromArgb(((int)((byte)180)), ((int)((byte)180)), ((int)((byte)180)));
         MusicTrackBar.IsDerivedStyle = true;
-        MusicTrackBar.Location = new System.Drawing.Point(134, 406);
+        MusicTrackBar.Location = new System.Drawing.Point(134, 404);
         MusicTrackBar.Maximum = 100;
         MusicTrackBar.Minimum = 0;
         MusicTrackBar.Name = "MusicTrackBar";
@@ -160,26 +187,50 @@ partial class Form1
         MusicTrackBar.Value = 0;
         MusicTrackBar.ValueColor = System.Drawing.Color.FromArgb(((int)((byte)65)), ((int)((byte)177)), ((int)((byte)225)));
         // 
-        // startMusicLabel
+        // StatusVolumeSound
         // 
-        startMusicLabel.BackColor = System.Drawing.Color.Transparent;
-        startMusicLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
-        startMusicLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-        startMusicLabel.Location = new System.Drawing.Point(121, 425);
-        startMusicLabel.Name = "startMusicLabel";
-        startMusicLabel.Size = new System.Drawing.Size(68, 28);
-        startMusicLabel.TabIndex = 7;
-        startMusicLabel.Text = "00:00";
+        StatusVolumeSound.BackColor = System.Drawing.Color.Transparent;
+        StatusVolumeSound.Image = ((System.Drawing.Image)resources.GetObject("StatusVolumeSound.Image"));
+        StatusVolumeSound.Location = new System.Drawing.Point(121, 360);
+        StatusVolumeSound.Name = "StatusVolumeSound";
+        StatusVolumeSound.Size = new System.Drawing.Size(33, 38);
+        StatusVolumeSound.TabIndex = 9;
+        StatusVolumeSound.TabStop = false;
+        StatusVolumeSound.Click += StatusVolumeSound_Click;
         // 
-        // endMusicLabel
+        // MusicLogo
         // 
-        endMusicLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
-        endMusicLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-        endMusicLabel.Location = new System.Drawing.Point(761, 423);
-        endMusicLabel.Name = "endMusicLabel";
-        endMusicLabel.Size = new System.Drawing.Size(72, 30);
-        endMusicLabel.TabIndex = 8;
-        endMusicLabel.Text = "00:00";
+        MusicLogo.BackColor = System.Drawing.Color.DimGray;
+        MusicLogo.Location = new System.Drawing.Point(305, 12);
+        MusicLogo.Name = "MusicLogo";
+        MusicLogo.Size = new System.Drawing.Size(323, 255);
+        MusicLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+        MusicLogo.TabIndex = 10;
+        MusicLogo.TabStop = false;
+        // 
+        // nameSong
+        // 
+        nameSong.BackColor = System.Drawing.Color.Transparent;
+        nameSong.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
+        nameSong.ForeColor = System.Drawing.SystemColors.ButtonFace;
+        nameSong.Location = new System.Drawing.Point(415, 296);
+        nameSong.Name = "nameSong";
+        nameSong.Size = new System.Drawing.Size(140, 26);
+        nameSong.TabIndex = 11;
+        nameSong.Text = "Unknown";
+        // 
+        // nameArtist
+        // 
+        nameArtist.BackColor = System.Drawing.Color.Transparent;
+        nameArtist.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        nameArtist.ForeColor = System.Drawing.SystemColors.ButtonFace;
+        nameArtist.Location = new System.Drawing.Point(356, 344);
+        nameArtist.Name = "nameArtist";
+        nameArtist.Size = new System.Drawing.Size(226, 27);
+        nameArtist.TabIndex = 12;
+        nameArtist.Text = "Unknown";
+        nameArtist.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        nameArtist.Click += label2_Click;
         // 
         // Form1
         // 
@@ -187,6 +238,10 @@ partial class Form1
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.Color.Black;
         ClientSize = new System.Drawing.Size(910, 610);
+        Controls.Add(nameArtist);
+        Controls.Add(nameSong);
+        Controls.Add(MusicLogo);
+        Controls.Add(StatusVolumeSound);
         Controls.Add(startMusicLabel);
         Controls.Add(endMusicLabel);
         Controls.Add(MusicTrackBar);
@@ -194,8 +249,10 @@ partial class Form1
         Controls.Add(labelProgram);
         Controls.Add(metroLabel1);
         Controls.Add(OpenSideBar);
+        DoubleBuffered = true;
         Location = new System.Drawing.Point(19, 19);
         Text = "TuneForge";
+        Load += Form1_Load;
         ResizeBegin += Form1_ResizeBegin;
         ResizeEnd += Form1_ResizeEnd;
         ControlRemoved += Form1_ControlRemoved;
@@ -203,14 +260,23 @@ partial class Form1
         ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+        ((System.ComponentModel.ISupportInitialize)StatusVolumeSound).EndInit();
+        ((System.ComponentModel.ISupportInitialize)MusicLogo).EndInit();
         ResumeLayout(false);
+        PerformLayout();
     }
 
-    private System.Windows.Forms.Label startMusicLabel;
-    private System.Windows.Forms.Label endMusicLabel;
-    
+    private System.Windows.Forms.Label nameSong;
+    private System.Windows.Forms.Label nameArtist;
 
+    private System.Windows.Forms.PictureBox MusicLogo;
+
+    private System.Windows.Forms.PictureBox StatusVolumeSound;
+
+    private System.Windows.Forms.Label endMusicLabel;
+    private System.Windows.Forms.Label startMusicLabel;
     private ReaLTaiizor.Controls.MetroTrackBar MusicTrackBar;
+
 
     private System.Windows.Forms.OpenFileDialog OpenFileDialog;
 
@@ -227,6 +293,7 @@ partial class Form1
     private ReaLTaiizor.Controls.MetroLabel metroLabel1;
 
     private ReaLTaiizor.Controls.MetroButton OpenSideBar;
+    
 
     #endregion
 }
