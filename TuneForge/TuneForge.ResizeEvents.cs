@@ -15,7 +15,7 @@
             nameArtist.Anchor = AnchorStyles.Bottom;
             
         }
-        private void Form1_ResizeBegin(object sender, EventArgs e)
+        private void TuneForge_ResizeBegin(object sender, EventArgs e)
         {
             labelProgram.Anchor = AnchorStyles.Right | AnchorStyles.Top;
             musicBar.Anchor = AnchorStyles.Bottom;
@@ -26,7 +26,7 @@
             
         }
 
-        private void Form1_ResizeEnd(object sender, EventArgs e)
+        private void TuneForge_ResizeEnd(object sender, EventArgs e)
         {
             labelProgram.Dock = DockStyle.None;
             labelProgram.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -43,7 +43,7 @@
             
             
         }
-        private void Form1_ControlRemoved(object sender, ControlEventArgs e)
+        private void TuneForge_ControlRemoved(object sender, ControlEventArgs e)
         {
             musicBar.Location = new Point(musicBar.Location.X - 80, musicBar.Location.Y);
             startMusicLabel.Location = new Point(startMusicLabel.Location.X - 80, startMusicLabel.Location.Y);

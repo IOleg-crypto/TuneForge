@@ -9,22 +9,28 @@ namespace TuneForge
         private List<SidebarItem> _items = new();
         private PictureBox _cancelIcon = null!;
         private Control? _toggleButton;
-        private readonly int _Width = 200;
-        private readonly Form ? _form;
+        private Form ? _form;
         
         public Sidebar(Form? form , Control? toggleButton = null)
         {
-            _form = form;
+            SetForm(form);
             IsToggleButtonVisible(toggleButton);
             InitSidebar();
             InitItems();
             InitCancelButton();
-            _form!.Resize += (_, _) => 
-            {
-                InitFullscreenResize();
-            };
+            HideToggleButtonIfValid();
         }
 
+        private void SetForm(Form? form)
+        {
+            _form = form ?? throw new ArgumentNullException(nameof(form), "Form can`t be null");
+        }
+
+        private void HideToggleButtonIfValid()
+        {
+            _form!.Resize += (s, e) => InitFullscreenResize();
+        }
+        
         private void IsToggleButtonVisible(Control? toggleButton = null)
         {
             _toggleButton = toggleButton;
@@ -35,31 +41,31 @@ namespace TuneForge
         }
         private void InitSidebar()
         {
-            this.SuspendLayout();
-            BackColor = Color.FromArgb(24, 21, 19);
+            SuspendLayout();
+            BackColor = Color.FromArgb(22, 22, 22);
             BorderStyle = BorderStyle.None;
             Dock = DockStyle.Left;
-            
-            Width = _Width;
-            this.DoubleBuffered = true;
-            this.SetStyle(ControlStyles.AllPaintingInWmPaint |
+            // Set sidebar size by default
+            Width = 200;
+            DoubleBuffered = true;
+            SetStyle(ControlStyles.AllPaintingInWmPaint |
                           ControlStyles.UserPaint |
                           ControlStyles.OptimizedDoubleBuffer, true);
-            this.ResumeLayout();
+            ResumeLayout();
         }
-        
-        
+
+
         public void InitFullscreenResize()
         {
-            var settingsItem = _items.Find(item =>
-                item.Label.Text == "Settings");
-            
+            var settingsItem = _items.Find(item => item.Label.Text == "Settings");
+
             if (settingsItem == null)
                 return; 
-            const int bottomMargin = 50; // Відступ від низу
+
+            const int bottomMargin = 50;
             int labelY = _form!.ClientSize.Height - bottomMargin;
 
-            settingsItem!.Label.Location = new Point(
+            settingsItem.Label.Location = new Point(
                 settingsItem.Label.Location.X,
                 labelY
             );
@@ -99,7 +105,7 @@ namespace TuneForge
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                if (_form is Form1 mainForm)
+                if (_form is TuneForge mainForm)
                 {
                     mainForm.CurrentMusicPath = openFileDialog.FileName;
                 }
@@ -108,13 +114,14 @@ namespace TuneForge
         private void InitItems()
         {
             // TODO : fix paths in future
-            AddItem("Profile",  "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\profile.png",  120, OnProfileClick);
+            //AddItem("Profile",  "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\profile.png",  120, OnProfileClick);
             AddItem("Favorite", "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\favoriter.png", 180, OnFavoriteClick);
             AddItem("Language", "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\language.png", 250, OnLanguageClick);
-            AddItem("Contract", "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\contact.png",  320, OnContractClick);
-            AddItem("Music","D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\music.png",  400, OnMusicClick);
-            AddItem("Settings", "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\settings.png", 550, OnSettingsClick);
+            //AddItem("Contact", "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\contact.png",  320, OnContractClick);
+            AddItem("Music","D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\music.png",  320, OnMusicClick);
+            AddItem("Settings", "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\settings.png", 400, OnSettingsClick);
         }
+        
 
         private void AddItem(string text, string relativePath, int top , Action action)
         {
@@ -126,7 +133,12 @@ namespace TuneForge
         private void InitCancelButton()
         {
             // TODO : fix paths in future
-            const string path = "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\cancel.png";
+            const string path = "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\exit2.png";
+            if (!File.Exists(path))
+            {
+                MessageBox.Show("File not found: " + path);
+                return;
+            }
             _cancelIcon = new PictureBox
             {
                 Image = Image.FromFile(path),
@@ -178,17 +190,6 @@ namespace TuneForge
              */
             Icon.Click += (s, e) => action();
             Label.Click += (s, e) => action();
-            /*
-             *  To draw the text smoothly
-             */
-            Label.Paint += (s, e) =>
-            {
-                e.Graphics.Clear(Label.BackColor);
-                e.Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
-
-                using var brush = new SolidBrush(Color.White);
-                e.Graphics.DrawString(Label.Text, Label.Font, brush, new PointF(0, 0));
-            };
         }
         public void AddTo(Control parent)
         {

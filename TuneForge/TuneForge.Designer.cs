@@ -1,6 +1,6 @@
 ﻿namespace TuneForge;
 
-partial class Form1
+partial class TuneForge
 {
     /// <summary>
     ///  Required designer variable.
@@ -29,13 +29,13 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TuneForge));
         OpenSideBar = new ReaLTaiizor.Controls.MetroButton();
         metroLabel1 = new ReaLTaiizor.Controls.MetroLabel();
         labelProgram = new System.Windows.Forms.Label();
         musicBar = new System.Windows.Forms.Panel();
-        pictureBox3 = new System.Windows.Forms.PictureBox();
-        pictureBox2 = new System.Windows.Forms.PictureBox();
+        previousSeek = new System.Windows.Forms.PictureBox();
+        nextSeek = new System.Windows.Forms.PictureBox();
         pictureBox1 = new System.Windows.Forms.PictureBox();
         OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
         endMusicLabel = new System.Windows.Forms.Label();
@@ -46,8 +46,8 @@ partial class Form1
         nameSong = new System.Windows.Forms.Label();
         nameArtist = new System.Windows.Forms.Label();
         musicBar.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)previousSeek).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)nextSeek).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         ((System.ComponentModel.ISupportInitialize)StatusVolumeSound).BeginInit();
         ((System.ComponentModel.ISupportInitialize)MusicLogo).BeginInit();
@@ -106,31 +106,33 @@ partial class Form1
         // 
         // musicBar
         // 
-        musicBar.Controls.Add(pictureBox3);
-        musicBar.Controls.Add(pictureBox2);
+        musicBar.Controls.Add(previousSeek);
+        musicBar.Controls.Add(nextSeek);
         musicBar.Controls.Add(pictureBox1);
         musicBar.Location = new System.Drawing.Point(259, 495);
         musicBar.Name = "musicBar";
         musicBar.Size = new System.Drawing.Size(425, 90);
         musicBar.TabIndex = 3;
         // 
-        // pictureBox3
+        // previousSeek
         // 
-        pictureBox3.Image = ((System.Drawing.Image)resources.GetObject("pictureBox3.Image"));
-        pictureBox3.Location = new System.Drawing.Point(46, 3);
-        pictureBox3.Name = "pictureBox3";
-        pictureBox3.Size = new System.Drawing.Size(70, 87);
-        pictureBox3.TabIndex = 2;
-        pictureBox3.TabStop = false;
+        previousSeek.Image = ((System.Drawing.Image)resources.GetObject("previousSeek.Image"));
+        previousSeek.Location = new System.Drawing.Point(46, 3);
+        previousSeek.Name = "previousSeek";
+        previousSeek.Size = new System.Drawing.Size(70, 87);
+        previousSeek.TabIndex = 2;
+        previousSeek.TabStop = false;
+        previousSeek.Click += startMusic;
         // 
-        // pictureBox2
+        // nextSeek
         // 
-        pictureBox2.Image = ((System.Drawing.Image)resources.GetObject("pictureBox2.Image"));
-        pictureBox2.Location = new System.Drawing.Point(252, 3);
-        pictureBox2.Name = "pictureBox2";
-        pictureBox2.Size = new System.Drawing.Size(132, 84);
-        pictureBox2.TabIndex = 1;
-        pictureBox2.TabStop = false;
+        nextSeek.Image = ((System.Drawing.Image)resources.GetObject("nextSeek.Image"));
+        nextSeek.Location = new System.Drawing.Point(252, 3);
+        nextSeek.Name = "nextSeek";
+        nextSeek.Size = new System.Drawing.Size(132, 84);
+        nextSeek.TabIndex = 1;
+        nextSeek.TabStop = false;
+        nextSeek.Click += endMusic;
         // 
         // pictureBox1
         // 
@@ -190,10 +192,11 @@ partial class Form1
         // StatusVolumeSound
         // 
         StatusVolumeSound.BackColor = System.Drawing.Color.Transparent;
+        StatusVolumeSound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
         StatusVolumeSound.Image = ((System.Drawing.Image)resources.GetObject("StatusVolumeSound.Image"));
         StatusVolumeSound.Location = new System.Drawing.Point(121, 360);
         StatusVolumeSound.Name = "StatusVolumeSound";
-        StatusVolumeSound.Size = new System.Drawing.Size(33, 38);
+        StatusVolumeSound.Size = new System.Drawing.Size(39, 38);
         StatusVolumeSound.TabIndex = 9;
         StatusVolumeSound.TabStop = false;
         StatusVolumeSound.Click += StatusVolumeSound_Click;
@@ -201,10 +204,11 @@ partial class Form1
         // MusicLogo
         // 
         MusicLogo.BackColor = System.Drawing.Color.DimGray;
-        MusicLogo.Location = new System.Drawing.Point(305, 12);
+        MusicLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+        MusicLogo.Location = new System.Drawing.Point(305, 24);
         MusicLogo.Name = "MusicLogo";
         MusicLogo.Size = new System.Drawing.Size(323, 255);
-        MusicLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+        MusicLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
         MusicLogo.TabIndex = 10;
         MusicLogo.TabStop = false;
         // 
@@ -230,9 +234,8 @@ partial class Form1
         nameArtist.TabIndex = 12;
         nameArtist.Text = "Unknown";
         nameArtist.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        nameArtist.Click += label2_Click;
         // 
-        // Form1
+        // TuneForge
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -250,20 +253,21 @@ partial class Form1
         Controls.Add(metroLabel1);
         Controls.Add(OpenSideBar);
         DoubleBuffered = true;
+        ForeColor = System.Drawing.Color.Transparent;
         Location = new System.Drawing.Point(19, 19);
         Text = "TuneForge";
-        Load += Form1_Load;
-        ResizeBegin += Form1_ResizeBegin;
-        ResizeEnd += Form1_ResizeEnd;
-        ControlRemoved += Form1_ControlRemoved;
+        FormClosing += TuneForgeClosing;
+        Load += TuneForge_Load;
+        ResizeBegin += TuneForge_ResizeBegin;
+        ResizeEnd += TuneForge_ResizeEnd;
+        ControlRemoved += TuneForge_ControlRemoved;
         musicBar.ResumeLayout(false);
-        ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+        ((System.ComponentModel.ISupportInitialize)previousSeek).EndInit();
+        ((System.ComponentModel.ISupportInitialize)nextSeek).EndInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         ((System.ComponentModel.ISupportInitialize)StatusVolumeSound).EndInit();
         ((System.ComponentModel.ISupportInitialize)MusicLogo).EndInit();
         ResumeLayout(false);
-        PerformLayout();
     }
 
     private System.Windows.Forms.Label nameSong;
@@ -280,9 +284,9 @@ partial class Form1
 
     private System.Windows.Forms.OpenFileDialog OpenFileDialog;
 
-    private System.Windows.Forms.PictureBox pictureBox3;
+    private System.Windows.Forms.PictureBox previousSeek;
 
-    private System.Windows.Forms.PictureBox pictureBox2;
+    private System.Windows.Forms.PictureBox nextSeek;
 
     private System.Windows.Forms.Panel musicBar;
 

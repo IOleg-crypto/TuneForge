@@ -664,6 +664,19 @@
           }
         }
       },
+      "TagLibSharp/2.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/TagLibSharp.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/TagLibSharp.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
       "Vanara.Core/4.1.6": {
         "type": "package",
         "compile": {
@@ -2024,6 +2037,23 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "TagLibSharp/2.3.0": {
+      "sha512": "Qo4z6ZjnIfbR3Us1Za5M2vQ97OWZPmODvVmepxZ8XW0UIVLGdO2T63/N3b23kCcyiwuIe0TQvMEQG8wUCCD1mA==",
+      "type": "package",
+      "path": "taglibsharp/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/TagLibSharp.dll",
+        "lib/net462/TagLibSharp.pdb",
+        "lib/net462/TaglibSharp.xml",
+        "lib/netstandard2.0/TagLibSharp.dll",
+        "lib/netstandard2.0/TagLibSharp.pdb",
+        "lib/netstandard2.0/TaglibSharp.xml",
+        "taglibsharp.2.3.0.nupkg.sha512",
+        "taglibsharp.nuspec"
+      ]
+    },
     "Vanara.Core/4.1.6": {
       "sha512": "6ofXAXvywY223+1cRs2uOiWWzBsy9o/m5Bh6txvF3weYSsLI18Pbaz6YCq4oLEEHD7UtE/l4qHkSMdZx9s/6LA==",
       "type": "package",
@@ -2779,6 +2809,7 @@
       "NAudio.WaveFormRenderer >= 2.0.0",
       "ReaLTaiizor >= 3.8.1.3",
       "Syncfusion.Tools.Windows >= 30.1.37",
+      "TagLibSharp >= 2.3.0",
       "Vanara.Windows.Forms >= 4.1.6"
     ]
   },
@@ -2851,6 +2882,10 @@
           "Syncfusion.Tools.Windows": {
             "target": "Package",
             "version": "[30.1.37, )"
+          },
+          "TagLibSharp": {
+            "target": "Package",
+            "version": "[2.3.0, )"
           },
           "Vanara.Windows.Forms": {
             "target": "Package",

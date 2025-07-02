@@ -8,6 +8,6 @@ static class Program
         Application.EnableVisualStyles();
         ApplicationConfiguration.Initialize();
         Application.SetCompatibleTextRenderingDefault(true);
-        Application.Run(new Form1());
+        Application.Run(new TuneForge());
     }
 }

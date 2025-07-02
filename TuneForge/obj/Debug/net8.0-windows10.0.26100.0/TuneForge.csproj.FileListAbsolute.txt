@@ -7,7 +7,6 @@ D:\gitnext\csharpProject\TuneForrge\TuneForge\bin\Debug\net8.0-windows10.0.26100
 D:\gitnext\csharpProject\TuneForrge\TuneForge\bin\Debug\net8.0-windows10.0.26100.0\Microsoft.Windows.SDK.NET.dll
 D:\gitnext\csharpProject\TuneForrge\TuneForge\bin\Debug\net8.0-windows10.0.26100.0\WinRT.Runtime.dll
 D:\gitnext\csharpProject\TuneForrge\TuneForge\obj\Debug\net8.0-windows10.0.26100.0\TuneForge.csproj.AssemblyReference.cache
-D:\gitnext\csharpProject\TuneForrge\TuneForge\obj\Debug\net8.0-windows10.0.26100.0\TuneForge.Form1.resources
 D:\gitnext\csharpProject\TuneForrge\TuneForge\obj\Debug\net8.0-windows10.0.26100.0\TuneForge.csproj.GenerateResource.cache
 D:\gitnext\csharpProject\TuneForrge\TuneForge\obj\Debug\net8.0-windows10.0.26100.0\TuneForge.GeneratedMSBuildEditorConfig.editorconfig
 D:\gitnext\csharpProject\TuneForrge\TuneForge\obj\Debug\net8.0-windows10.0.26100.0\TuneForge.AssemblyInfoInputs.cache
@@ -68,3 +67,5 @@ D:\gitnext\csharpProject\TuneForrge\TuneForge\bin\Debug\net8.0-windows10.0.26100
 D:\gitnext\csharpProject\TuneForrge\TuneForge\bin\Debug\net8.0-windows10.0.26100.0\Vanara.Windows.Shell.Common.dll
 D:\gitnext\csharpProject\TuneForrge\TuneForge\bin\Debug\net8.0-windows10.0.26100.0\fr\Vanara.Core.resources.dll
 D:\gitnext\csharpProject\TuneForrge\TuneForge\bin\Debug\net8.0-windows10.0.26100.0\fr\Vanara.Windows.Forms.resources.dll
+D:\gitnext\csharpProject\TuneForrge\TuneForge\obj\Debug\net8.0-windows10.0.26100.0\TuneForge.TuneForge.resources
+D:\gitnext\csharpProject\TuneForrge\TuneForge\bin\Debug\net8.0-windows10.0.26100.0\TagLibSharp.dll
