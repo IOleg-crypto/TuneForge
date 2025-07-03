@@ -2,6 +2,8 @@
 
 TuneForge is a Windows Forms application developed in C# for audio playback and visualization. The project leverages the powerful TagLib library for audio metadata handling, and integrates a real-time audio visualizer for an enhanced user experience.
 
+**TuneForge is developing and not fully implemented**
+
 ## Features
 
 - Audio playback with support for common audio formats (MP3, WAV, etc.)
