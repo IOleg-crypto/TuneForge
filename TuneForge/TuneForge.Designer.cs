@@ -115,7 +115,7 @@ partial class TuneForge
         musicBar.Controls.Add(previousSeek);
         musicBar.Controls.Add(nextSeek);
         musicBar.Controls.Add(pictureBox1);
-        musicBar.Location = new System.Drawing.Point(259, 495);
+        musicBar.Location = new System.Drawing.Point(259, 493);
         musicBar.Name = "musicBar";
         musicBar.Size = new System.Drawing.Size(425, 90);
         musicBar.TabIndex = 3;
@@ -133,7 +133,7 @@ partial class TuneForge
         // nextSeek
         // 
         nextSeek.Image = ((System.Drawing.Image)resources.GetObject("nextSeek.Image"));
-        nextSeek.Location = new System.Drawing.Point(252, 3);
+        nextSeek.Location = new System.Drawing.Point(272, 3);
         nextSeek.Name = "nextSeek";
         nextSeek.Size = new System.Drawing.Size(132, 84);
         nextSeek.TabIndex = 1;
@@ -143,7 +143,7 @@ partial class TuneForge
         // pictureBox1
         // 
         pictureBox1.Image = ((System.Drawing.Image)resources.GetObject("pictureBox1.Image"));
-        pictureBox1.Location = new System.Drawing.Point(139, 3);
+        pictureBox1.Location = new System.Drawing.Point(140, 3);
         pictureBox1.Name = "pictureBox1";
         pictureBox1.Size = new System.Drawing.Size(126, 87);
         pictureBox1.TabIndex = 0;
@@ -211,6 +211,7 @@ partial class TuneForge
         // 
         MusicLogo.BackColor = System.Drawing.Color.DimGray;
         MusicLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+        MusicLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
         MusicLogo.Location = new System.Drawing.Point(305, 24);
         MusicLogo.Name = "MusicLogo";
         MusicLogo.Size = new System.Drawing.Size(323, 255);
@@ -271,6 +272,7 @@ partial class TuneForge
         repeatPlayList.Size = new System.Drawing.Size(37, 36);
         repeatPlayList.TabIndex = 15;
         repeatPlayList.TabStop = false;
+        repeatPlayList.Click += repeatSong;
         // 
         // TuneForge
         // 
@@ -296,8 +298,7 @@ partial class TuneForge
         ForeColor = System.Drawing.Color.Transparent;
         Location = new System.Drawing.Point(19, 19);
         Text = "TuneForge";
-        FormClosing += TuneForgeClosing;
-        Load += TuneForge_Load;
+        Load += TuneForgeLoad;
         ResizeBegin += TuneForge_ResizeBegin;
         ResizeEnd += TuneForge_ResizeEnd;
         ControlRemoved += TuneForge_ControlRemoved;

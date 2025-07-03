@@ -106,6 +106,12 @@ namespace TuneForge
                     mainForm.CurrentMusicPath = openFileDialog.FileName;
                 }
             }
+
+            if (_form is TuneForge form)
+            {
+                form.TakeArtistSongName(form.CurrentMusicPath); 
+                form.UpdateAlbumArt(form.CurrentMusicPath); 
+            }
         }
         private void InitItems()
         {

@@ -8,13 +8,5 @@ namespace TuneForge
             LayoutMusicComponents();
             InitTimerMusic();
         }
-
-
-        private void TuneForge_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        
     }
 }

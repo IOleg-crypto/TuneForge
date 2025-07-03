@@ -1,13 +1,11 @@
 ﻿namespace TuneForge
-{ 
+{
     public partial class TuneForge : Form
     {
-        private void TuneForgeClosing(object sender, FormClosingEventArgs e)
+        private void TuneForgeLoad(object sender, EventArgs e)
         {
-            // audioFile!.Dispose();
-            // audioFile = null;
-            // outputDevice?.Dispose();
-            // outputDevice = null;
+            
         }
+        
     }
 }
