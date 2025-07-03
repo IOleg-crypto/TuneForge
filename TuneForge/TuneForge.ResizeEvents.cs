@@ -13,7 +13,9 @@
             MusicLogo.Anchor = AnchorStyles.Bottom;
             nameSong.Anchor = AnchorStyles.Bottom;
             nameArtist.Anchor = AnchorStyles.Bottom;
-            
+            selectFavoriteSong.Anchor = AnchorStyles.Bottom;
+            repeatPlayList.Anchor = AnchorStyles.Bottom;
+            Shuffle.Anchor = AnchorStyles.Bottom;
         }
         private void TuneForge_ResizeBegin(object sender, EventArgs e)
         {
@@ -23,7 +25,9 @@
             startMusicLabel.Anchor = AnchorStyles.Bottom;
             endMusicLabel.Anchor = AnchorStyles.Bottom;
             StatusVolumeSound.Anchor = AnchorStyles.Bottom;
-            
+            selectFavoriteSong.Anchor = AnchorStyles.Bottom;
+            repeatPlayList.Anchor = AnchorStyles.Bottom;
+            Shuffle.Anchor = AnchorStyles.Bottom;
         }
 
         private void TuneForge_ResizeEnd(object sender, EventArgs e)
@@ -40,19 +44,29 @@
             endMusicLabel.Anchor = AnchorStyles.Bottom;
             StatusVolumeSound.Dock = DockStyle.None;
             StatusVolumeSound.Anchor = AnchorStyles.Bottom;
+            selectFavoriteSong.Dock = DockStyle.None;
+            selectFavoriteSong.Anchor = AnchorStyles.Bottom;
+            repeatPlayList.Dock = DockStyle.None;
+            repeatPlayList.Anchor = AnchorStyles.Bottom;
+            Shuffle.Dock = DockStyle.None;
+            Shuffle.Anchor = AnchorStyles.Bottom;
             
             
         }
         private void TuneForge_ControlRemoved(object sender, ControlEventArgs e)
         {
-            musicBar.Location = new Point(musicBar.Location.X - 80, musicBar.Location.Y);
-            startMusicLabel.Location = new Point(startMusicLabel.Location.X - 80, startMusicLabel.Location.Y);
-            endMusicLabel.Location = new Point(endMusicLabel.Location.X - 80, endMusicLabel.Location.Y);
-            MusicTrackBar.Location = new Point(MusicTrackBar.Location.X - 80, MusicTrackBar.Location.Y);
-            StatusVolumeSound.Location = new Point(StatusVolumeSound.Location.X - 80, StatusVolumeSound.Location.Y);
-            MusicLogo.Location = new Point(MusicLogo.Location.X - 80, MusicLogo.Location.Y);
-            nameSong.Location = new Point(nameSong.Location.X - 80, nameSong.Location.Y);
-            nameArtist.Location = new Point(nameArtist.Location.X - 80, nameArtist.Location.Y);
+            Control[] controlsToShift =
+            [
+                musicBar, startMusicLabel, endMusicLabel, MusicTrackBar,
+                StatusVolumeSound, MusicLogo, nameSong, nameArtist,
+                Shuffle, selectFavoriteSong, repeatPlayList
+            ];
+
+            foreach (var control in controlsToShift)
+            {
+                control.Location = new Point(control.Location.X - 80, control.Location.Y);
+            }
         }
+        
     }
 }

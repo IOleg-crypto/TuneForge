@@ -16,6 +16,7 @@ namespace TuneForge
         private bool _isMusicPlaying;
         private bool _isSoundOn;
         private bool _userIsDragging;
+        private bool _IsSelectedSongFavorite;
         
         private Image? GetAlbumArt(string path)
         {
@@ -57,6 +58,40 @@ namespace TuneForge
             MusicTrackBar.MouseUp   += MusicTrackBar_MouseUp;
             _timer.Interval = 500;
             _timer.Tick += TimerTime_Tick;
+        }
+        
+        private void TakeArtistSongName(string path)
+        {
+            try
+            {
+                var file = TagLib.File.Create(path);
+                string artist = file.Tag.FirstPerformer ?? "";
+                string title = file.Tag.Title ?? "";
+                
+                if (string.IsNullOrWhiteSpace(artist) || string.IsNullOrWhiteSpace(title))
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(path);
+                    string[] parts = fileName.Split(" - ", StringSplitOptions.RemoveEmptyEntries);
+
+                    if (parts.Length == 2)
+                    {
+                        artist = string.IsNullOrWhiteSpace(artist) ? parts[0].Trim() : artist;
+                        title = string.IsNullOrWhiteSpace(title) ? parts[1].Trim() : title;
+                    }
+                    else
+                    {
+                        title = fileName;
+                    }
+                }
+
+                nameArtist.Text = string.IsNullOrWhiteSpace(artist) ? "Unknown" : artist;
+                nameSong.Text = string.IsNullOrWhiteSpace(title) ? "Unknown" : title;
+            }
+            catch
+            {
+                nameArtist.Text = "Unknown";
+                nameSong.Text = "Unknown";
+            }
         }
         
         private void MusicTrackBar_MouseUp(object? sender, MouseEventArgs e)
@@ -139,7 +174,7 @@ namespace TuneForge
                     outputDevice.PlaybackStopped += OnPlaybackStopped;
                     outputDevice.Volume = 1f;
                     _isSoundOn = true;
-
+                    TakeArtistSongName(CurrentMusicPath);
                     outputDevice.Play();
                     _isMusicPlaying = true;
                     _timer.Start();
@@ -218,6 +253,24 @@ namespace TuneForge
         private void endMusic(object sender, EventArgs e)
         {
             if (audioFile != null) audioFile.CurrentTime = audioFile.TotalTime - TimeSpan.FromMilliseconds(500);
+        }
+        
+        private void selectFavoriteSongToPlayList(object sender, EventArgs e)
+        {
+            if (outputDevice == null || audioFile == null)
+            {
+                return;
+            }
+            if (_IsSelectedSongFavorite)
+            {
+                selectFavoriteSong.Image = Image.FromFile("D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\menu\\favorite_b.png");
+                _IsSelectedSongFavorite = false;
+            }
+            else
+            {
+                selectFavoriteSong.Image = Image.FromFile("D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\favorite_a.png");
+                _IsSelectedSongFavorite = true;
+            }
         }
     }
 }

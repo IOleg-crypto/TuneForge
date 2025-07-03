@@ -76,10 +76,6 @@ namespace TuneForge
             );
         }
         
-        private void OnProfileClick()
-        {
-            MessageBox.Show(@"Profile");
-        }
         private void OnFavoriteClick()
         {
             MessageBox.Show(@"Favorite");

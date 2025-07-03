@@ -45,12 +45,18 @@ partial class TuneForge
         MusicLogo = new System.Windows.Forms.PictureBox();
         nameSong = new System.Windows.Forms.Label();
         nameArtist = new System.Windows.Forms.Label();
+        selectFavoriteSong = new System.Windows.Forms.PictureBox();
+        Shuffle = new System.Windows.Forms.PictureBox();
+        repeatPlayList = new System.Windows.Forms.PictureBox();
         musicBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)previousSeek).BeginInit();
         ((System.ComponentModel.ISupportInitialize)nextSeek).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         ((System.ComponentModel.ISupportInitialize)StatusVolumeSound).BeginInit();
         ((System.ComponentModel.ISupportInitialize)MusicLogo).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)selectFavoriteSong).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)Shuffle).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)repeatPlayList).BeginInit();
         SuspendLayout();
         // 
         // OpenSideBar
@@ -214,26 +220,57 @@ partial class TuneForge
         // 
         // nameSong
         // 
+        nameSong.AutoEllipsis = true;
         nameSong.BackColor = System.Drawing.Color.Transparent;
+        nameSong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
         nameSong.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
         nameSong.ForeColor = System.Drawing.SystemColors.ButtonFace;
-        nameSong.Location = new System.Drawing.Point(415, 296);
+        nameSong.Location = new System.Drawing.Point(259, 295);
         nameSong.Name = "nameSong";
-        nameSong.Size = new System.Drawing.Size(140, 26);
+        nameSong.Size = new System.Drawing.Size(425, 32);
         nameSong.TabIndex = 11;
         nameSong.Text = "Unknown";
+        nameSong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         // 
         // nameArtist
         // 
         nameArtist.BackColor = System.Drawing.Color.Transparent;
         nameArtist.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
         nameArtist.ForeColor = System.Drawing.SystemColors.ButtonFace;
-        nameArtist.Location = new System.Drawing.Point(356, 344);
+        nameArtist.Location = new System.Drawing.Point(354, 344);
         nameArtist.Name = "nameArtist";
         nameArtist.Size = new System.Drawing.Size(226, 27);
         nameArtist.TabIndex = 12;
         nameArtist.Text = "Unknown";
         nameArtist.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // selectFavoriteSong
+        // 
+        selectFavoriteSong.Image = ((System.Drawing.Image)resources.GetObject("selectFavoriteSong.Image"));
+        selectFavoriteSong.Location = new System.Drawing.Point(726, 360);
+        selectFavoriteSong.Name = "selectFavoriteSong";
+        selectFavoriteSong.Size = new System.Drawing.Size(33, 38);
+        selectFavoriteSong.TabIndex = 13;
+        selectFavoriteSong.TabStop = false;
+        selectFavoriteSong.Click += selectFavoriteSongToPlayList;
+        // 
+        // Shuffle
+        // 
+        Shuffle.Image = ((System.Drawing.Image)resources.GetObject("Shuffle.Image"));
+        Shuffle.Location = new System.Drawing.Point(784, 360);
+        Shuffle.Name = "Shuffle";
+        Shuffle.Size = new System.Drawing.Size(35, 33);
+        Shuffle.TabIndex = 14;
+        Shuffle.TabStop = false;
+        // 
+        // repeatPlayList
+        // 
+        repeatPlayList.Image = ((System.Drawing.Image)resources.GetObject("repeatPlayList.Image"));
+        repeatPlayList.Location = new System.Drawing.Point(837, 360);
+        repeatPlayList.Name = "repeatPlayList";
+        repeatPlayList.Size = new System.Drawing.Size(37, 36);
+        repeatPlayList.TabIndex = 15;
+        repeatPlayList.TabStop = false;
         // 
         // TuneForge
         // 
@@ -241,6 +278,9 @@ partial class TuneForge
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.Color.Black;
         ClientSize = new System.Drawing.Size(910, 610);
+        Controls.Add(repeatPlayList);
+        Controls.Add(Shuffle);
+        Controls.Add(selectFavoriteSong);
         Controls.Add(nameArtist);
         Controls.Add(nameSong);
         Controls.Add(MusicLogo);
@@ -267,8 +307,17 @@ partial class TuneForge
         ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         ((System.ComponentModel.ISupportInitialize)StatusVolumeSound).EndInit();
         ((System.ComponentModel.ISupportInitialize)MusicLogo).EndInit();
+        ((System.ComponentModel.ISupportInitialize)selectFavoriteSong).EndInit();
+        ((System.ComponentModel.ISupportInitialize)Shuffle).EndInit();
+        ((System.ComponentModel.ISupportInitialize)repeatPlayList).EndInit();
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.PictureBox repeatPlayList;
+
+    private System.Windows.Forms.PictureBox Shuffle;
+
+    private System.Windows.Forms.PictureBox selectFavoriteSong;
 
     private System.Windows.Forms.Label nameSong;
     private System.Windows.Forms.Label nameArtist;
