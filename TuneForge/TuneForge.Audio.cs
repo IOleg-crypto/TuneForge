@@ -95,13 +95,13 @@ namespace TuneForge
                     }
                 }
 
-                nameArtist.Text = string.IsNullOrWhiteSpace(artist) ? "Unknown" : artist;
-                nameSong.Text = string.IsNullOrWhiteSpace(title) ? "Unknown" : title;
+                nameArtist.Text = string.IsNullOrWhiteSpace(artist) ? "" : artist;
+                nameSong.Text = string.IsNullOrWhiteSpace(title) ? "" : title;
             }
             catch
             {
-                nameArtist.Text = "Unknown";
-                nameSong.Text = "Unknown";
+                nameArtist.Text = "";
+                nameSong.Text = "";
             }
         }
 

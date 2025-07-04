@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TuneForge")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aae0d3d21ed17d763989323e287cbc1548c18cca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81097dde6d7238926bdee91d33959bce4c075ccd")]
 [assembly: System.Reflection.AssemblyProductAttribute("TuneForge")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TuneForge")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

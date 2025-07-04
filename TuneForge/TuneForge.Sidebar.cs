@@ -4,6 +4,7 @@
     {
         private readonly int _sidebarOffset = 85; // Default offset
         private bool _isSidebarOpen;
+        private Sidebar sidebar;
 
         private void openSideBar(object sender, EventArgs e)
         {
@@ -30,11 +31,11 @@
                 return;
             }
 
-            Sidebar sidebar = new Sidebar(this , OpenSideBar);
+            sidebar = new Sidebar(this , OpenSideBar);
             Controls.Add(sidebar);
             sidebar.InitFullscreenResize();
             
-
+            
             if (sidebar.IsHandleCreated)
             {
                 ShiftMusicBar(_sidebarOffset);

@@ -1,97 +1,127 @@
 ﻿namespace TuneForge
 {
-    public partial class TuneForge
+    public partial class TuneForge : Form
     {
         private Dictionary<Control, Rectangle> originalControlBounds;
-        private Size _originalSize;
+        private Dictionary<Control, float> originalFontSizes;
+        private Size _originalClientSize;
 
+        private const float MIN_FONT = 6f;
+        private const float MAX_FONT = 15f;
+        
+      
         private void TuneForge_Load(object? sender, EventArgs e)
         {
-            _originalSize = this.Size;
+            // Зберігаємо початкові властивості
+            _originalClientSize = this.ClientSize;
             originalControlBounds = new Dictionary<Control, Rectangle>();
+            originalFontSizes = new Dictionary<Control, float>();
 
-            foreach (Control ctrl in this.Controls)
+            sidebar = this.Controls.OfType<Sidebar>().FirstOrDefault()!;
+            StoreOriginalBounds(this);
+            // Прив'язуємо обробники завантаження та зміни розміру
+            this.Load += TuneForge_Load;
+            this.Resize += TuneForge_Resize;
+        }
+
+        private void StoreOriginalBounds(Control parent)
+        {
+            foreach (Control ctrl in parent.Controls)
             {
-                originalControlBounds[ctrl] = ctrl.Bounds;
+                if (!originalControlBounds.ContainsKey(ctrl)) 
+                {
+                    Rectangle bounds = ctrl.Bounds;
+                    
+                    if (sidebar?.IsHandleCreated == true && ctrl != sidebar)
+                    {
+                        bounds.X += 15; // або bounds.X += 15; — залежно від твого дизайну
+                    }
+
+                    
+                    
+
+                    originalControlBounds[ctrl] = bounds;
+                    originalFontSizes[ctrl] = ctrl.Font.Size;
+                }
+
+                if (ctrl.HasChildren)
+                    StoreOriginalBounds(ctrl);
             }
         }
-        
+
         private void TuneForge_Resize(object? sender, EventArgs e)
         {
-            float xRatio = (float)this.Width / _originalSize.Width;
-            float yRatio = (float)this.Height / _originalSize.Height;
+            MinimumSize = new Size(960, 480);
+            float xRatio = (float)ClientSize.Width / _originalClientSize.Width;
+            float yRatio = (float)ClientSize.Height / _originalClientSize.Height;
+            float scale = Math.Min(xRatio, yRatio);
 
             foreach (var entry in originalControlBounds)
             {
                 Control ctrl = entry.Key;
-                Rectangle originalBounds = entry.Value;
+                if (ctrl == sidebar)
+                    continue;
 
-                int newX = (int)(originalBounds.X * xRatio);
-                int newY = (int)(originalBounds.Y * yRatio);
-                int newWidth = (int)(originalBounds.Width * xRatio);
-                int newHeight = (int)(originalBounds.Height * yRatio);
+                Rectangle orig = entry.Value;
+                int offsetX = (sidebar?.IsHandleCreated == true ? 50 : 0);
 
-                ctrl.Bounds = new Rectangle(newX, newY, newWidth, newHeight);
+                int newX = offsetX + (int)(orig.X * xRatio);
+                int newY = (int)(orig.Y * yRatio);
+                int newW = (int)(orig.Width * xRatio);
+                int newH = (int)(orig.Height * yRatio);
+                
+                //ctrl.Bounds = new Rectangle(newX, newY, newW, newH);
+                ctrl.Location = new Point(newX, newY);
+                ctrl.Size = new Size(newW, newH);
 
-                float newFontSize = ctrl.Font.Size * Math.Min(xRatio, yRatio);
-                ctrl.Font = new Font(ctrl.Font.FontFamily, Math.Max(6, newFontSize));
+                if (ctrl == musicBar)
+                {
+                    ctrl.Location = new Point(newX + 20, newY);
+                }
+                
+
+                var originalFont = originalFontSizes[ctrl];
+                var newFont = Math.Clamp(originalFont * scale, MIN_FONT, MAX_FONT);
+                ctrl.Font = new Font(ctrl.Font.FontFamily, newFont, ctrl.Font.Style);
             }
         }
-
         
         private void LayoutMusicComponents()
         {
-            labelProgram.Anchor = AnchorStyles.Right | AnchorStyles.Top;
-
-            Control[] bottomAnchoredControls =
-            [
-                musicBar, MusicTrackBar, startMusicLabel, endMusicLabel,
-                StatusVolumeSound, MusicLogo, nameSong, nameArtist,
-                selectFavoriteSong, repeatPlayList, Shuffle
-            ];
-
-            foreach (var ctrl in bottomAnchoredControls)
-                ctrl.Anchor = AnchorStyles.Bottom;
-
             this.Load += TuneForge_Load;
             this.Resize += TuneForge_Resize;
-
-            if (WindowState == FormWindowState.Normal)
-            {
-                
-            }
         }
 
         private void TuneForge_ResizeBegin(object sender, EventArgs e)
         {
-            labelProgram.Anchor = AnchorStyles.Right | AnchorStyles.Top;
-
-            Control[] bottomAnchoredControls =
+            Control[] controlsToShift =
             [
-                musicBar, MusicTrackBar, startMusicLabel, endMusicLabel,
-                StatusVolumeSound, selectFavoriteSong, repeatPlayList, Shuffle
+                musicBar, startMusicLabel, endMusicLabel, MusicTrackBar,
+                StatusVolumeSound, MusicLogo, nameSong, nameArtist,
+                Shuffle, selectFavoriteSong, repeatPlayList
             ];
 
-            foreach (var ctrl in bottomAnchoredControls)
+            foreach (var ctrl in controlsToShift)
+            {
                 ctrl.Anchor = AnchorStyles.Bottom;
+            }
         }
 
         private void TuneForge_ResizeEnd(object sender, EventArgs e)
         {
-            labelProgram.Dock = DockStyle.None;
-            labelProgram.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Control[] controlsToShift =
+            [
+                musicBar, startMusicLabel, endMusicLabel, MusicTrackBar,
+                StatusVolumeSound, MusicLogo, nameSong, nameArtist,
+                Shuffle, selectFavoriteSong, repeatPlayList
+            ];
 
-            Control[] allDockedControls = {
-                musicBar, MusicTrackBar, startMusicLabel, endMusicLabel,
-                StatusVolumeSound, selectFavoriteSong, repeatPlayList, Shuffle
-            };
-
-            foreach (var ctrl in allDockedControls)
+            foreach (var ctrl in controlsToShift)
             {
-                ctrl.Dock = DockStyle.None;
                 ctrl.Anchor = AnchorStyles.Bottom;
             }
         }
+
         private void TuneForge_ControlRemoved(object sender, ControlEventArgs e)
         {
             Control[] controlsToShift =
@@ -101,11 +131,10 @@
                 Shuffle, selectFavoriteSong, repeatPlayList
             ];
 
-            foreach (var control in controlsToShift)
+            foreach (var ctrl in controlsToShift)
             {
-                control.Location = new Point(control.Location.X - 80, control.Location.Y);
+                ctrl.Location = ctrl.Location with { X = ctrl.Location.X - 75 };
             }
         }
-        
     }
 }

@@ -36,7 +36,7 @@ partial class TuneForge
         musicBar = new System.Windows.Forms.Panel();
         previousSeek = new System.Windows.Forms.PictureBox();
         nextSeek = new System.Windows.Forms.PictureBox();
-        pictureBox1 = new System.Windows.Forms.PictureBox();
+        playBox = new System.Windows.Forms.PictureBox();
         OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
         endMusicLabel = new System.Windows.Forms.Label();
         startMusicLabel = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@ partial class TuneForge
         musicBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)previousSeek).BeginInit();
         ((System.ComponentModel.ISupportInitialize)nextSeek).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)playBox).BeginInit();
         ((System.ComponentModel.ISupportInitialize)StatusVolumeSound).BeginInit();
         ((System.ComponentModel.ISupportInitialize)MusicLogo).BeginInit();
         ((System.ComponentModel.ISupportInitialize)selectFavoriteSong).BeginInit();
@@ -112,18 +112,19 @@ partial class TuneForge
         // 
         // musicBar
         // 
+        musicBar.AutoSize = true;
         musicBar.Controls.Add(previousSeek);
         musicBar.Controls.Add(nextSeek);
-        musicBar.Controls.Add(pictureBox1);
+        musicBar.Controls.Add(playBox);
         musicBar.Location = new System.Drawing.Point(259, 493);
         musicBar.Name = "musicBar";
-        musicBar.Size = new System.Drawing.Size(425, 90);
+        musicBar.Size = new System.Drawing.Size(425, 93);
         musicBar.TabIndex = 3;
         // 
         // previousSeek
         // 
         previousSeek.Image = ((System.Drawing.Image)resources.GetObject("previousSeek.Image"));
-        previousSeek.Location = new System.Drawing.Point(46, 3);
+        previousSeek.Location = new System.Drawing.Point(64, 3);
         previousSeek.Name = "previousSeek";
         previousSeek.Size = new System.Drawing.Size(70, 87);
         previousSeek.TabIndex = 2;
@@ -133,32 +134,31 @@ partial class TuneForge
         // nextSeek
         // 
         nextSeek.Image = ((System.Drawing.Image)resources.GetObject("nextSeek.Image"));
-        nextSeek.Location = new System.Drawing.Point(272, 3);
+        nextSeek.Location = new System.Drawing.Point(204, 3);
         nextSeek.Name = "nextSeek";
-        nextSeek.Size = new System.Drawing.Size(132, 84);
+        nextSeek.Size = new System.Drawing.Size(127, 87);
         nextSeek.TabIndex = 1;
         nextSeek.TabStop = false;
         nextSeek.Click += endMusic;
         // 
-        // pictureBox1
+        // playBox
         // 
-        pictureBox1.Image = ((System.Drawing.Image)resources.GetObject("pictureBox1.Image"));
-        pictureBox1.Location = new System.Drawing.Point(140, 3);
-        pictureBox1.Name = "pictureBox1";
-        pictureBox1.Size = new System.Drawing.Size(126, 87);
-        pictureBox1.TabIndex = 0;
-        pictureBox1.TabStop = false;
-        pictureBox1.Click += OnClickMusic;
+        playBox.Image = ((System.Drawing.Image)resources.GetObject("playBox.Image"));
+        playBox.Location = new System.Drawing.Point(140, 3);
+        playBox.Name = "playBox";
+        playBox.Size = new System.Drawing.Size(126, 87);
+        playBox.TabIndex = 0;
+        playBox.TabStop = false;
+        playBox.Click += OnClickMusic;
         // 
         // endMusicLabel
         // 
         endMusicLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
         endMusicLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-        endMusicLabel.Location = new System.Drawing.Point(757, 423);
+        endMusicLabel.Location = new System.Drawing.Point(766, 423);
         endMusicLabel.Name = "endMusicLabel";
         endMusicLabel.Size = new System.Drawing.Size(72, 30);
         endMusicLabel.TabIndex = 8;
-        endMusicLabel.Text = "00:00";
         // 
         // startMusicLabel
         // 
@@ -169,7 +169,6 @@ partial class TuneForge
         startMusicLabel.Name = "startMusicLabel";
         startMusicLabel.Size = new System.Drawing.Size(68, 28);
         startMusicLabel.TabIndex = 7;
-        startMusicLabel.Text = "00:00";
         // 
         // MusicTrackBar
         // 
@@ -189,7 +188,6 @@ partial class TuneForge
         MusicTrackBar.Style = ReaLTaiizor.Enum.Metro.Style.Light;
         MusicTrackBar.StyleManager = null;
         MusicTrackBar.TabIndex = 4;
-        MusicTrackBar.Text = "metroTrackBar1";
         MusicTrackBar.ThemeAuthor = "Taiizor";
         MusicTrackBar.ThemeName = "MetroLight";
         MusicTrackBar.Value = 0;
@@ -209,10 +207,11 @@ partial class TuneForge
         // 
         // MusicLogo
         // 
+        MusicLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right));
         MusicLogo.BackColor = System.Drawing.Color.DimGray;
         MusicLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
         MusicLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-        MusicLogo.Location = new System.Drawing.Point(305, 24);
+        MusicLogo.Location = new System.Drawing.Point(295, 37);
         MusicLogo.Name = "MusicLogo";
         MusicLogo.Size = new System.Drawing.Size(323, 255);
         MusicLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -230,7 +229,6 @@ partial class TuneForge
         nameSong.Name = "nameSong";
         nameSong.Size = new System.Drawing.Size(425, 32);
         nameSong.TabIndex = 11;
-        nameSong.Text = "Unknown";
         nameSong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         // 
         // nameArtist
@@ -242,7 +240,6 @@ partial class TuneForge
         nameArtist.Name = "nameArtist";
         nameArtist.Size = new System.Drawing.Size(226, 27);
         nameArtist.TabIndex = 12;
-        nameArtist.Text = "Unknown";
         nameArtist.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         // 
         // selectFavoriteSong
@@ -297,21 +294,20 @@ partial class TuneForge
         DoubleBuffered = true;
         ForeColor = System.Drawing.Color.Transparent;
         Location = new System.Drawing.Point(19, 19);
-        Text = "TuneForge";
         Load += TuneForgeLoad;
-        ResizeBegin += TuneForge_ResizeBegin;
         ResizeEnd += TuneForge_ResizeEnd;
         ControlRemoved += TuneForge_ControlRemoved;
         musicBar.ResumeLayout(false);
         ((System.ComponentModel.ISupportInitialize)previousSeek).EndInit();
         ((System.ComponentModel.ISupportInitialize)nextSeek).EndInit();
-        ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+        ((System.ComponentModel.ISupportInitialize)playBox).EndInit();
         ((System.ComponentModel.ISupportInitialize)StatusVolumeSound).EndInit();
         ((System.ComponentModel.ISupportInitialize)MusicLogo).EndInit();
         ((System.ComponentModel.ISupportInitialize)selectFavoriteSong).EndInit();
         ((System.ComponentModel.ISupportInitialize)Shuffle).EndInit();
         ((System.ComponentModel.ISupportInitialize)repeatPlayList).EndInit();
         ResumeLayout(false);
+        PerformLayout();
     }
 
     private System.Windows.Forms.PictureBox repeatPlayList;
@@ -340,7 +336,7 @@ partial class TuneForge
 
     private System.Windows.Forms.Panel musicBar;
 
-    private System.Windows.Forms.PictureBox pictureBox1;
+    private System.Windows.Forms.PictureBox playBox;
 
     private System.Windows.Forms.Label labelProgram;
 

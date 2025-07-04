@@ -46,7 +46,7 @@ namespace TuneForge
             BorderStyle = BorderStyle.None;
             Dock = DockStyle.Left;
             // Set sidebar size by default
-            Width = 200;
+            Width = 185;
             DoubleBuffered = true;
             SetStyle(ControlStyles.AllPaintingInWmPaint |
                           ControlStyles.UserPaint |
