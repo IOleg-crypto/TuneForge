@@ -18,7 +18,6 @@ namespace TuneForge
         private bool _isSoundOn;
         private bool _userIsDragging;
         private bool _IsSelectedSongFavorite;
-        private bool _isRepeatMusic = false;
 
         public string CurrentMusicPath
         {
@@ -276,6 +275,10 @@ namespace TuneForge
 
         private void repeatSong(object sender , EventArgs e)
         {
+            if (_audioFile == null && outputDevice == null)
+            {
+                return;
+            }
             _audioFile!.Position = 0;
             _timer.Start();
             outputDevice!.Play();

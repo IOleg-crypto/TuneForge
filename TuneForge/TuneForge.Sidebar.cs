@@ -2,7 +2,7 @@
 {
     public partial class TuneForge
     {
-        private readonly int _sidebarOffset = 85; // Default offset
+        private readonly int _sidebarOffset = 60; // Default offset
         private bool _isSidebarOpen;
         private Sidebar sidebar;
 
@@ -13,7 +13,6 @@
                 var existingSidebar = Controls.OfType<Sidebar>().FirstOrDefault();
                 if (existingSidebar != null)
                 {
-                    
                     Controls.Remove(existingSidebar);
                     existingSidebar.Dispose();
                 }
@@ -21,16 +20,7 @@
                 return;
             }
 
-            if (OpenSideBar == null || OpenSideBar.IsDisposed || !OpenSideBar.IsHandleCreated)
-            {
-                return;
-            }
-
-            if (IsDisposed || !IsHandleCreated)
-            {
-                return;
-            }
-
+            
             sidebar = new Sidebar(this , OpenSideBar);
             Controls.Add(sidebar);
             sidebar.InitFullscreenResize();
@@ -50,7 +40,7 @@
             [
                 musicBar, startMusicLabel, endMusicLabel, MusicTrackBar,
                 StatusVolumeSound, MusicLogo, nameSong, nameArtist,
-                Shuffle, selectFavoriteSong, repeatPlayList
+                Shuffle, selectFavoriteSong, repeatPlayList , labelProgram
             ];
 
             foreach (var control in controlsToShift)

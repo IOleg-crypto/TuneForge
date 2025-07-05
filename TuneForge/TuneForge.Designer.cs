@@ -102,11 +102,11 @@ partial class TuneForge
         // labelProgram
         // 
         labelProgram.BackColor = System.Drawing.Color.Black;
-        labelProgram.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
+        labelProgram.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
         labelProgram.ForeColor = System.Drawing.Color.Transparent;
-        labelProgram.Location = new System.Drawing.Point(784, 12);
+        labelProgram.Location = new System.Drawing.Point(813, -1);
         labelProgram.Name = "labelProgram";
-        labelProgram.Size = new System.Drawing.Size(123, 37);
+        labelProgram.Size = new System.Drawing.Size(100, 40);
         labelProgram.TabIndex = 2;
         labelProgram.Text = "TuneForge";
         // 
@@ -116,15 +116,15 @@ partial class TuneForge
         musicBar.Controls.Add(previousSeek);
         musicBar.Controls.Add(nextSeek);
         musicBar.Controls.Add(playBox);
-        musicBar.Location = new System.Drawing.Point(259, 493);
+        musicBar.Location = new System.Drawing.Point(267, 493);
         musicBar.Name = "musicBar";
-        musicBar.Size = new System.Drawing.Size(425, 93);
+        musicBar.Size = new System.Drawing.Size(406, 93);
         musicBar.TabIndex = 3;
         // 
         // previousSeek
         // 
         previousSeek.Image = ((System.Drawing.Image)resources.GetObject("previousSeek.Image"));
-        previousSeek.Location = new System.Drawing.Point(64, 3);
+        previousSeek.Location = new System.Drawing.Point(36, 3);
         previousSeek.Name = "previousSeek";
         previousSeek.Size = new System.Drawing.Size(70, 87);
         previousSeek.TabIndex = 2;
@@ -133,8 +133,9 @@ partial class TuneForge
         // 
         // nextSeek
         // 
+        nextSeek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
         nextSeek.Image = ((System.Drawing.Image)resources.GetObject("nextSeek.Image"));
-        nextSeek.Location = new System.Drawing.Point(204, 3);
+        nextSeek.Location = new System.Drawing.Point(260, 3);
         nextSeek.Name = "nextSeek";
         nextSeek.Size = new System.Drawing.Size(127, 87);
         nextSeek.TabIndex = 1;
@@ -153,12 +154,14 @@ partial class TuneForge
         // 
         // endMusicLabel
         // 
+        endMusicLabel.BackColor = System.Drawing.Color.Transparent;
         endMusicLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
         endMusicLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
         endMusicLabel.Location = new System.Drawing.Point(766, 423);
         endMusicLabel.Name = "endMusicLabel";
         endMusicLabel.Size = new System.Drawing.Size(72, 30);
         endMusicLabel.TabIndex = 8;
+        endMusicLabel.Text = "00:00";
         // 
         // startMusicLabel
         // 
@@ -169,6 +172,7 @@ partial class TuneForge
         startMusicLabel.Name = "startMusicLabel";
         startMusicLabel.Size = new System.Drawing.Size(68, 28);
         startMusicLabel.TabIndex = 7;
+        startMusicLabel.Text = "00:00";
         // 
         // MusicTrackBar
         // 
@@ -208,12 +212,12 @@ partial class TuneForge
         // MusicLogo
         // 
         MusicLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right));
-        MusicLogo.BackColor = System.Drawing.Color.DimGray;
+        MusicLogo.BackColor = System.Drawing.Color.Transparent;
         MusicLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
         MusicLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-        MusicLogo.Location = new System.Drawing.Point(295, 37);
+        MusicLogo.Location = new System.Drawing.Point(243, 37);
         MusicLogo.Name = "MusicLogo";
-        MusicLogo.Size = new System.Drawing.Size(323, 255);
+        MusicLogo.Size = new System.Drawing.Size(470, 255);
         MusicLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
         MusicLogo.TabIndex = 10;
         MusicLogo.TabStop = false;
@@ -225,7 +229,7 @@ partial class TuneForge
         nameSong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
         nameSong.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
         nameSong.ForeColor = System.Drawing.SystemColors.ButtonFace;
-        nameSong.Location = new System.Drawing.Point(259, 295);
+        nameSong.Location = new System.Drawing.Point(248, 295);
         nameSong.Name = "nameSong";
         nameSong.Size = new System.Drawing.Size(425, 32);
         nameSong.TabIndex = 11;
