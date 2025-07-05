@@ -24,7 +24,7 @@
 
             // Register form load and resize handlers
             this.Load += TuneForge_Load;
-            this.Resize += TuneForge_Resize;
+            this.ForgePanel.Resize += TuneForge_Resize;
         }
 
         private void StoreOriginalBounds(Control parent)
@@ -179,6 +179,25 @@
         }
 
         private void TuneForge_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            // Adjust X-position of controls when sidebar is removed
+            Control[] controlsToShift =
+            [
+                musicBar, startMusicLabel, endMusicLabel, MusicTrackBar,
+                StatusVolumeSound, MusicLogo, nameSong, nameArtist,
+                Shuffle, selectFavoriteSong, repeatPlayList , labelProgram
+            ];
+
+#if DEBUG
+            MessageBox.Show("Control removed");
+#endif
+
+            foreach (var ctrl in controlsToShift)
+            {
+                ctrl.Location = ctrl.Location with { X = ctrl.Location.X - 65 };
+            }
+        }
+        private void ForgePanelControlRemoved(object sender, ControlEventArgs e)
         {
             // Adjust X-position of controls when sidebar is removed
             Control[] controlsToShift =

@@ -48,6 +48,7 @@ namespace TuneForge
             // Set sidebar size by default
             Width = 185;
             DoubleBuffered = true;
+            Visible = true;
             SetStyle(ControlStyles.AllPaintingInWmPaint |
                           ControlStyles.UserPaint |
                           ControlStyles.OptimizedDoubleBuffer, true);
@@ -92,25 +93,33 @@ namespace TuneForge
         {
             MessageBox.Show(@"Settings");
         }
+        
         private void OnMusicClick()
         {
-            var openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "mp3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
-            openFileDialog.FilterIndex = 1;
-            openFileDialog.RestoreDirectory = true;
+            // var openFileDialog = new OpenFileDialog();
+            // openFileDialog.Filter = "mp3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
+            // openFileDialog.FilterIndex = 1;
+            // openFileDialog.RestoreDirectory = true;
+            //
+            // if (openFileDialog.ShowDialog() == DialogResult.OK)
+            // {
+            //     if (_form is TuneForge mainForm)
+            //     {
+            //         mainForm.CurrentMusicPath = openFileDialog.FileName;
+            //     }
+            // }
+            //
+            // if (_form is TuneForge form)
+            // {
+            //     form.TakeArtistSongName(form.CurrentMusicPath); 
+            //     form.UpdateAlbumArt(form.CurrentMusicPath); 
+            // }
+            var musicList = new TuneForgeMusicDirectory();
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            if (_form is TuneForge mainForm)
             {
-                if (_form is TuneForge mainForm)
-                {
-                    mainForm.CurrentMusicPath = openFileDialog.FileName;
-                }
-            }
-
-            if (_form is TuneForge form)
-            {
-                form.TakeArtistSongName(form.CurrentMusicPath); 
-                form.UpdateAlbumArt(form.CurrentMusicPath); 
+                musicList.OpenSideBarCalled += mainForm.openSideBar;
+                mainForm.ShowUserControl(musicList);
             }
         }
         private void InitItems()
@@ -138,7 +147,7 @@ namespace TuneForge
             const string path = "D:\\gitnext\\csharpProject\\TuneForrge\\TuneForge\\assets\\sidebar\\exit2.png";
             if (!File.Exists(path))
             {
-                MessageBox.Show("File not found: " + path);
+                MessageBox.Show(@"File not found: " + path);
                 return;
             }
             _cancelIcon = new PictureBox

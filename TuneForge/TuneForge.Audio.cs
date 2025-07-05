@@ -59,7 +59,7 @@ namespace TuneForge
             return Image.FromStream(ms);
         }
 
-        public void UpdateAlbumArt(string path)
+        private void UpdateAlbumArt(string path)
         {
             var albumImage = GetAlbumArt(path);
             if (albumImage == null)

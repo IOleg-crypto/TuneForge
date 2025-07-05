@@ -48,6 +48,7 @@ partial class TuneForge
         selectFavoriteSong = new System.Windows.Forms.PictureBox();
         Shuffle = new System.Windows.Forms.PictureBox();
         repeatPlayList = new System.Windows.Forms.PictureBox();
+        ForgePanel = new System.Windows.Forms.Panel();
         musicBar.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)previousSeek).BeginInit();
         ((System.ComponentModel.ISupportInitialize)nextSeek).BeginInit();
@@ -57,6 +58,7 @@ partial class TuneForge
         ((System.ComponentModel.ISupportInitialize)selectFavoriteSong).BeginInit();
         ((System.ComponentModel.ISupportInitialize)Shuffle).BeginInit();
         ((System.ComponentModel.ISupportInitialize)repeatPlayList).BeginInit();
+        ForgePanel.SuspendLayout();
         SuspendLayout();
         // 
         // OpenSideBar
@@ -69,7 +71,7 @@ partial class TuneForge
         OpenSideBar.HoverColor = System.Drawing.Color.FromArgb(((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)));
         OpenSideBar.HoverTextColor = System.Drawing.Color.DimGray;
         OpenSideBar.IsDerivedStyle = false;
-        OpenSideBar.Location = new System.Drawing.Point(12, 12);
+        OpenSideBar.Location = new System.Drawing.Point(10, 12);
         OpenSideBar.Name = "OpenSideBar";
         OpenSideBar.NormalBorderColor = System.Drawing.Color.Transparent;
         OpenSideBar.NormalColor = System.Drawing.Color.Transparent;
@@ -98,15 +100,16 @@ partial class TuneForge
         metroLabel1.TabIndex = 1;
         metroLabel1.ThemeAuthor = "Taiizor";
         metroLabel1.ThemeName = "MetroLight";
+        metroLabel1.Visible = false;
         // 
         // labelProgram
         // 
         labelProgram.BackColor = System.Drawing.Color.Black;
-        labelProgram.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
+        labelProgram.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
         labelProgram.ForeColor = System.Drawing.Color.Transparent;
-        labelProgram.Location = new System.Drawing.Point(813, -1);
+        labelProgram.Location = new System.Drawing.Point(782, 12);
         labelProgram.Name = "labelProgram";
-        labelProgram.Size = new System.Drawing.Size(100, 40);
+        labelProgram.Size = new System.Drawing.Size(123, 37);
         labelProgram.TabIndex = 2;
         labelProgram.Text = "TuneForge";
         // 
@@ -116,7 +119,7 @@ partial class TuneForge
         musicBar.Controls.Add(previousSeek);
         musicBar.Controls.Add(nextSeek);
         musicBar.Controls.Add(playBox);
-        musicBar.Location = new System.Drawing.Point(267, 493);
+        musicBar.Location = new System.Drawing.Point(265, 493);
         musicBar.Name = "musicBar";
         musicBar.Size = new System.Drawing.Size(406, 93);
         musicBar.TabIndex = 3;
@@ -157,22 +160,20 @@ partial class TuneForge
         endMusicLabel.BackColor = System.Drawing.Color.Transparent;
         endMusicLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
         endMusicLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-        endMusicLabel.Location = new System.Drawing.Point(766, 423);
+        endMusicLabel.Location = new System.Drawing.Point(764, 423);
         endMusicLabel.Name = "endMusicLabel";
         endMusicLabel.Size = new System.Drawing.Size(72, 30);
         endMusicLabel.TabIndex = 8;
-        endMusicLabel.Text = "00:00";
         // 
         // startMusicLabel
         // 
         startMusicLabel.BackColor = System.Drawing.Color.Transparent;
         startMusicLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
         startMusicLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-        startMusicLabel.Location = new System.Drawing.Point(121, 425);
+        startMusicLabel.Location = new System.Drawing.Point(119, 425);
         startMusicLabel.Name = "startMusicLabel";
         startMusicLabel.Size = new System.Drawing.Size(68, 28);
         startMusicLabel.TabIndex = 7;
-        startMusicLabel.Text = "00:00";
         // 
         // MusicTrackBar
         // 
@@ -184,7 +185,7 @@ partial class TuneForge
         MusicTrackBar.DisabledValueColor = System.Drawing.Color.FromArgb(((int)((byte)205)), ((int)((byte)205)), ((int)((byte)205)));
         MusicTrackBar.HandlerColor = System.Drawing.Color.FromArgb(((int)((byte)180)), ((int)((byte)180)), ((int)((byte)180)));
         MusicTrackBar.IsDerivedStyle = true;
-        MusicTrackBar.Location = new System.Drawing.Point(134, 404);
+        MusicTrackBar.Location = new System.Drawing.Point(132, 404);
         MusicTrackBar.Maximum = 100;
         MusicTrackBar.Minimum = 0;
         MusicTrackBar.Name = "MusicTrackBar";
@@ -202,7 +203,7 @@ partial class TuneForge
         StatusVolumeSound.BackColor = System.Drawing.Color.Transparent;
         StatusVolumeSound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
         StatusVolumeSound.Image = ((System.Drawing.Image)resources.GetObject("StatusVolumeSound.Image"));
-        StatusVolumeSound.Location = new System.Drawing.Point(121, 360);
+        StatusVolumeSound.Location = new System.Drawing.Point(119, 360);
         StatusVolumeSound.Name = "StatusVolumeSound";
         StatusVolumeSound.Size = new System.Drawing.Size(39, 38);
         StatusVolumeSound.TabIndex = 9;
@@ -215,7 +216,7 @@ partial class TuneForge
         MusicLogo.BackColor = System.Drawing.Color.Transparent;
         MusicLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
         MusicLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-        MusicLogo.Location = new System.Drawing.Point(243, 37);
+        MusicLogo.Location = new System.Drawing.Point(234, 37);
         MusicLogo.Name = "MusicLogo";
         MusicLogo.Size = new System.Drawing.Size(470, 255);
         MusicLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -229,27 +230,29 @@ partial class TuneForge
         nameSong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
         nameSong.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)204));
         nameSong.ForeColor = System.Drawing.SystemColors.ButtonFace;
-        nameSong.Location = new System.Drawing.Point(248, 295);
+        nameSong.Location = new System.Drawing.Point(246, 295);
         nameSong.Name = "nameSong";
         nameSong.Size = new System.Drawing.Size(425, 32);
         nameSong.TabIndex = 11;
         nameSong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        nameSong.Visible = false;
         // 
         // nameArtist
         // 
         nameArtist.BackColor = System.Drawing.Color.Transparent;
         nameArtist.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
         nameArtist.ForeColor = System.Drawing.SystemColors.ButtonFace;
-        nameArtist.Location = new System.Drawing.Point(354, 344);
+        nameArtist.Location = new System.Drawing.Point(352, 344);
         nameArtist.Name = "nameArtist";
         nameArtist.Size = new System.Drawing.Size(226, 27);
         nameArtist.TabIndex = 12;
         nameArtist.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        nameArtist.Visible = false;
         // 
         // selectFavoriteSong
         // 
         selectFavoriteSong.Image = ((System.Drawing.Image)resources.GetObject("selectFavoriteSong.Image"));
-        selectFavoriteSong.Location = new System.Drawing.Point(726, 360);
+        selectFavoriteSong.Location = new System.Drawing.Point(724, 360);
         selectFavoriteSong.Name = "selectFavoriteSong";
         selectFavoriteSong.Size = new System.Drawing.Size(33, 38);
         selectFavoriteSong.TabIndex = 13;
@@ -259,7 +262,7 @@ partial class TuneForge
         // Shuffle
         // 
         Shuffle.Image = ((System.Drawing.Image)resources.GetObject("Shuffle.Image"));
-        Shuffle.Location = new System.Drawing.Point(784, 360);
+        Shuffle.Location = new System.Drawing.Point(782, 360);
         Shuffle.Name = "Shuffle";
         Shuffle.Size = new System.Drawing.Size(35, 33);
         Shuffle.TabIndex = 14;
@@ -268,12 +271,33 @@ partial class TuneForge
         // repeatPlayList
         // 
         repeatPlayList.Image = ((System.Drawing.Image)resources.GetObject("repeatPlayList.Image"));
-        repeatPlayList.Location = new System.Drawing.Point(837, 360);
+        repeatPlayList.Location = new System.Drawing.Point(835, 360);
         repeatPlayList.Name = "repeatPlayList";
         repeatPlayList.Size = new System.Drawing.Size(37, 36);
         repeatPlayList.TabIndex = 15;
         repeatPlayList.TabStop = false;
         repeatPlayList.Click += repeatSong;
+        // 
+        // ForgePanel
+        // 
+        ForgePanel.Controls.Add(repeatPlayList);
+        ForgePanel.Controls.Add(Shuffle);
+        ForgePanel.Controls.Add(selectFavoriteSong);
+        ForgePanel.Controls.Add(nameArtist);
+        ForgePanel.Controls.Add(nameSong);
+        ForgePanel.Controls.Add(MusicLogo);
+        ForgePanel.Controls.Add(StatusVolumeSound);
+        ForgePanel.Controls.Add(startMusicLabel);
+        ForgePanel.Controls.Add(endMusicLabel);
+        ForgePanel.Controls.Add(MusicTrackBar);
+        ForgePanel.Controls.Add(musicBar);
+        ForgePanel.Controls.Add(labelProgram);
+        ForgePanel.Controls.Add(OpenSideBar);
+        ForgePanel.Location = new System.Drawing.Point(2, 0);
+        ForgePanel.Name = "ForgePanel";
+        ForgePanel.Size = new System.Drawing.Size(913, 630);
+        ForgePanel.TabIndex = 16;
+        ForgePanel.ControlRemoved += ForgePanelControlRemoved;
         // 
         // TuneForge
         // 
@@ -281,20 +305,8 @@ partial class TuneForge
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.Color.Black;
         ClientSize = new System.Drawing.Size(910, 610);
-        Controls.Add(repeatPlayList);
-        Controls.Add(Shuffle);
-        Controls.Add(selectFavoriteSong);
-        Controls.Add(nameArtist);
-        Controls.Add(nameSong);
-        Controls.Add(MusicLogo);
-        Controls.Add(StatusVolumeSound);
-        Controls.Add(startMusicLabel);
-        Controls.Add(endMusicLabel);
-        Controls.Add(MusicTrackBar);
-        Controls.Add(musicBar);
-        Controls.Add(labelProgram);
+        Controls.Add(ForgePanel);
         Controls.Add(metroLabel1);
-        Controls.Add(OpenSideBar);
         DoubleBuffered = true;
         ForeColor = System.Drawing.Color.Transparent;
         Location = new System.Drawing.Point(19, 19);
@@ -310,9 +322,12 @@ partial class TuneForge
         ((System.ComponentModel.ISupportInitialize)selectFavoriteSong).EndInit();
         ((System.ComponentModel.ISupportInitialize)Shuffle).EndInit();
         ((System.ComponentModel.ISupportInitialize)repeatPlayList).EndInit();
+        ForgePanel.ResumeLayout(false);
+        ForgePanel.PerformLayout();
         ResumeLayout(false);
-        PerformLayout();
     }
+
+    public System.Windows.Forms.Panel ForgePanel;
 
     private System.Windows.Forms.PictureBox repeatPlayList;
 

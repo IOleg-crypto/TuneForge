@@ -6,14 +6,14 @@
         private bool _isSidebarOpen;
         private Sidebar sidebar;
 
-        private void openSideBar(object sender, EventArgs e)
+        public void openSideBar(object sender, EventArgs e)
         {
             if (_isSidebarOpen)
             {
                 var existingSidebar = Controls.OfType<Sidebar>().FirstOrDefault();
                 if (existingSidebar != null)
                 {
-                    Controls.Remove(existingSidebar);
+                    ForgePanel.Controls.Remove(existingSidebar);
                     existingSidebar.Dispose();
                 }
                 _isSidebarOpen = false;
@@ -22,7 +22,7 @@
 
             
             sidebar = new Sidebar(this , OpenSideBar);
-            Controls.Add(sidebar);
+            ForgePanel.Controls.Add(sidebar);
             sidebar.InitFullscreenResize();
             
             
